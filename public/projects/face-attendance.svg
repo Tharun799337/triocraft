@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cvBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e1c" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="neonGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#cvBg)" stroke="rgba(16,185,129,0.3)" stroke-width="2" />
+
+  <!-- Top bar -->
+  <rect width="800" height="48" rx="16" fill="#0f172a" />
+  <circle cx="28" cy="24" r="6" fill="#ef4444" />
+  <circle cx="48" cy="24" r="6" fill="#f59e0b" />
+  <circle cx="68" cy="24" r="6" fill="#10b981" />
+  <text x="120" y="28" fill="#34d399" font-family="monospace" font-size="13" font-weight="bold">AI VISION // FACE-ATTENDANCE-ENGINE v2.4 [60 FPS]</text>
+  <rect x="660" y="12" width="110" height="24" rx="4" fill="rgba(16,185,129,0.2)" />
+  <text x="715" y="27" fill="#34d399" font-family="monospace" font-size="10" text-anchor="middle">LIVE STREAM</text>
+
+  <!-- Left Side: Computer Vision Camera Viewport -->
+  <g transform="translate(30, 70)">
+    <rect width="450" height="400" rx="10" fill="#0b1325" stroke="#1e293b" stroke-width="1.5" />
+    
+    <!-- Camera Grid Lines -->
+    <line x1="30" y1="130" x2="420" y2="130" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 4" />
+    <line x1="30" y1="270" x2="420" y2="270" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 4" />
+    <line x1="150" y1="30" x2="150" y2="370" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 4" />
+    <line x1="300" y1="30" x2="300" y2="370" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 4" />
+
+    <!-- Face Bounding Box 1 (Detected & Verified) -->
+    <rect x="120" y="90" width="200" height="240" rx="12" fill="none" stroke="#10b981" stroke-width="2.5" />
+    
+    <!-- Corner HUD brackets -->
+    <path d="M120 120 L120 90 L150 90" fill="none" stroke="#34d399" stroke-width="4" />
+    <path d="M320 120 L320 90 L290 90" fill="none" stroke="#34d399" stroke-width="4" />
+    <path d="M120 300 L120 330 L150 330" fill="none" stroke="#34d399" stroke-width="4" />
+    <path d="M320 300 L320 330 L290 330" fill="none" stroke="#34d399" stroke-width="4" />
+
+    <!-- Facial Landmark Points -->
+    <!-- Eyes -->
+    <circle cx="170" cy="180" r="4" fill="#38bdf8" />
+    <circle cx="250" cy="180" r="4" fill="#38bdf8" />
+    <!-- Nose bridge & tip -->
+    <circle cx="210" cy="205" r="3" fill="#38bdf8" />
+    <circle cx="210" cy="225" r="4" fill="#38bdf8" />
+    <!-- Mouth corners & chin -->
+    <circle cx="185" cy="260" r="3" fill="#38bdf8" />
+    <circle cx="235" cy="260" r="3" fill="#38bdf8" />
+    <circle cx="210" cy="270" r="3" fill="#38bdf8" />
+    <circle cx="210" cy="305" r="3" fill="#38bdf8" />
+
+    <!-- Recognition Tag Floating Above -->
+    <rect x="120" y="55" width="200" height="30" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1" />
+    <text x="220" y="74" fill="#ecfdf5" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">VERIFIED: Tharun (99.4%)</text>
+
+    <!-- Embedding vector bar below -->
+    <rect x="40" y="350" width="370" height="32" rx="6" fill="#070c17" />
+    <text x="50" y="370" fill="#94a3b8" font-family="monospace" font-size="10">128D VECTOR: [-0.042, 0.184, 0.932, -0.114...]</text>
+  </g>
+
+  <!-- Right Side: Live Logs & Attendance Feed -->
+  <g transform="translate(500, 70)">
+    <rect width="270" height="400" rx="10" fill="#0b1322" stroke="rgba(255,255,255,0.06)" />
+    <text x="20" y="30" fill="#f1f5f9" font-family="sans-serif" font-size="13" font-weight="bold">Automated Attendance Log</text>
+
+    <!-- Log entry 1 -->
+    <g transform="translate(15, 50)">
+      <rect width="240" height="60" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1" />
+      <text x="12" y="22" fill="#a7f3d0" font-family="sans-serif" font-size="11" font-weight="bold">✓ Tharun (Lead Dev)</text>
+      <text x="12" y="40" fill="#6ee7b7" font-family="monospace" font-size="10">09:14:02 AM • Zone 1 Gate</text>
+      <text x="12" y="52" fill="#d1fae5" font-family="monospace" font-size="9">Match Confidence: 99.4%</text>
+    </g>
+
+    <!-- Log entry 2 -->
+    <g transform="translate(15, 120)">
+      <rect width="240" height="60" rx="6" fill="#0f1f33" stroke="rgba(56,189,248,0.2)" stroke-width="1" />
+      <text x="12" y="22" fill="#e2e8f0" font-family="sans-serif" font-size="11" font-weight="bold">✓ Sarah Connor (Design)</text>
+      <text x="12" y="40" fill="#94a3b8" font-family="monospace" font-size="10">09:11:45 AM • Zone 1 Gate</text>
+      <text x="12" y="52" fill="#38bdf8" font-family="monospace" font-size="9">Match Confidence: 98.1%</text>
+    </g>
+
+    <!-- Log entry 3 -->
+    <g transform="translate(15, 190)">
+      <rect width="240" height="60" rx="6" fill="#0f1f33" stroke="rgba(56,189,248,0.2)" stroke-width="1" />
+      <text x="12" y="22" fill="#e2e8f0" font-family="sans-serif" font-size="11" font-weight="bold">✓ Alex Morgan (Product)</text>
+      <text x="12" y="40" fill="#94a3b8" font-family="monospace" font-size="10">09:08:12 AM • Zone 2 Gate</text>
+      <text x="12" y="52" fill="#38bdf8" font-family="monospace" font-size="9">Match Confidence: 97.6%</text>
+    </g>
+
+    <!-- Summary Box -->
+    <g transform="translate(15, 270)">
+      <rect width="240" height="110" rx="8" fill="#070c17" stroke="#1e293b" />
+      <text x="15" y="25" fill="#e2e8f0" font-family="sans-serif" font-size="11" font-weight="bold">Shift Statistics</text>
+      <text x="15" y="48" fill="#94a3b8" font-family="sans-serif" font-size="11">Total Present: <tspan fill="#34d399" font-weight="bold">124</tspan> / 130</text>
+      <text x="15" y="70" fill="#94a3b8" font-family="sans-serif" font-size="11">Avg Latency: <tspan fill="#38bdf8" font-weight="bold">142ms</tspan></text>
+      <text x="15" y="92" fill="#94a3b8" font-family="sans-serif" font-size="11">Anti-Spoof Check: <tspan fill="#10b981">PASSED (Blink Ok)</tspan></text>
+    </g>
+  </g>
+</svg>

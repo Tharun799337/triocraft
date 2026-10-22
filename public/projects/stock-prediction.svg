@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="stockBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060c18" />
+      <stop offset="100%" stop-color="#02050b" />
+    </linearGradient>
+    <linearGradient id="chartGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#stockBg)" stroke="rgba(16,185,129,0.25)" stroke-width="2" />
+
+  <!-- Top bar -->
+  <rect width="800" height="48" rx="16" fill="#0d1527" />
+  <circle cx="28" cy="24" r="6" fill="#ef4444" />
+  <circle cx="48" cy="24" r="6" fill="#f59e0b" />
+  <circle cx="68" cy="24" r="6" fill="#10b981" />
+  <text x="120" y="28" fill="#38bdf8" font-family="sans-serif" font-size="13" font-weight="bold">QUANT-TRADE AI // TIME-SERIES PREDICTOR</text>
+
+  <!-- Stock Header -->
+  <g transform="translate(30, 65)">
+    <text x="0" y="25" fill="#f8fafc" font-family="sans-serif" font-size="22" font-weight="bold">NVDA • NVIDIA Corp</text>
+    <text x="260" y="25" fill="#34d399" font-family="sans-serif" font-size="22" font-weight="bold">$138.45 <tspan font-size="13">(+4.12% Today)</tspan></text>
+    
+    <!-- Timeframe pills -->
+    <rect x="520" y="5" width="220" height="28" rx="6" fill="#111c33" />
+    <text x="540" y="23" fill="#64748b" font-family="sans-serif" font-size="11">1D</text>
+    <text x="575" y="23" fill="#64748b" font-family="sans-serif" font-size="11">1W</text>
+    <text x="610" y="23" fill="#64748b" font-family="sans-serif" font-size="11">1M</text>
+    <text x="645" y="23" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="bold">1Y (LSTM)</text>
+    <text x="710" y="23" fill="#64748b" font-family="sans-serif" font-size="11">ALL</text>
+  </g>
+
+  <!-- Chart Area -->
+  <g transform="translate(30, 115)">
+    <rect width="740" height="230" rx="8" fill="#081020" stroke="#1e293b" />
+    
+    <!-- Grid Lines -->
+    <line x1="20" y1="40" x2="720" y2="40" stroke="#162238" stroke-width="1" />
+    <line x1="20" y1="90" x2="720" y2="90" stroke="#162238" stroke-width="1" />
+    <line x1="20" y1="140" x2="720" y2="140" stroke="#162238" stroke-width="1" />
+    <line x1="20" y1="190" x2="720" y2="190" stroke="#162238" stroke-width="1" />
+
+    <!-- Historical Stock Curve -->
+    <path d="M 40 180 Q 120 160 180 130 T 320 140 T 460 80 T 560 60" fill="none" stroke="#10b981" stroke-width="3" />
+    <path d="M 40 180 Q 120 160 180 130 T 320 140 T 460 80 T 560 60 L 560 210 L 40 210 Z" fill="url(#chartGlow)" />
+
+    <!-- Forecast / Predicted Section (LSTM 14-day projection) -->
+    <path d="M 560 60 Q 620 45 680 35" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="6 4" />
+    <!-- Prediction Cone -->
+    <polygon points="560,60 680,20 680,55" fill="rgba(56,189,248,0.12)" />
+    
+    <!-- Forecast Marker -->
+    <circle cx="680" cy="35" r="5" fill="#38bdf8" />
+    <rect x="610" y="5" width="100" height="24" rx="4" fill="#0369a1" />
+    <text x="660" y="21" fill="#fff" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">LSTM: $148.20</text>
+  </g>
+
+  <!-- Bottom Technical Indicators -->
+  <g transform="translate(30, 360)">
+    <!-- RSI Box -->
+    <rect width="230" height="110" rx="8" fill="#081020" stroke="#1e293b" />
+    <text x="15" y="25" fill="#94a3b8" font-family="sans-serif" font-size="11">RSI (14 Period)</text>
+    <text x="15" y="55" fill="#38bdf8" font-family="sans-serif" font-size="22" font-weight="bold">64.2</text>
+    <text x="15" y="80" fill="#34d399" font-family="sans-serif" font-size="11">Bullish Momentum Trend</text>
+
+    <!-- MACD Box -->
+    <rect x="255" width="230" height="110" rx="8" fill="#081020" stroke="#1e293b" />
+    <text x="270" y="25" fill="#94a3b8" font-family="sans-serif" font-size="11">MACD Crossover</text>
+    <text x="270" y="55" fill="#34d399" font-family="sans-serif" font-size="22" font-weight="bold">+2.84</text>
+    <text x="270" y="80" fill="#94a3b8" font-family="sans-serif" font-size="11">Signal Line: Above (+0.45)</text>
+
+    <!-- Model Stats -->
+    <rect x="510" width="230" height="110" rx="8" fill="#081020" stroke="rgba(168,85,247,0.3)" />
+    <text x="525" y="25" fill="#c084fc" font-family="sans-serif" font-size="11" font-weight="bold">ML Model Metrics</text>
+    <text x="525" y="50" fill="#e2e8f0" font-family="monospace" font-size="11">RMSE: 1.42 • R²: 0.89</text>
+    <text x="525" y="72" fill="#e2e8f0" font-family="monospace" font-size="11">Backtest Sharpe: 2.18</text>
+    <text x="525" y="94" fill="#64748b" font-family="monospace" font-size="9">Trained on 10Y Daily OHLCV</text>
+  </g>
+</svg>

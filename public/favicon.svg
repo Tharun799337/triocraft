@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <!-- Cyan Teal Metallic Gradient -->
+    <linearGradient id="tcTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <!-- Copper Amber Metallic Gradient -->
+    <linearGradient id="tcCopper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#c2410c" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="tcGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Obsidian Hexagon / Pill -->
+  <rect x="6" y="6" width="108" height="108" rx="28" fill="#050508" stroke="url(#tcTeal)" stroke-width="1.5" stroke-opacity="0.3" />
+
+  <!-- Upward Teal Triangle with Internal Nested Geometry -->
+  <g filter="url(#tcGlow)">
+    <!-- Outer Teal Triangle Frame -->
+    <path d="M60 18 L100 86 L20 86 Z" stroke="url(#tcTeal)" stroke-width="5" stroke-linejoin="round" fill="none" />
+    <!-- Inner Nested Teal Chevron -->
+    <path d="M60 38 L84 78 L36 78 Z" stroke="url(#tcTeal)" stroke-width="3.5" stroke-linejoin="round" fill="none" stroke-opacity="0.85" />
+  </g>
+
+  <!-- Inverted Downward Copper Triangle Interlocking Frame -->
+  <g filter="url(#tcGlow)">
+    <!-- Outer Copper Triangle Frame (Inverted) -->
+    <path d="M60 102 L20 34 L100 34 Z" stroke="url(#tcCopper)" stroke-width="5.5" stroke-linejoin="round" fill="none" />
+    <!-- Inner Nested Copper Chevron -->
+    <path d="M60 82 L36 42 L84 42 Z" stroke="url(#tcCopper)" stroke-width="3.5" stroke-linejoin="round" fill="none" stroke-opacity="0.85" />
+    <!-- Inner Core Accent -->
+    <path d="M60 68 L48 48 L72 48 Z" stroke="url(#tcCopper)" stroke-width="2" stroke-linejoin="round" fill="none" stroke-opacity="0.6" />
+  </g>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="medBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05131e" />
+      <stop offset="100%" stop-color="#0a1d2e" />
+    </linearGradient>
+    <linearGradient id="medTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#medBg)" stroke="rgba(13,148,136,0.3)" stroke-width="2" />
+
+  <!-- Top bar -->
+  <rect width="800" height="48" rx="16" fill="#082032" />
+  <circle cx="28" cy="24" r="6" fill="#ef4444" />
+  <circle cx="48" cy="24" r="6" fill="#f59e0b" />
+  <circle cx="68" cy="24" r="6" fill="#10b981" />
+  <text x="120" y="28" fill="#2dd4bf" font-family="sans-serif" font-size="13" font-weight="bold">MedCore Clinical OS</text>
+  <rect x="620" y="12" width="150" height="24" rx="12" fill="#0e374e" />
+  <text x="695" y="27" fill="#99f6e4" font-family="sans-serif" font-size="10" text-anchor="middle">Dr. Tharun (Chief Resident)</text>
+
+  <!-- Left Navigation -->
+  <rect x="20" y="65" width="160" height="415" rx="10" fill="#071b29" stroke="rgba(255,255,255,0.05)" />
+  <g transform="translate(35, 90)">
+    <rect width="130" height="32" rx="6" fill="url(#medTeal)" />
+    <text x="15" y="20" fill="#fff" font-family="sans-serif" font-size="11" font-weight="bold">Dashboard</text>
+    
+    <text x="15" y="55" fill="#94a3b8" font-family="sans-serif" font-size="11">Appointments</text>
+    <text x="15" y="85" fill="#94a3b8" font-family="sans-serif" font-size="11">EHR Records</text>
+    <text x="15" y="115" fill="#94a3b8" font-family="sans-serif" font-size="11">Prescriptions</text>
+    <text x="15" y="145" fill="#94a3b8" font-family="sans-serif" font-size="11">Billing &amp; Invoices</text>
+    <text x="15" y="175" fill="#94a3b8" font-family="sans-serif" font-size="11">Ward Occupancy</text>
+  </g>
+
+  <!-- Stat Cards -->
+  <g transform="translate(200, 65)">
+    <!-- Card 1 -->
+    <rect width="180" height="70" rx="8" fill="#0a2538" stroke="rgba(45,212,191,0.2)" />
+    <text x="14" y="24" fill="#94a3b8" font-family="sans-serif" font-size="10">Active Inpatients</text>
+    <text x="14" y="52" fill="#f0fdfa" font-family="sans-serif" font-size="22" font-weight="bold">148 / 160</text>
+    
+    <!-- Card 2 -->
+    <rect x="195" width="180" height="70" rx="8" fill="#0a2538" stroke="rgba(45,212,191,0.2)" />
+    <text x="210" y="24" fill="#94a3b8" font-family="sans-serif" font-size="10">Today's Appointments</text>
+    <text x="210" y="52" fill="#38bdf8" font-family="sans-serif" font-size="22" font-weight="bold">84 Scheduled</text>
+    
+    <!-- Card 3 -->
+    <rect x="390" width="180" height="70" rx="8" fill="#0a2538" stroke="rgba(45,212,191,0.2)" />
+    <text x="404" y="24" fill="#94a3b8" font-family="sans-serif" font-size="10">Pending Invoices</text>
+    <text x="404" y="52" fill="#34d399" font-family="sans-serif" font-size="22" font-weight="bold">$32,450</text>
+  </g>
+
+  <!-- Patient Queue Table -->
+  <g transform="translate(200, 150)">
+    <rect width="570" height="330" rx="10" fill="#071c2b" stroke="rgba(255,255,255,0.06)" />
+    <text x="20" y="32" fill="#e2e8f0" font-family="sans-serif" font-size="13" font-weight="bold">Live Outpatient Queue &amp; Doctor Roster</text>
+
+    <!-- Table Header -->
+    <rect x="20" y="48" width="530" height="28" rx="4" fill="#0b2c44" />
+    <text x="35" y="66" fill="#94a3b8" font-family="sans-serif" font-size="10">PATIENT ID</text>
+    <text x="140" y="66" fill="#94a3b8" font-family="sans-serif" font-size="10">NAME</text>
+    <text x="260" y="66" fill="#94a3b8" font-family="sans-serif" font-size="10">DOCTOR</text>
+    <text x="380" y="66" fill="#94a3b8" font-family="sans-serif" font-size="10">STATUS</text>
+    <text x="480" y="66" fill="#94a3b8" font-family="sans-serif" font-size="10">ACTION</text>
+
+    <!-- Row 1 -->
+    <rect x="20" y="82" width="530" height="42" fill="#0a2234" />
+    <text x="35" y="107" fill="#2dd4bf" font-family="monospace" font-size="11">#MED-8492</text>
+    <text x="140" y="107" fill="#f8fafc" font-family="sans-serif" font-size="11">Sophia Miller (32y)</text>
+    <text x="260" y="107" fill="#cbd5e1" font-family="sans-serif" font-size="11">Dr. Chen (Cardiology)</text>
+    <rect x="375" y="93" width="75" height="20" rx="4" fill="rgba(16,185,129,0.15)" />
+    <text x="412" y="107" fill="#34d399" font-family="sans-serif" font-size="10" text-anchor="middle">In Consult</text>
+    <text x="485" y="107" fill="#38bdf8" font-family="sans-serif" font-size="11">View EHR ➔</text>
+
+    <!-- Row 2 -->
+    <rect x="20" y="128" width="530" height="42" fill="#081d2c" />
+    <text x="35" y="153" fill="#2dd4bf" font-family="monospace" font-size="11">#MED-8493</text>
+    <text x="140" y="153" fill="#f8fafc" font-family="sans-serif" font-size="11">David Kumar (45y)</text>
+    <text x="260" y="153" fill="#cbd5e1" font-family="sans-serif" font-size="11">Dr. Tharun (Neurology)</text>
+    <rect x="375" y="139" width="75" height="20" rx="4" fill="rgba(245,158,11,0.15)" />
+    <text x="412" y="153" fill="#f59e0b" font-family="sans-serif" font-size="10" text-anchor="middle">Waiting</text>
+    <text x="485" y="153" fill="#38bdf8" font-family="sans-serif" font-size="11">Call Patient ➔</text>
+
+    <!-- Row 3 -->
+    <rect x="20" y="174" width="530" height="42" fill="#0a2234" />
+    <text x="35" y="199" fill="#2dd4bf" font-family="monospace" font-size="11">#MED-8494</text>
+    <text x="140" y="199" fill="#f8fafc" font-family="sans-serif" font-size="11">Emily Watson (28y)</text>
+    <text x="260" y="199" fill="#cbd5e1" font-family="sans-serif" font-size="11">Dr. Patel (Pediatrics)</text>
+    <rect x="375" y="185" width="75" height="20" rx="4" fill="rgba(14,165,233,0.15)" />
+    <text x="412" y="199" fill="#38bdf8" font-family="sans-serif" font-size="10" text-anchor="middle">Triage Done</text>
+    <text x="485" y="199" fill="#38bdf8" font-family="sans-serif" font-size="11">View EHR ➔</text>
+  </g>
+</svg>
