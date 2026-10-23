@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
         solution: "Engineered an in-memory Redis mutex bidding engine with OTP phone verification for authorized bidders."
       }
     ],
-    image: "/projects/vinayaka-chaturthi.svg",
+    image: "https://images.unsplash.com/photo-1613422954567-8eade6e47038?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Vinayaka Chavithi Maha Utsav Festival and Puja Portal",
     status: "Live Demo Available",
     featured: true
@@ -68,7 +68,7 @@ export const PROJECTS: Project[] = [
         solution: "Utilized TimescaleDB hypertable continuous aggregates for instantaneous query response under 40ms."
       }
     ],
-    image: "/projects/revenue-tracker.svg",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "RevPulse SaaS Revenue and Financial Intelligence Platform",
     status: "Live Demo Available",
     featured: true
@@ -104,7 +104,7 @@ export const PROJECTS: Project[] = [
         solution: "Created client-side localized timestamp triggers with fallback countdown synchronizers."
       }
     ],
-    image: "/projects/couple-surprise.svg",
+    image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "ForeverAfter Couple Surprise and Apology Web Portal",
     status: "Live Demo Available",
     featured: true
@@ -140,7 +140,7 @@ export const PROJECTS: Project[] = [
         solution: "Integrated automated clinical safety cross-checking rules that flag adverse drug interactions before pharmacy dispensing."
       }
     ],
-    image: "/projects/hospital-hms.svg",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "CareGrid End-to-End Hospital Management System (HMS)",
     status: "Live Demo Available",
     featured: true
@@ -175,7 +175,7 @@ export const PROJECTS: Project[] = [
         solution: "Optimized modern asset pipelines with Brotli compression, lazy-loaded route chunks, and WebP responsive image sets scoring 98+ on Google Lighthouse."
       }
     ],
-    image: "/projects/hospital-website.svg",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "NovaCare Hospital Website and Patient Telehealth Portal",
     status: "Live Demo Available",
     featured: true
@@ -210,7 +210,7 @@ export const PROJECTS: Project[] = [
         solution: "Employed asynchronous FastAPI coroutines backed by Redis Streams for state caching and token buffering."
       }
     ],
-    image: "/projects/hospital-chatbot.svg",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "MediPulse Real-Time Clinical AI Chatbot and Patient Triage",
     status: "Live Demo Available",
     featured: true
