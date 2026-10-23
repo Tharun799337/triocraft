@@ -74,7 +74,7 @@ const projectsList: SubItem[] = [
     icon: Building2
   },
   {
-    name: 'NovaCare Hospital & Telehealth Portal',
+    name: 'Hospital Website',
     desc: '24/7 OPD doctor booking & encrypted medical records',
     href: '#projects',
     icon: HeartPulse

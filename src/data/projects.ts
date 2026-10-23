@@ -147,7 +147,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "hospital-website-portal",
-    title: "NovaCare Multi-Specialty Hospital Website & Patient Portal",
+    title: "Hospital Website — Patient Portal & Telehealth",
     category: "Web Development",
     shortDescription: "Next-generation healthcare web platform with live doctor rosters, specialty departments, real-time OPD booking, and patient portal.",
     overview: 
@@ -176,7 +176,7 @@ export const PROJECTS: Project[] = [
       }
     ],
     image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "NovaCare Hospital Website and Patient Telehealth Portal",
+    imageAlt: "Hospital Website and Patient Telehealth Portal",
     status: "Live Demo Available",
     featured: true
   },

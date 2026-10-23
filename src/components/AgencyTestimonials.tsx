@@ -3,9 +3,9 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: 'Trio Craft transformed our entire hospital intake. Their NovaCare patient portal and real-time AI triage assistant dropped patient wait times by 45% while handling 2,400+ monthly online appointments flawlessly.',
+    quote: 'Trio Craft transformed our entire hospital intake. Their hospital website and real-time AI triage assistant dropped patient wait times by 45% while handling 2,400+ monthly online appointments flawlessly.',
     name: 'Dr. Rajesh Vardhan',
-    role: 'Managing Medical Director, NovaCare Hospital',
+    role: 'Managing Medical Director, City Care Multi-Specialty Hospital',
     rating: 5,
     tag: 'Healthcare & AI Chatbot',
   },

@@ -35,7 +35,7 @@ const PROJECTS_LIST: ProjectItem[] = [
     id: 'hospital-web',
     category: 'healthcare',
     categoryLabel: 'Hospital Portal',
-    title: 'NovaCare Multi-Specialty Hospital Portal',
+    title: 'Hospital Website',
     desc: 'High-converting hospital web platform with live doctor rosters, specialty departments, real-time OPD booking, and telehealth portal.',
     image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80',
     badge: '24/7 OPD & Telehealth',
