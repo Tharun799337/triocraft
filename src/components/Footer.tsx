@@ -1,5 +1,4 @@
-import React from 'react';
-import { Sparkles, ArrowRight, Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { ArrowRight, Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 export const Footer: React.FC = () => {
@@ -14,13 +13,20 @@ export const Footer: React.FC = () => {
           
           {/* Col 1: Brand & About */}
           <div className="space-y-4 text-left">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-indigo-600 flex items-center justify-center text-white shadow-sm">
-                <Sparkles className="w-4 h-4" />
+            <div className="flex items-center gap-3">
+              <img
+                src="/triocraft-emblem.png"
+                alt="TrioCraft Official Emblem"
+                className="w-10 h-10 object-contain drop-shadow-xs"
+              />
+              <div className="flex flex-col text-left">
+                <span className="font-display font-medium text-2xl text-slate-900 tracking-tight leading-none">
+                  Trio<span className="text-amber-600 font-semibold">Craft</span>
+                </span>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-medium mt-0.5">
+                  Design &amp; Development
+                </span>
               </div>
-              <span className="font-display font-black text-2xl text-[#1a1f22] tracking-tight">
-                trio<span className="text-amber-600">craft</span>
-              </span>
             </div>
 
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">

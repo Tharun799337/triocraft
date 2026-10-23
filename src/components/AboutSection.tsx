@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, Award, Zap, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Zap, ShieldCheck } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -15,15 +14,19 @@ export const AboutSection: React.FC = () => {
               {/* Inner Decorative Circle */}
               <div className="w-full h-full rounded-full border-4 border-white/60 flex flex-col items-center justify-center text-center p-6 bg-gradient-to-br from-white/90 via-amber-50/90 to-white/90 backdrop-blur-sm">
                 
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-amber-500 to-rose-600 flex items-center justify-center text-white shadow-lg mb-4">
-                  <Award className="w-10 h-10" />
+                <div className="w-24 h-24 rounded-3xl bg-white/95 shadow-xl border border-amber-200/60 flex items-center justify-center p-3 mb-3 group hover:scale-105 transition-transform">
+                  <img
+                    src="/triocraft-emblem.png"
+                    alt="TrioCraft Official Emblem"
+                    className="w-full h-full object-contain drop-shadow-md"
+                  />
                 </div>
 
-                <h3 className="font-display font-black text-2xl sm:text-3xl text-[#1a1f22]">
-                  Trio Craft
+                <h3 className="font-display font-medium text-2xl sm:text-3xl text-slate-900 tracking-tight">
+                  Trio<span className="text-amber-600 font-semibold">Craft</span>
                 </h3>
-                <p className="text-xs sm:text-sm font-semibold text-amber-700 uppercase tracking-widest mt-1">
-                  Design &amp; AI Studio
+                <p className="text-[11px] sm:text-xs font-semibold text-amber-700 uppercase tracking-[0.2em] mt-1">
+                  Design &amp; Development
                 </p>
 
                 <p className="text-xs text-slate-500 mt-3 max-w-[220px]">
