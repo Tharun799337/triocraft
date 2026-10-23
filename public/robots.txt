@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tharun-portfolio.vercel.app/sitemap.xml
+Sitemap: https://triocraft-5cix.onrender.com/sitemap.xml

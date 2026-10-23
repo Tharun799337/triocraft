@@ -6,8 +6,8 @@ interface SEOProps {
 }
 
 export const SEO: React.FC<SEOProps> = ({ 
-  title = "Tharun | AI Developer & Full-Stack Web Developer", 
-  description = "Freelance portfolio of Tharun. I build modern websites and AI-powered tools, RAG systems, chatbots, and automations for businesses."
+  title = "TrioCraft // Design & Development - AI Systems & Spatial Web Engines", 
+  description = "TrioCraft is an elite Design & Development studio specializing in custom web applications, autonomous AI agents, enterprise RAG pipelines, and interactive 3D spatial web experiences."
 }) => {
   useEffect(() => {
     document.title = title;
