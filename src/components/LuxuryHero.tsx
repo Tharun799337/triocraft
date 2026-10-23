@@ -1,90 +1,93 @@
 import React from 'react';
-import { Sparkles, ArrowDown, Send } from 'lucide-react';
-import { TrioCraft3DLogo } from './TrioCraft3DLogo';
+import { Sparkles, ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react';
+import { DeveloperHero3D } from './DeveloperHero3D';
 
 export const LuxuryHero: React.FC = () => {
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center pt-24 pb-16 relative w-full">
-      {/* 3D Animated TrioCraft Emblem Feature */}
-      <div className="mb-4 relative flex flex-col items-center">
-        <TrioCraft3DLogo size="md" interactive={true} showGlow={true} />
-        {/* Subtle holographic floor shadow */}
-        <div className="w-36 h-2 -mt-3 rounded-full bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent blur-sm" />
+    <section id="hero" className="pt-28 pb-16 sm:pb-24 w-full relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF7F2] to-[#FFFFFF]">
+      {/* Curved crimson accent background wing on the right (Raiseup Banner Style) */}
+      <div className="absolute right-0 top-0 w-full lg:w-1/2 h-full pointer-events-none overflow-hidden z-0 opacity-90">
+        <div className="absolute -right-24 -top-24 w-[640px] h-[640px] rounded-full bg-gradient-to-br from-[#881337] via-[#991B1B] to-[#7F1D1D] opacity-95 blur-2xl transform rotate-12 scale-110" />
+        <div className="absolute right-12 top-32 w-[480px] h-[480px] rounded-full bg-gradient-to-tr from-[#991B1B] to-[#BE123C] opacity-80 blur-xl" />
       </div>
 
-      {/* Status Tag */}
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/[0.08] border border-cyan-500/30 backdrop-blur-md mb-8 hover:border-amber-500/60 transition-colors shadow-glow-amber">
-        <Sparkles className="w-4 h-4 text-cyan-400 animate-pulse" />
-        <span className="text-xs uppercase font-mono tracking-widest text-slate-200">
-          TRIOCRAFT • DESIGN &amp; DEVELOPMENT
-        </span>
-      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[580px]">
+          
+          {/* Left Column: Bold Typography & Action Module (Raiseup Style) */}
+          <div className="lg:col-span-6 flex flex-col items-start text-left">
+            
+            {/* Welcome Tag */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200/90 text-amber-800 text-xs font-mono font-bold tracking-wider uppercase mb-5 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+              <span>WELCOME TO TRIO CRAFT STUDIO</span>
+            </div>
 
-      {/* Main Headline */}
-      <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-extrabold tracking-tight leading-[1.08] max-w-5xl text-white">
-        Architecting <br className="hidden sm:inline" />
-        <span className="text-gradient-copper-teal">Next-Gen Digital Systems</span> <br />
-        &amp; Spatial Engines
-      </h1>
+            {/* Giant Headline with Solid + Outline Effect */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-[#1a1f22] leading-[1.06]">
+              GROW YOUR <br />
+              <span className="text-[#991B1B]">BUSINESS</span> <br />
+              <span className="text-outline-crimson tracking-wider">DIGITALLY</span>
+            </h1>
 
-      <p className="mt-6 text-base sm:text-xl text-slate-400 max-w-2xl font-light leading-relaxed">
-        Building high-throughput machine learning infrastructure, multi-agent RAG pipelines, and tactile 3D control planes designed for mission-critical enterprise scale.
-      </p>
+            {/* Subtitle Value Proposition */}
+            <p className="mt-6 text-base sm:text-lg text-[#475569] leading-relaxed max-w-xl">
+              From high-traffic web applications, festival puja platforms, and revenue tracking engines to hospital management systems, viral influencer marketing, and 24/7 real-time AI chatbots.
+            </p>
 
-      {/* Action Buttons */}
-      <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <a
-          href="#projects"
-          className="group relative inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-black font-bold text-sm tracking-wide shadow-glow-amber transition-all transform hover:-translate-y-0.5 cursor-pointer"
-        >
-          <span>Explore Projects</span>
-          <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-        </a>
-        <a
-          href="#contact"
-          className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] text-white border border-amber-500/25 font-semibold text-sm backdrop-blur-md transition-all transform hover:-translate-y-0.5 hover:border-amber-500/50 cursor-pointer"
-        >
-          <span>Initiate Contact</span>
-          <Send className="w-4 h-4 text-amber-400" />
-        </a>
-      </div>
+            {/* Action Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+              <a
+                href="#contact"
+                className="btn-raiseup-gold px-8 py-4 rounded-full text-sm uppercase tracking-wider font-bold inline-flex items-center gap-2.5 cursor-pointer"
+              >
+                <span>Get Started</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
 
-      {/* Telemetry Stats */}
-      <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl text-left">
-        <div className="glass-card p-4 rounded-2xl">
-          <div className="text-2xl font-display font-bold text-white flex items-baseline gap-1">
-            &lt; 50<span className="text-xs text-amber-400 font-mono">ms</span>
-          </div>
-          <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">
-            P95 Inference Latency
-          </div>
-        </div>
+              <a
+                href="#projects"
+                className="px-7 py-4 rounded-full bg-white hover:bg-slate-50 text-[#1a1f22] border border-slate-300 font-bold text-sm shadow-sm hover:border-amber-400 transition-all cursor-pointer inline-flex items-center gap-2"
+              >
+                <span>Explore Projects</span>
+              </a>
 
-        <div className="glass-card p-4 rounded-2xl">
-          <div className="text-2xl font-display font-bold text-white flex items-baseline gap-1">
-            99.4<span className="text-xs text-rose-500 font-mono">%</span>
-          </div>
-          <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">
-            Model Accuracy SLA
-          </div>
-        </div>
+              <a
+                href="https://wa.me/917993370000?text=Hello%20TrioCraft%20Team,%20I%20would%20like%20to%20discuss%20a%20project"
+                target="_blank"
+                rel="noreferrer"
+                className="px-4 py-4 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-bold text-sm shadow-sm transition-all cursor-pointer inline-flex items-center gap-2"
+                title="Direct WhatsApp"
+              >
+                <MessageCircle className="w-4 h-4 text-emerald-600" />
+                <span className="hidden sm:inline">WhatsApp</span>
+              </a>
+            </div>
 
-        <div className="glass-card p-4 rounded-2xl">
-          <div className="text-2xl font-display font-bold text-white flex items-baseline gap-1">
-            2.4<span className="text-xs text-emerald-400 font-mono">M+</span>
-          </div>
-          <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">
-            Daily Agent Runs
-          </div>
-        </div>
+            {/* Trust Bullet Items */}
+            <div className="mt-10 pt-6 border-t border-slate-200/90 w-full grid grid-cols-3 gap-4 text-xs font-semibold text-[#334155]">
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                <span>50+ Shipped</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                <span>99.8% Retention</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                <span>24/7 Support</span>
+              </div>
+            </div>
 
-        <div className="glass-card p-4 rounded-2xl">
-          <div className="text-2xl font-display font-bold text-white flex items-baseline gap-1">
-            $1.8<span className="text-xs text-amber-400 font-mono">M</span>
           </div>
-          <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">
-            Infra Cloud Saved
+
+          {/* Right Column: 3D Developer Sitting in Chair Working Animation */}
+          <div className="lg:col-span-6 relative w-full flex items-center justify-center">
+            {/* The Interactive 3D Workstation */}
+            <DeveloperHero3D />
           </div>
+
         </div>
       </div>
     </section>

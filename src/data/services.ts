@@ -2,6 +2,38 @@ import type { Service } from '../types';
 
 export const SERVICES: Service[] = [
   {
+    id: "digital-marketing-services",
+    title: "Digital Marketing & Performance Growth",
+    shortDescription: "Data-driven 360-degree digital marketing solutions including SEO ranking, Google & Meta Ads, conversion funnels, and revenue growth strategies.",
+    businessBenefit: "Drives predictable, high-intent leads and maximizes customer acquisition ROI across all search and social channels.",
+    deliverables: [
+      "Search Engine Optimization (Technical, On-Page & Local SEO)",
+      "High-ROI Google Search, Display & Performance Max Ad Campaigns",
+      "Meta (Instagram & Facebook) Ad targeting & A/B testing",
+      "Sales Funnel Optimization & Conversion Rate Enhancement",
+      "Transparent Weekly Analytics, CAC & ROAS Performance Reports"
+    ],
+    techStack: ["Google Ads", "Meta Ads Manager", "Google Analytics 4", "SEMrush", "Tag Manager", "Looker Studio"],
+    iconName: "TrendingUp",
+    popular: true
+  },
+  {
+    id: "influencer-marketing",
+    title: "Influencer Marketing & Brand Endorsements",
+    shortDescription: "Strategic creator matchmaking, viral short-form video campaigns, and high-engagement influencer promotions tailored for your target audience.",
+    businessBenefit: "Builds massive brand trust, drives viral social momentum, and accelerates product adoption through verified creator advocacy.",
+    deliverables: [
+      "Targeted Creator Matchmaking (Micro, Macro & Celebrity Influencers)",
+      "Viral Reels, YouTube Shorts & TikTok Campaign Strategy",
+      "Full Contract Negotiation, Rights Management & Script Direction",
+      "Custom Trackable Promo Codes & UTM Attribution Tracking",
+      "Comprehensive Campaign Reach, Impressions & Engagement Audits"
+    ],
+    techStack: ["Instagram Creators", "YouTube BrandConnect", "Viral Reel Directing", "Creator Analytics", "UTM Tracking"],
+    iconName: "Megaphone",
+    popular: true
+  },
+  {
     id: "business-landing-pages",
     title: "High-Converting Business Landing Pages",
     shortDescription: "Custom-designed, blazing-fast landing pages engineered to convert visitors into booked calls and paying customers.",

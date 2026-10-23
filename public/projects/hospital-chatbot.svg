@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="chatBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050a14" />
+      <stop offset="100%" stop-color="#0b172a" />
+    </linearGradient>
+    <linearGradient id="botBubble" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f2942" />
+      <stop offset="100%" stop-color="#133658" />
+    </linearGradient>
+    <linearGradient id="userBubble" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5c9" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+    <linearGradient id="badgeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#chatBg)" stroke="rgba(0,229,201,0.3)" stroke-width="2" />
+
+  <!-- Window Header -->
+  <rect width="800" height="46" rx="16" fill="#081526" />
+  <circle cx="28" cy="23" r="5.5" fill="#ef4444" />
+  <circle cx="48" cy="23" r="5.5" fill="#f59e0b" />
+  <circle cx="68" cy="23" r="5.5" fill="#10b981" />
+
+  <text x="120" y="27" fill="#00e5c9" font-family="sans-serif" font-size="12" font-weight="bold">MediPulse AI // Real-Time Clinical Assistant &amp; Triage Bot</text>
+
+  <rect x="620" y="11" width="155" height="24" rx="12" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.35)" />
+  <circle cx="635" cy="23" r="4" fill="#10b981" />
+  <text x="645" y="27" fill="#34d399" font-family="sans-serif" font-size="10" font-weight="600">WebSocket 18ms Active</text>
+
+  <!-- Left Sidebar: Patient Profile & Triage Engine -->
+  <g transform="translate(25, 65)">
+    <rect width="220" height="410" rx="12" fill="#071728" stroke="rgba(255,255,255,0.06)" />
+    
+    <!-- Bot Avatar & Info -->
+    <circle cx="40" cy="40" r="22" fill="#00e5c9" opacity="0.2" />
+    <text x="40" y="47" fill="#00e5c9" font-family="sans-serif" font-size="18" text-anchor="middle">🩺</text>
+    
+    <text x="75" y="36" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold">MediPulse Core</text>
+    <text x="75" y="52" fill="#10b981" font-family="sans-serif" font-size="10">Clinical LLM v4.2</text>
+
+    <!-- Triage Status Box -->
+    <rect x="15" y="80" width="190" height="75" rx="8" fill="#0b233c" stroke="rgba(0,229,201,0.2)" />
+    <text x="25" y="100" fill="#94a3b8" font-family="sans-serif" font-size="10">Active Triage Case</text>
+    <text x="25" y="122" fill="#38bdf8" font-family="sans-serif" font-size="14" font-weight="bold">Acute Migraine &amp; Nausea</text>
+    <text x="25" y="142" fill="#f59e0b" font-family="sans-serif" font-size="10">Priority: Level 3 (Urgent Care)</text>
+
+    <!-- Connected Department -->
+    <rect x="15" y="170" width="190" height="60" rx="8" fill="#091e33" />
+    <text x="25" y="190" fill="#94a3b8" font-family="sans-serif" font-size="10">Auto-Assigned Specialist</text>
+    <text x="25" y="212" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="600">Dr. Sarah (Neurology)</text>
+
+    <!-- Supported Languages -->
+    <rect x="15" y="245" width="190" height="80" rx="8" fill="#091e33" />
+    <text x="25" y="265" fill="#94a3b8" font-family="sans-serif" font-size="10">Multi-Lingual Engine</text>
+    <text x="25" y="286" fill="#34d399" font-family="sans-serif" font-size="11">✓ English, Hindi, Telugu</text>
+    <text x="25" y="306" fill="#34d399" font-family="sans-serif" font-size="11">✓ Spanish, Arabic, French</text>
+
+    <!-- Emergency Button -->
+    <rect x="15" y="345" width="190" height="42" rx="8" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.4)" />
+    <text x="110" y="371" fill="#fca5a5" font-family="sans-serif" font-size="11.5" font-weight="bold" text-anchor="middle">🚨 Trigger 911 / ER Dispatch</text>
+  </g>
+
+  <!-- Right Main Chat Flow -->
+  <g transform="translate(265, 65)">
+    <rect width="510" height="410" rx="12" fill="#07192a" stroke="rgba(255,255,255,0.06)" />
+
+    <!-- Message 1: Bot -->
+    <g transform="translate(20, 20)">
+      <rect width="360" height="64" rx="12" fill="url(#botBubble)" stroke="rgba(255,255,255,0.06)" />
+      <text x="16" y="24" fill="#00e5c9" font-family="sans-serif" font-size="10.5" font-weight="bold">MediPulse AI • 14:02 PM</text>
+      <text x="16" y="44" fill="#e2e8f0" font-family="sans-serif" font-size="12">Hello Tharun! How can I assist you today? Are you experiencing any symptoms or looking to book an appointment?</text>
+    </g>
+
+    <!-- Message 2: User -->
+    <g transform="translate(140, 98)">
+      <rect width="350" height="52" rx="12" fill="url(#userBubble)" />
+      <text x="16" y="22" fill="#051c2e" font-family="sans-serif" font-size="10.5" font-weight="bold">Patient (Tharun) • 14:03 PM</text>
+      <text x="16" y="40" fill="#041826" font-family="sans-serif" font-size="12" font-weight="500">I have had a severe throbbing headache with light sensitivity since morning.</text>
+    </g>
+
+    <!-- Message 3: Bot Triage Analysis -->
+    <g transform="translate(20, 165)">
+      <rect width="470" height="135" rx="12" fill="url(#botBubble)" stroke="rgba(0,229,201,0.2)" />
+      <text x="16" y="24" fill="#00e5c9" font-family="sans-serif" font-size="10.5" font-weight="bold">MediPulse Clinical Triage Protocol • 14:03 PM</text>
+      <text x="16" y="44" fill="#e2e8f0" font-family="sans-serif" font-size="12">Based on acute photophobia and unilateral pulsatile pain, this matches criteria for a migraine episode.</text>
+      <text x="16" y="66" fill="#fef08a" font-family="sans-serif" font-size="11.5">⚠️ No red-flag neurological deficits reported (speech clear, no numbness).</text>
+      
+      <!-- Interactive Booking CTA inside chat -->
+      <rect x="16" y="85" width="210" height="36" rx="8" fill="#10b981" />
+      <text x="121" y="108" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Book OPD slot (Today 3:30 PM)</text>
+
+      <rect x="236" y="85" width="210" height="36" rx="8" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" />
+      <text x="341" y="108" fill="#e2e8f0" font-family="sans-serif" font-size="11" text-anchor="middle">Start Instant Video Call</text>
+    </g>
+
+    <!-- Typing Indicator / Live Stream -->
+    <g transform="translate(20, 315)">
+      <rect width="240" height="34" rx="10" fill="rgba(255,255,255,0.04)" />
+      <circle cx="25" cy="17" r="4" fill="#00e5c9" />
+      <circle cx="40" cy="17" r="4" fill="#00e5c9" opacity="0.6" />
+      <circle cx="55" cy="17" r="4" fill="#00e5c9" opacity="0.3" />
+      <text x="75" y="21" fill="#94a3b8" font-family="sans-serif" font-size="11">Checking doctor calendar live...</text>
+    </g>
+
+    <!-- Input Box -->
+    <g transform="translate(20, 360)">
+      <rect width="470" height="38" rx="19" fill="#0b2238" stroke="rgba(0,229,201,0.3)" />
+      <text x="20" y="24" fill="#64748b" font-family="sans-serif" font-size="12">Type symptoms, request prescription refill, or lab reports...</text>
+      <rect x="425" y="5" width="38" height="28" rx="14" fill="url(#userBubble)" />
+      <text x="444" y="23" fill="#041c2c" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle">→</text>
+    </g>
+  </g>
+</svg>

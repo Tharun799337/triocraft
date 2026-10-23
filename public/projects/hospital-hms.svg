@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hmsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF" />
+      <stop offset="50%" stop-color="#DBEAFE" />
+      <stop offset="100%" stop-color="#BFDBFE" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <filter id="hmsShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#1E40AF" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#hmsBg)" />
+
+  <!-- Background Health Crosses -->
+  <g opacity="0.12">
+    <path d="M 700 80 L 720 80 L 720 60 L 740 60 L 740 80 L 760 80 L 760 100 L 740 100 L 740 120 L 720 120 L 720 100 L 700 100 Z" fill="#2563EB" />
+    <path d="M 80 80 L 95 80 L 95 65 L 110 65 L 110 80 L 125 80 L 125 95 L 110 95 L 110 110 L 95 110 L 95 95 L 80 95 Z" fill="#2563EB" />
+  </g>
+
+  <!-- Top Badge -->
+  <rect x="40" y="36" width="220" height="32" rx="16" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1" />
+  <circle cx="56" cy="52" r="5" fill="#2563EB" />
+  <text x="70" y="57" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#1E40AF" letter-spacing="1">ENTERPRISE HEALTHCARE HMS</text>
+
+  <!-- Section Title -->
+  <text x="40" y="105" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#1E3A8A">CareGrid End-to-End Hospital Management</text>
+  <text x="40" y="132" font-family="system-ui, sans-serif" font-size="14" font-weight="500" fill="#1D4ED8">Live Bed Occupancy, Inpatient/Outpatient EHR, Doctor Rosters &amp; Pharmacy POS</text>
+
+  <!-- Main HMS Frame -->
+  <g transform="translate(40, 155)" filter="url(#hmsShadow)">
+    <rect width="720" height="310" rx="16" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.5" />
+    
+    <!-- Header -->
+    <rect width="720" height="36" rx="16" fill="#F8FAFC" />
+    <rect y="26" width="720" height="10" fill="#F8FAFC" />
+    <line x1="0" y1="36" x2="720" y2="36" stroke="#E2E8F0" stroke-width="1" />
+    
+    <circle cx="24" cy="18" r="5" fill="#EF4444" />
+    <circle cx="40" cy="18" r="5" fill="#F59E0B" />
+    <circle cx="56" cy="18" r="5" fill="#10B981" />
+    <rect x="90" y="9" width="310" height="18" rx="9" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" />
+    <text x="105" y="22" font-family="monospace" font-size="10" fill="#1E40AF">https://hms.caregrid.triocraft.studio/ops</text>
+
+    <!-- Side Navigation Simulation -->
+    <rect x="0" y="36" width="130" height="274" fill="#F8FAFC" />
+    <line x1="130" y1="36" x2="130" y2="310" stroke="#E2E8F0" stroke-width="1" />
+    <text x="20" y="65" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#1E40AF">📊 Operations</text>
+    <text x="20" y="95" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#475569">🛏️ Bed Ward</text>
+    <text x="20" y="125" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#475569">👨‍⚕️ Doctors</text>
+    <text x="20" y="155" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#475569">💊 Pharmacy</text>
+    <text x="20" y="185" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#475569">🧪 Laboratory</text>
+    <text x="20" y="215" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#475569">💳 Billing &amp; TPA</text>
+
+    <!-- Dashboard Content -->
+    <!-- Metric 1: Bed Occupancy -->
+    <g transform="translate(145, 50)">
+      <rect width="170" height="75" rx="8" fill="#EFF6FF" stroke="#BFDBFE" />
+      <text x="14" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#1E40AF">BED OCCUPANCY</text>
+      <text x="14" y="48" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#1E3A8A">184 / 200</text>
+      <text x="14" y="64" font-family="system-ui, sans-serif" font-size="9" fill="#2563EB">ICU: 94% | General: 88%</text>
+    </g>
+
+    <!-- Metric 2: Today's OPD Queues -->
+    <g transform="translate(325, 50)">
+      <rect width="170" height="75" rx="8" fill="#F0FDF4" stroke="#BBF7D0" />
+      <text x="14" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#15803D">TODAY'S OPD QUEUE</text>
+      <text x="14" y="48" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#14532D">420 Patients</text>
+      <text x="14" y="64" font-family="system-ui, sans-serif" font-size="9" fill="#16A34A">Avg Wait: 14 mins</text>
+    </g>
+
+    <!-- Metric 3: Emergency Status -->
+    <g transform="translate(505, 50)">
+      <rect width="195" height="75" rx="8" fill="#FEF2F2" stroke="#FECACA" />
+      <text x="14" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#991B1B">EMERGENCY / TRIAGE</text>
+      <text x="14" y="48" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#991B1B">Code Green</text>
+      <text x="14" y="64" font-family="system-ui, sans-serif" font-size="9" fill="#DC2626">4 Ambulances Active</text>
+    </g>
+
+    <!-- Bed Grid Visual Area -->
+    <g transform="translate(145, 140)">
+      <rect width="555" height="150" rx="8" fill="#FAFAFA" stroke="#E2E8F0" />
+      <text x="18" y="24" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#1E293B">Real-Time Ward &amp; Patient Telemetry (Ward 3B - Intensive Care)</text>
+
+      <!-- Table headers -->
+      <rect x="18" y="38" width="519" height="24" rx="4" fill="#F1F5F9" />
+      <text x="30" y="54" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#475569">BED #</text>
+      <text x="90" y="54" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#475569">PATIENT NAME</text>
+      <text x="210" y="54" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#475569">ATTENDING SURGEON</text>
+      <text x="340" y="54" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#475569">VITALS / STATUS</text>
+      <text x="460" y="54" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#475569">ACTION</text>
+
+      <!-- Row 1 -->
+      <text x="30" y="80" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#1E40AF">B-301</text>
+      <text x="90" y="80" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#1E293B">Rajesh Sharma (52M)</text>
+      <text x="210" y="80" font-family="system-ui, sans-serif" font-size="9" fill="#475569">Dr. Priya K. (Cardiology)</text>
+      <text x="340" y="80" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#16A34A">HR: 76 bpm | BP 120/80</text>
+      <rect x="460" y="68" width="65" height="18" rx="4" fill="#2563EB" />
+      <text x="492" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">EHR Chart</text>
+
+      <!-- Row 2 -->
+      <text x="30" y="106" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#1E40AF">B-302</text>
+      <text x="90" y="106" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#1E293B">Ananya Reddy (29F)</text>
+      <text x="210" y="106" font-family="system-ui, sans-serif" font-size="9" fill="#475569">Dr. Suresh M. (Orthopedics)</text>
+      <text x="340" y="106" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#2563EB">Post-Op Recovery (Stable)</text>
+      <rect x="460" y="94" width="65" height="18" rx="4" fill="#2563EB" />
+      <text x="492" y="106" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">EHR Chart</text>
+
+      <!-- Row 3 -->
+      <text x="30" y="132" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#1E40AF">B-303</text>
+      <text x="90" y="132" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#1E293B">Vikram Verma (44M)</text>
+      <text x="210" y="132" font-family="system-ui, sans-serif" font-size="9" fill="#475569">Dr. Arvind N. (Neurology)</text>
+      <text x="340" y="132" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#EAB308">Under Lab Observation</text>
+      <rect x="460" y="120" width="65" height="18" rx="4" fill="#2563EB" />
+      <text x="492" y="132" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">EHR Chart</text>
+    </g>
+  </g>
+</svg>

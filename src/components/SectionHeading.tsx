@@ -25,23 +25,23 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       className
     )}>
       {badge && (
-        <div className={cn("inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4 bg-cyan-950/60 text-cyan-400 border border-cyan-500/30",
+        <div className={cn("inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold mb-4 bg-white text-indigo-700 border border-indigo-200/90 shadow-2xs font-mono",
           align === 'center' && "mx-auto"
         )}>
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 animate-pulse" />
           {badge}
         </div>
       )}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-[#25263A] mb-4 leading-tight">
         {title}{' '}
         {highlight && (
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
+          <span className="text-gradient-extraordinary">
             {highlight}
           </span>
         )}
       </h2>
       {description && (
-        <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+        <p className="text-base sm:text-lg text-[#5B5D7A] leading-relaxed font-normal">
           {description}
         </p>
       )}

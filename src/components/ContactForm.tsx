@@ -194,31 +194,31 @@ export const ContactForm: React.FC = () => {
   )}`;
 
   return (
-    <div className="w-full max-w-2xl mx-auto rounded-2xl glass-card p-6 sm:p-10 border border-slate-800">
+    <div className="w-full max-w-2xl mx-auto rounded-2xl glass-card p-6 sm:p-10 bg-white/95 border border-slate-200 shadow-card-3d text-[#25263A]">
       {submitSuccess ? (
         <div className="text-center py-8 space-y-6">
-          <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 mx-auto flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 mx-auto flex items-center justify-center">
             <CheckCircle2 className="w-8 h-8" />
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-white mb-2">
+            <h3 className="text-2xl font-bold font-display text-[#25263A] mb-2">
               Enquiry Prepared Successfully!
             </h3>
             {endpointConfigured ? (
-              <p className="text-slate-300 text-sm max-w-md mx-auto leading-relaxed">
-                Thank you, <strong className="text-white">{formData.name}</strong>. Your message has been sent directly to my inbox. I will review your requirements and respond within 24 hours.
+              <p className="text-[#5B5D7A] text-sm max-w-md mx-auto leading-relaxed">
+                Thank you, <strong className="text-[#25263A]">{formData.name}</strong>. Your message has been sent directly to our inbox. We will review your requirements and respond within 24 hours.
               </p>
             ) : (
               <div className="space-y-4 max-w-md mx-auto text-left">
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Thank you, <strong className="text-white">{formData.name}</strong>! Your details have been validated. To ensure instant delivery, please choose your preferred direct channel:
+                <p className="text-[#5B5D7A] text-sm leading-relaxed">
+                  Thank you, <strong className="text-[#25263A]">{formData.name}</strong>! Your details have been validated. To ensure instant delivery, please choose your preferred direct channel:
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <a
                     href={mailtoUrl}
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm hover:brightness-110 shadow-lg shadow-cyan-500/20"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#25263A] hover:bg-indigo-600 text-white font-semibold text-sm shadow-md transition-all"
                   >
                     <Mail className="w-4 h-4" />
                     Send via Email App
@@ -227,15 +227,15 @@ export const ContactForm: React.FC = () => {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-lg shadow-emerald-500/20"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-md transition-all"
                   >
                     <MessageSquare className="w-4 h-4" />
                     Send via WhatsApp
                   </a>
                 </div>
 
-                <div className="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-[11px] text-slate-400 font-mono">
-                  💡 <strong>Deployment Note:</strong> To receive form messages automatically to your email without opening an email client, add your free key to <code>VITE_WEB3FORMS_ACCESS_KEY</code> in <code>.env</code>.
+                <div className="p-3 rounded-lg bg-slate-50 border border-slate-200 text-[11px] text-[#5B5D7A] font-mono">
+                  💡 <strong>Deployment Note:</strong> Form messages can also be bound to <code>VITE_WEB3FORMS_ACCESS_KEY</code> in <code>.env</code> for direct webhook delivery.
                 </div>
               </div>
             )}
@@ -253,7 +253,7 @@ export const ContactForm: React.FC = () => {
                 message: ''
               });
             }}
-            className="text-xs text-cyan-400 hover:underline inline-block pt-2"
+            className="text-xs text-indigo-600 hover:underline inline-block pt-2 font-medium"
           >
             ← Submit Another Enquiry
           </button>
@@ -261,14 +261,14 @@ export const ContactForm: React.FC = () => {
       ) : (
         <form onSubmit={handleSubmit} noValidate className="space-y-6">
           {submitError && (
-            <div className="p-4 rounded-xl bg-red-950/60 border border-red-500/30 flex items-start gap-3 text-red-300 text-sm">
-              <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-400" />
+            <div className="p-4 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3 text-red-800 text-sm">
+              <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-500" />
               <div>
                 <p className="font-semibold">Unable to submit form</p>
-                <p className="text-xs mt-1 text-red-300/80">{submitError}</p>
+                <p className="text-xs mt-1 text-red-700">{submitError}</p>
                 <p className="text-xs mt-2">
-                  You can email me directly at{' '}
-                  <a href={`mailto:${PROFILE.email}`} className="underline font-bold text-white">
+                  You can email us directly at{' '}
+                  <a href={`mailto:${PROFILE.email}`} className="underline font-bold text-[#25263A]">
                     {PROFILE.email}
                   </a>
                 </p>
@@ -279,8 +279,8 @@ export const ContactForm: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Name */}
             <div>
-              <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-                Your Name <span className="text-cyan-400">*</span>
+              <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-wider text-[#25263A] mb-2 font-mono">
+                Your Name <span className="text-indigo-600">*</span>
               </label>
               <input
                 id="name"
@@ -289,16 +289,16 @@ export const ContactForm: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="e.g. Alex Rivera"
-                className={`w-full px-4 py-3 rounded-xl bg-slate-900/90 border text-white text-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 transition-all ${
+                className={`w-full px-4 py-3 rounded-xl bg-slate-50 border text-[#25263A] text-sm placeholder-[#8E90A6] focus:outline-none focus:bg-white focus:ring-2 transition-all ${
                   errors.name 
-                    ? 'border-red-500/60 focus:ring-red-400/40' 
-                    : 'border-slate-700/80 focus:border-cyan-400 focus:ring-cyan-400/20'
+                    ? 'border-red-400 focus:ring-red-200' 
+                    : 'border-slate-200 focus:border-indigo-500 focus:ring-indigo-100'
                 }`}
                 aria-invalid={!!errors.name}
                 aria-describedby={errors.name ? 'name-error' : undefined}
               />
               {errors.name && (
-                <p id="name-error" className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
+                <p id="name-error" className="mt-1.5 text-xs text-red-600 flex items-center gap-1 font-mono">
                   <AlertCircle className="w-3.5 h-3.5" />
                   {errors.name}
                 </p>
@@ -307,8 +307,8 @@ export const ContactForm: React.FC = () => {
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-                Your Email <span className="text-cyan-400">*</span>
+              <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider text-[#25263A] mb-2 font-mono">
+                Your Email <span className="text-indigo-600">*</span>
               </label>
               <input
                 id="email"
@@ -317,16 +317,16 @@ export const ContactForm: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="alex@company.com"
-                className={`w-full px-4 py-3 rounded-xl bg-slate-900/90 border text-white text-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 transition-all ${
+                className={`w-full px-4 py-3 rounded-xl bg-slate-50 border text-[#25263A] text-sm placeholder-[#8E90A6] focus:outline-none focus:bg-white focus:ring-2 transition-all ${
                   errors.email 
-                    ? 'border-red-500/60 focus:ring-red-400/40' 
-                    : 'border-slate-700/80 focus:border-cyan-400 focus:ring-cyan-400/20'
+                    ? 'border-red-400 focus:ring-red-200' 
+                    : 'border-slate-200 focus:border-indigo-500 focus:ring-indigo-100'
                 }`}
                 aria-invalid={!!errors.email}
                 aria-describedby={errors.email ? 'email-error' : undefined}
               />
               {errors.email && (
-                <p id="email-error" className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
+                <p id="email-error" className="mt-1.5 text-xs text-red-600 flex items-center gap-1 font-mono">
                   <AlertCircle className="w-3.5 h-3.5" />
                   {errors.email}
                 </p>
@@ -337,8 +337,8 @@ export const ContactForm: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Company (Optional) */}
             <div>
-              <label htmlFor="company" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-                Company / Organization <span className="text-slate-500 text-[11px] font-normal">(Optional)</span>
+              <label htmlFor="company" className="block text-xs font-semibold uppercase tracking-wider text-[#25263A] mb-2 font-mono">
+                Company / Organization <span className="text-[#8E90A6] text-[11px] font-normal">(Optional)</span>
               </label>
               <input
                 id="company"
@@ -347,24 +347,24 @@ export const ContactForm: React.FC = () => {
                 value={formData.company}
                 onChange={handleChange}
                 placeholder="e.g. Acme Studio"
-                className="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all"
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-[#25263A] text-sm placeholder-[#8E90A6] focus:outline-none focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all"
               />
             </div>
 
             {/* Service Selection */}
             <div>
-              <label htmlFor="service" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-                Select Service <span className="text-cyan-400">*</span>
+              <label htmlFor="service" className="block text-xs font-semibold uppercase tracking-wider text-[#25263A] mb-2 font-mono">
+                Select Service <span className="text-indigo-600">*</span>
               </label>
               <select
                 id="service"
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 rounded-xl bg-slate-900 text-white text-sm border focus:outline-none focus:ring-2 transition-all ${
+                className={`w-full px-4 py-3 rounded-xl bg-slate-50 text-[#25263A] text-sm border focus:outline-none focus:bg-white focus:ring-2 transition-all ${
                   errors.service
-                    ? 'border-red-500/60 focus:ring-red-400/40'
-                    : 'border-slate-700/80 focus:border-cyan-400 focus:ring-cyan-400/20'
+                    ? 'border-red-400 focus:ring-red-200'
+                    : 'border-slate-200 focus:border-indigo-500 focus:ring-indigo-100'
                 }`}
                 aria-invalid={!!errors.service}
               >
@@ -377,7 +377,7 @@ export const ContactForm: React.FC = () => {
                 <option value="other-custom">Other / Custom AI &amp; Web Project</option>
               </select>
               {errors.service && (
-                <p className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
+                <p className="mt-1.5 text-xs text-red-600 flex items-center gap-1 font-mono">
                   <AlertCircle className="w-3.5 h-3.5" />
                   {errors.service}
                 </p>
@@ -387,15 +387,15 @@ export const ContactForm: React.FC = () => {
 
           {/* Budget Range */}
           <div>
-            <label htmlFor="budget" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-              Estimated Budget <span className="text-slate-500 text-[11px] font-normal">(Optional)</span>
+            <label htmlFor="budget" className="block text-xs font-semibold uppercase tracking-wider text-[#25263A] mb-2 font-mono">
+              Estimated Budget <span className="text-[#8E90A6] text-[11px] font-normal">(Optional)</span>
             </label>
             <select
               id="budget"
               name="budget"
               value={formData.budget}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl bg-slate-900 text-white text-sm border border-slate-700/80 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all"
+              className="w-full px-4 py-3 rounded-xl bg-slate-50 text-[#25263A] text-sm border border-slate-200 focus:outline-none focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all"
             >
               <option value="< $500">&lt; $500 (Small Task / Prototype)</option>
               <option value="$500 - $1,500">$500 - $1,500 (Standard MVP / Landing Page)</option>
@@ -407,8 +407,8 @@ export const ContactForm: React.FC = () => {
 
           {/* Project Description */}
           <div>
-            <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-              Project Description <span className="text-cyan-400">*</span>
+            <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider text-[#25263A] mb-2 font-mono">
+              Project Description <span className="text-indigo-600">*</span>
             </label>
             <textarea
               id="message"
@@ -416,17 +416,17 @@ export const ContactForm: React.FC = () => {
               rows={4}
               value={formData.message}
               onChange={handleChange}
-              placeholder="Tell me about what you are building, target timeline, key technical requirements, or problems you need solved..."
-              className={`w-full px-4 py-3 rounded-xl bg-slate-900/90 border text-white text-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 transition-all ${
+              placeholder="Tell us about what you are building, target timeline, key technical requirements, or problems you need solved..."
+              className={`w-full px-4 py-3 rounded-xl bg-slate-50 border text-[#25263A] text-sm placeholder-[#8E90A6] focus:outline-none focus:bg-white focus:ring-2 transition-all ${
                 errors.message 
-                  ? 'border-red-500/60 focus:ring-red-400/40' 
-                  : 'border-slate-700/80 focus:border-cyan-400 focus:ring-cyan-400/20'
+                  ? 'border-red-400 focus:ring-red-200' 
+                  : 'border-slate-200 focus:border-indigo-500 focus:ring-indigo-100'
               }`}
               aria-invalid={!!errors.message}
               aria-describedby={errors.message ? 'message-error' : undefined}
             />
             {errors.message && (
-              <p id="message-error" className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
+              <p id="message-error" className="mt-1.5 text-xs text-red-600 flex items-center gap-1 font-mono">
                 <AlertCircle className="w-3.5 h-3.5" />
                 {errors.message}
               </p>
@@ -445,7 +445,7 @@ export const ContactForm: React.FC = () => {
             Send Project Enquiry
           </Button>
 
-          <p className="text-center text-xs text-slate-400 font-mono">
+          <p className="text-center text-xs text-[#5B5D7A] font-mono">
             ⚡ Quick turnaround • 24-hour response guarantee • 100% confidential
           </p>
         </form>

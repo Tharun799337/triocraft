@@ -32,15 +32,15 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary: 
-      "bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 text-white shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:brightness-110 border border-cyan-400/30",
+      "bg-[#25263A] hover:bg-indigo-600 text-white font-semibold shadow-md shadow-slate-900/10 transition-all",
     secondary: 
-      "bg-slate-900/90 hover:bg-slate-800 text-slate-100 border border-slate-700/60 hover:border-cyan-400/40 shadow-sm",
+      "bg-white hover:bg-slate-50 text-[#25263A] border border-slate-200/90 shadow-2xs font-medium transition-all",
     outline: 
-      "bg-transparent text-cyan-400 border border-cyan-500/40 hover:bg-cyan-500/10 hover:border-cyan-400",
+      "bg-transparent text-[#25263A] border border-slate-300 hover:bg-slate-100 transition-all font-medium",
     ghost: 
-      "bg-transparent text-slate-300 hover:text-white hover:bg-slate-800/60",
+      "bg-transparent text-[#5B5D7A] hover:text-[#25263A] hover:bg-slate-100 transition-all font-medium",
     glow:
-      "relative bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-white font-semibold shadow-[0_0_25px_rgba(56,189,248,0.35)] hover:shadow-[0_0_35px_rgba(168,85,247,0.5)] hover:scale-[1.02]"
+      "relative bg-gradient-to-r from-indigo-600 via-purple-600 to-rose-500 text-white font-semibold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all"
   };
 
   return (

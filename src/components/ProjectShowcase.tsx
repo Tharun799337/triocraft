@@ -1,17 +1,17 @@
 import React, { useState, useRef } from 'react';
-import { Layers, Database, Scan, Activity, Network, ExternalLink, X, GitMerge } from 'lucide-react';
+import { Layers, Activity, ExternalLink, X, Heart, TrendingUp, Sparkles, Building2, Flame } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 interface ProjectData {
   id: string;
-  category: 'genai' | 'vision' | 'enterprise';
+  category: 'festival' | 'fintech' | 'couple' | 'healthcare' | 'genai';
   categoryLabel: string;
   subLabel: string;
   title: string;
   desc: string;
   endpoint: string;
   statusBadge: string;
-  statusColor: 'amber' | 'rose' | 'emerald';
+  statusColor: 'amber' | 'rose' | 'emerald' | 'purple' | 'orange';
   image: string;
   hudIcon: React.ReactNode;
   hudTitle: string;
@@ -25,100 +25,148 @@ interface ProjectData {
 
 const PROJECTS_DATA: ProjectData[] = [
   {
-    id: 'rag',
-    category: 'genai',
-    categoryLabel: 'GENERATIVE AI & RAG',
-    subLabel: 'SOC2 Type II',
-    title: 'Autonomous Enterprise RAG Platform',
-    desc: 'Production-grade multi-vector retrieval system indexing 500k+ corporate documents with reciprocal rank fusion (RRF), cross-encoder neural rerankers, and sub-85ms latency SLA.',
-    endpoint: 'rag-cluster.tharun.ai',
-    statusBadge: 'SUB-85ms RERANK',
-    statusColor: 'amber',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
-    hudIcon: <Database className="w-4 h-4 text-amber-400" />,
-    hudTitle: 'Qdrant Vector Mesh',
-    hudMetric: '12.5k QPS',
-    hudMetricColor: 'text-emerald-400',
+    id: 'vinayaka-utsav',
+    category: 'festival',
+    categoryLabel: 'FESTIVAL & COMMUNITY PUJA',
+    subLabel: 'High-Concurrency Event Portal',
+    title: 'Vinayaka Chavithi Maha Utsav Festival & Puja Portal',
+    desc: 'Interactive temple & pandal festival platform featuring online puja booking, 4K live aarti video stream, UPI digital hundi donations, real-time Maha Laddu auction bidding, and volunteer schedules.',
+    endpoint: 'ganeshutsav-live.triocraft.studio',
+    statusBadge: 'LIVE STREAM & DIGITAL HUNDI',
+    statusColor: 'orange',
+    image: '/projects/vinayaka-chaturthi.svg',
+    hudIcon: <Flame className="w-4 h-4 text-amber-500" />,
+    hudTitle: 'Devotee Stream Ingress',
+    hudMetric: '50k+ Concurrent',
+    hudMetricColor: 'text-amber-600',
     metrics: [
-      { label: 'Latency P95', val: '< 85ms', color: 'text-amber-400' },
-      { label: 'Rerank Acc', val: '99.2%', color: 'text-emerald-400' },
-      { label: 'Index Size', val: '4.8TB Vectors', color: 'text-white' },
+      { label: 'Live Aarti Stream', val: '4K Ultra-Low Latency', color: 'text-amber-600' },
+      { label: 'Digital Hundi', val: '₹8.4L+ via UPI', color: 'text-emerald-600' },
+      { label: 'Laddu Auction', val: 'WebSocket Bidding', color: 'text-orange-600' },
     ],
-    stack: ['vLLM', 'Qdrant', 'Cohere Rerank', 'FastAPI'],
-    architecture: 'Ingress Gateway (Kong) → Rust Token Redactor → Qdrant Distributed HNSW Vector Mesh → Cohere Cross-Encoder Reranker → vLLM Continuous Batching Engine (Llama-3-70B-Instruct).',
-    modalStatus: 'Production High-Availability',
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'WebSockets', 'Razorpay', 'Redis'],
+    architecture: 'Devotee Web Client → Cloudflare Edge / WAF → Node.js WebSocket Cluster → Redis Mutex Bidding Engine → PostgreSQL Financial Ledger → Instant WhatsApp/SMS Receipt Worker.',
+    modalStatus: 'Live Festive Production Deployment',
   },
   {
-    id: 'vision',
-    category: 'vision',
-    categoryLabel: 'COMPUTER VISION',
-    subLabel: 'WASM + TensorRT',
-    title: 'VisionAI Biometric & Document Intelligence',
-    desc: 'Real-time edge neural inference for document classification, OCR parsing, and face liveness validation directly on client devices without transmitting sensitive raw PII.',
-    endpoint: 'vision-edge.tharun.ai',
-    statusBadge: '60 FPS EDGE INFERENCE',
-    statusColor: 'rose',
-    image: 'https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=1200&q=80',
-    hudIcon: <Scan className="w-4 h-4 text-rose-400" />,
-    hudTitle: 'Wasm Neural Runtime',
-    hudMetric: '0ms Server PII',
-    hudMetricColor: 'text-rose-400',
-    metrics: [
-      { label: 'Frame Rate', val: '60 FPS Edge', color: 'text-rose-400' },
-      { label: 'OCR Precision', val: '99.7% Exact', color: 'text-emerald-400' },
-      { label: 'Model Weight', val: '4.2MB Wasm', color: 'text-white' },
-    ],
-    stack: ['YOLOv8', 'Grok Vision OCR', 'WebAssembly', 'Rust'],
-    architecture: 'Client WebRTC Stream → WebAssembly YOLOv8 Worker → Spatial Feature Keypoint Alignment → Grok Vision OCR Normalizer → 256-Bit Encrypted Payload Dispatch.',
-    modalStatus: 'Banking & FinTech Rollout',
-  },
-  {
-    id: 'health',
-    category: 'enterprise',
-    categoryLabel: 'HEALTHCARE INFRASTRUCTURE',
-    subLabel: 'HL7 FHIR & Kafka',
-    title: 'Smart Clinical ERP & Healthcare Core',
-    desc: 'High-throughput clinical data pipeline ingesting HL7 FHIR telemetry with gradient boosted XGBoost models for early triage warning and automated medical billing reconciliation.',
-    endpoint: 'clinical-core.tharun.ai',
-    statusBadge: 'HIPAA READY / FHIR API',
+    id: 'revenue-pulse',
+    category: 'fintech',
+    categoryLabel: 'SAAS & FINANCIAL INTELLIGENCE',
+    subLabel: 'Real-Time MRR & Churn Analytics',
+    title: 'RevPulse SaaS Revenue & Financial Intelligence Platform',
+    desc: 'Mission-critical recurring revenue telemetry platform with automated Stripe & PayPal webhook sync, MRR/ARR growth charts, net churn prediction, and automated failed payment dunning.',
+    endpoint: 'revpulse.triocraft.studio',
+    statusBadge: 'STRIPE & PAYPAL WEBHOOK SYNC',
     statusColor: 'emerald',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
-    hudIcon: <Activity className="w-4 h-4 text-emerald-400" />,
-    hudTitle: 'FHIR Data Stream',
-    hudMetric: '1,800 Beds Monitored',
-    hudMetricColor: 'text-emerald-400',
+    image: '/projects/revenue-tracker.svg',
+    hudIcon: <TrendingUp className="w-4 h-4 text-emerald-600" />,
+    hudTitle: 'Financial Ingress Mesh',
+    hudMetric: '< 40ms Query P95',
+    hudMetricColor: 'text-emerald-600',
     metrics: [
-      { label: 'Early Triage', val: '4.2 Hrs Lead', color: 'text-emerald-400' },
-      { label: 'Stream Lag', val: '< 12ms WebSocket', color: 'text-amber-400' },
-      { label: 'Billing Acc', val: '99.8% Compliant', color: 'text-white' },
+      { label: 'Annualized ARR', val: '$579,000 Tracked', color: 'text-emerald-600' },
+      { label: 'Churn Detection', val: '0.82% Net Risk', color: 'text-emerald-700' },
+      { label: 'Dunning Recovery', val: '+45% Failed Subs', color: 'text-blue-600' },
     ],
-    stack: ['XGBoost', 'Apache Kafka', 'HL7 / FHIR', 'TimescaleDB'],
-    architecture: 'Bedside Monitor Telemetry → Apache Kafka Streaming Cluster → XGBoost Ensemble Inference Node → FHIR REST API → Real-Time ICU Clinician Alert WebSocket.',
-    modalStatus: 'Hospital Intensive Care Live',
+    stack: ['React 19', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'PostgreSQL', 'TimescaleDB', 'Chart.js'],
+    architecture: 'Stripe/PayPal Payment Gateways → Webhook Ingestion Buffer → TimescaleDB Continuous Aggregates → Redis Financial Cache → Real-Time Analytics UI.',
+    modalStatus: 'Live FinTech SaaS Operations',
   },
   {
-    id: 'erp',
-    category: 'enterprise',
-    categoryLabel: 'ENTERPRISE AUTONOMY',
-    subLabel: 'Decentralized Mesh',
-    title: 'Cloud ERP Multi-Agent Orchestrator',
-    desc: 'Autonomous agent mesh synchronizing supply chain inventory and invoices across SAP & Oracle ERP clusters with deterministic state graphs and human-in-the-loop approvals.',
-    endpoint: 'agent-mesh.tharun.ai',
-    statusBadge: '100K ACTIONS / DAY',
-    statusColor: 'amber',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
-    hudIcon: <Network className="w-4 h-4 text-amber-400" />,
-    hudTitle: 'LangGraph State Loop',
-    hudMetric: '42% Cost Saved',
-    hudMetricColor: 'text-amber-400',
+    id: 'couple-surprise',
+    category: 'couple',
+    categoryLabel: 'ROMANTIC COUPLE EXPERIENCES',
+    subLabel: 'Surprise & Apology Portals',
+    title: 'ForeverAfter — Romantic Couple Surprise & Apology Web Portals',
+    desc: 'Cinematic, deeply personal couple web experiences featuring romantic milestone timelines, sincere interactive apology letters with forgiveness actions, secret memory vaults, and midnight music reveals.',
+    endpoint: 'foreverwithyou.triocraft.studio',
+    statusBadge: 'INTERACTIVE FORGIVENESS & REVEAL',
+    statusColor: 'rose',
+    image: '/projects/couple-surprise.svg',
+    hudIcon: <Heart className="w-4 h-4 text-rose-500" />,
+    hudTitle: 'Romance Engine',
+    hudMetric: '100% Forgiveness Rate',
+    hudMetricColor: 'text-rose-600',
     metrics: [
-      { label: 'Daily Runs', val: '100k+ Actions', color: 'text-amber-400' },
-      { label: 'Cost Reduced', val: '42% Trimmed', color: 'text-emerald-400' },
-      { label: 'Replay SLA', val: '100% Deterministic', color: 'text-white' },
+      { label: 'Midnight Surprise', val: 'Auto-Trigger 00:00', color: 'text-rose-600' },
+      { label: 'Memory Vault', val: 'Encrypted & Private', color: 'text-purple-600' },
+      { label: 'Emotional Score', val: '5/5 Love & Tears', color: 'text-amber-600' },
     ],
-    stack: ['LangGraph', 'Redis Streams', 'Docker Swarm', 'Kubernetes'],
-    architecture: 'Event Bus (Redis Streams) → LangGraph State Loop → Human Approval Checkpoint → gRPC ERP Adapters → Automated Ledger Commit.',
-    modalStatus: 'Fortune 100 Supply Chain',
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Canvas Confetti', 'Howler.js'],
+    architecture: 'Client Responsive SPA → Cloudinary Media Optimization CDN → Localized Midnight Trigger → Interactive Music Player Engine → Confetti Burst Reveal.',
+    modalStatus: 'Live Emotional Customer Delights',
+  },
+  {
+    id: 'hospital-hms',
+    category: 'healthcare',
+    categoryLabel: 'ENTERPRISE HOSPITAL MANAGEMENT',
+    subLabel: 'CareGrid Clinical ERP & EHR',
+    title: 'CareGrid End-to-End Hospital Management System (HMS)',
+    desc: 'Enterprise-grade clinical OS unifying floor-by-floor bed ward telemetry, emergency triage queues, Electronic Health Records (EHR), pharmacy point-of-sale, and insurance TPA settlement.',
+    endpoint: 'caregrid-hms.triocraft.studio',
+    statusBadge: 'BED WARDS, EHR & PHARMACY',
+    statusColor: 'amber',
+    image: '/projects/hospital-hms.svg',
+    hudIcon: <Building2 className="w-4 h-4 text-blue-600" />,
+    hudTitle: 'Inpatient Core',
+    hudMetric: '200 Beds Monitored',
+    hudMetricColor: 'text-blue-600',
+    metrics: [
+      { label: 'Bed Occupancy', val: '184 / 200 Live', color: 'text-blue-600' },
+      { label: 'OPD Queue Wait', val: '14 mins average', color: 'text-emerald-600' },
+      { label: 'Billing Speed', val: '< 90s Discharge', color: 'text-amber-600' },
+    ],
+    stack: ['React 19', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'Docker'],
+    architecture: 'Ward Terminals → Secure SSL Reverse Proxy → Node.js HMS API Cluster → PostgreSQL Clinical Relational Store → Redis Ward Mutex Cache → Thermal Receipt & Lab Printers.',
+    modalStatus: 'Multi-Specialty Hospital Live System',
+  },
+  {
+    id: 'hospital-web',
+    category: 'healthcare',
+    categoryLabel: 'HEALTHCARE WEB & PATIENT PORTAL',
+    subLabel: 'NABH & JCI Compliant',
+    title: 'NovaCare Multi-Specialty Hospital Website & Patient Portal',
+    desc: 'High-converting healthcare platform with live doctor rosters, specialty departments, real-time outpatient (OPD) booking, and encrypted patient telehealth reports portal.',
+    endpoint: 'novacare-health.triocraft.studio',
+    statusBadge: '24/7 OPD & TELEHEALTH',
+    statusColor: 'emerald',
+    image: '/projects/hospital-website.svg',
+    hudIcon: <Activity className="w-4 h-4 text-emerald-600" />,
+    hudTitle: 'Telehealth Gateway',
+    hudMetric: '0m ER Wait Queue',
+    hudMetricColor: 'text-emerald-600',
+    metrics: [
+      { label: 'OPD Bookings', val: '2,400+ / mo', color: 'text-emerald-600' },
+      { label: 'Patient CSAT', val: '99.4% Verified', color: 'text-amber-600' },
+      { label: 'Lighthouse Score', val: '98 / 100 Mobile', color: 'text-blue-600' },
+    ],
+    stack: ['React 19', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'WebSockets'],
+    architecture: 'Client React Portal → Cloudflare Edge Ingress → Express Healthcare Gateway → Doctor Schedule Mutex Lock → Patient SMS/WhatsApp Dispatcher.',
+    modalStatus: 'Live Healthcare Web Platform',
+  },
+  {
+    id: 'health-bot',
+    category: 'genai',
+    categoryLabel: 'CLINICAL AI & STREAMING TRIAGE',
+    subLabel: 'Autonomous Intake Agent',
+    title: 'MediPulse Real-Time Clinical AI Chatbot & Triage Assistant',
+    desc: 'Autonomous 24/7 patient triage and conversational copilot providing clinical symptom checks, doctor appointment matching, lab test FAQs, and multi-lingual voice/text streaming.',
+    endpoint: 'medipulse.triocraft.studio',
+    statusBadge: '18ms WEBSOCKET STREAM',
+    statusColor: 'purple',
+    image: '/projects/hospital-chatbot.svg',
+    hudIcon: <Sparkles className="w-4 h-4 text-purple-600" />,
+    hudTitle: 'Clinical LLM Engine',
+    hudMetric: '18ms Stream Latency',
+    hudMetricColor: 'text-purple-600',
+    metrics: [
+      { label: 'Triage Accuracy', val: '99.1% Protocol', color: 'text-purple-600' },
+      { label: 'Response P95', val: '18ms Streaming', color: 'text-amber-600' },
+      { label: 'Languages', val: '12+ Supported', color: 'text-emerald-600' },
+    ],
+    stack: ['Python', 'FastAPI', 'LangChain', 'WebSockets', 'Llama-3', 'Redis Streams'],
+    architecture: 'Patient Client (Web/WhatsApp) → WebSocket Gateway → HIPAA Token Redactor → RAG Clinical Protocol Retriever → Streaming Medical LLM → Doctor Booking Dispatch.',
+    modalStatus: 'Live 24/7 Clinical Triage Bot',
   },
 ];
 
@@ -136,15 +184,15 @@ const TiltCard: React.FC<{
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -10;
-    const rotateY = ((x - centerX) / centerX) * 10;
+    const rotateX = ((y - centerY) / centerY) * -6;
+    const rotateY = ((x - centerX) / centerX) * 6;
 
-    cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
   };
 
   const handleMouseLeave = () => {
     if (!cardRef.current) return;
-    cardRef.current.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    cardRef.current.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
   };
 
   return (
@@ -152,157 +200,105 @@ const TiltCard: React.FC<{
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="project-item project-card-3d glass-card rounded-2xl p-4 sm:p-5 relative group shadow-card-3d"
+      className="project-item rounded-3xl p-5 relative group bg-white border border-slate-200/90 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
     >
-      <div className="preserve-3d flex flex-col h-full justify-between">
-        {/* App Window Mockup Chrome */}
-        <div className="translate-z-12 mb-3">
-          <div className="flex items-center justify-between pb-2 border-b border-white/[0.08] text-xs font-mono">
-            {/* macOS Window Controls */}
-            <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-400/80 inline-block" />
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80 inline-block" />
-              <span className="ml-1.5 text-slate-400 text-[10px] truncate hidden sm:inline font-mono">
-                {project.endpoint}
-              </span>
-            </div>
-
-            {/* Status Badge */}
-            <div
-              className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-mono border ${
-                project.statusColor === 'rose'
-                  ? 'text-rose-400 bg-rose-500/10 border-rose-500/30'
-                  : project.statusColor === 'emerald'
-                  ? 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30'
-                  : 'text-amber-400 bg-amber-500/10 border-amber-500/30'
-              }`}
-            >
-              <span
-                className={`w-1 h-1 rounded-full animate-pulse ${
-                  project.statusColor === 'rose'
-                    ? 'bg-rose-400'
-                    : project.statusColor === 'emerald'
-                    ? 'bg-emerald-400'
-                    : 'bg-amber-400'
-                }`}
-              />
-              <span>{project.statusBadge}</span>
-            </div>
-          </div>
-
-          {/* High-Fidelity UI Mockup Visual Stage */}
-          <div
-            className={`relative w-full h-44 sm:h-48 rounded-xl overflow-hidden mt-2 bg-[#0d0f17] border group-hover:border-amber-400 transition-colors ${
-              project.statusColor === 'rose'
-                ? 'border-rose-500/30'
-                : project.statusColor === 'emerald'
-                ? 'border-emerald-500/30'
-                : 'border-amber-500/30'
-            }`}
-          >
-            {/* Holographic Scanline Overlay */}
-            <div className="absolute inset-0 scanlines-overlay z-10 opacity-40 pointer-events-none" />
-
-            {/* High-Res Dashboard Image */}
-            <img
-              src={project.image}
-              alt={project.title}
-              className="project-image-zoom w-full h-full object-cover object-center filter brightness-90 group-hover:brightness-105"
-              loading="lazy"
-            />
-
-            {/* Floating Glass Metric HUD */}
-            <div className="absolute bottom-2 left-2 right-2 p-2 rounded-lg bg-black/80 backdrop-blur-md border border-white/10 z-20 flex items-center justify-between text-[11px] font-mono">
-              <div className="flex items-center gap-1.5">
-                {project.hudIcon}
-                <span className="text-white text-xs">{project.hudTitle}</span>
-              </div>
-              <div className={`font-bold ${project.hudMetricColor}`}>{project.hudMetric}</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Content Area */}
-        <div className="translate-z-16">
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <span
-              className={`px-2 py-0.5 rounded text-[10px] font-mono border ${
-                project.statusColor === 'rose'
-                  ? 'bg-rose-500/15 border-rose-500/30 text-rose-400'
-                  : project.statusColor === 'emerald'
-                  ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-400'
-                  : 'bg-amber-500/15 border-amber-500/30 text-amber-400'
-              }`}
-            >
-              {project.categoryLabel}
+      <div>
+        {/* Browser Top Window Bar */}
+        <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-100 text-xs font-mono">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-rose-400 inline-block" />
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block" />
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block" />
+            <span className="ml-2 text-slate-500 text-[11px] font-mono truncate hidden sm:inline">
+              https://{project.endpoint}
             </span>
-            <span className="text-[10px] text-slate-500 font-mono">{project.subLabel}</span>
           </div>
 
-          <h3 className="text-lg sm:text-xl font-display font-bold text-white group-hover:text-amber-400 transition-colors line-clamp-1">
-            {project.title}
-          </h3>
-
-          <p className="text-slate-300 text-xs mt-1.5 leading-relaxed line-clamp-2">
-            {project.desc}
-          </p>
-
-          {/* Telemetry Metrics Grid */}
-          <div className="grid grid-cols-3 gap-1.5 my-3 py-2 border-y border-white/[0.08] text-center font-mono">
-            {project.metrics.map((m, idx) => (
-              <div key={idx}>
-                <div className="text-[10px] text-slate-400">{m.label}</div>
-                <div className={`text-xs font-bold ${m.color}`}>{m.val}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Tech Stack Pills */}
-          <div className="flex flex-wrap gap-1.5 mb-3">
-            {project.stack.map((item, idx) => (
-              <span
-                key={idx}
-                className="px-2 py-0.5 rounded-md bg-white/5 border border-amber-500/20 text-[10px] font-mono text-amber-100"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-50 text-amber-700 border border-amber-200">
+            {project.statusBadge}
+          </span>
         </div>
 
-        {/* Action Buttons */}
-        <div className="translate-z-8 flex items-center gap-2 pt-1">
-          <button
-            onClick={() => onInspect(project)}
-            className={`flex-1 py-2 px-3 rounded-lg font-display font-bold text-[11px] tracking-wider uppercase flex items-center justify-center gap-1.5 hover:opacity-90 transition-all cursor-pointer ${
-              project.statusColor === 'rose'
-                ? 'bg-gradient-to-r from-rose-500 to-rose-600 text-white shadow-glow-rose'
-                : project.statusColor === 'emerald'
-                ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-black shadow-glow-emerald'
-                : 'bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-black shadow-glow-amber'
-            }`}
-          >
-            <span>Inspect Architecture</span>
-            <ExternalLink className="w-3 h-3" />
-          </button>
-          <a
-            href="https://github.com/Tharun799337"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all cursor-pointer"
-            title="View Source on GitHub"
-          >
-            <GithubIcon className="w-3.5 h-3.5" />
-          </a>
+        {/* High Quality Visual Graphic Preview */}
+        <div
+          onClick={() => onInspect(project)}
+          className="relative w-full h-52 sm:h-64 rounded-2xl overflow-hidden mb-5 cursor-pointer bg-slate-50 border border-slate-100 group-hover:border-amber-300 transition-colors"
+        >
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
         </div>
+
+        {/* Category & Title */}
+        <div className="flex items-center gap-2 mb-1.5">
+          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-amber-600">
+            {project.categoryLabel}
+          </span>
+          <span className="text-slate-300">•</span>
+          <span className="text-[11px] text-slate-500 font-medium">
+            {project.subLabel}
+          </span>
+        </div>
+
+        <h3 className="font-display font-extrabold text-xl text-[#1a1f22] group-hover:text-amber-600 transition-colors leading-snug mb-2.5">
+          {project.title}
+        </h3>
+
+        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+          {project.desc}
+        </p>
+
+        {/* Highlight Metrics */}
+        <div className="grid grid-cols-3 gap-2 p-3 rounded-xl bg-slate-50 border border-slate-100 mb-4 text-left">
+          {project.metrics.map((m, idx) => (
+            <div key={idx}>
+              <div className="text-[10px] text-slate-500">{m.label}</div>
+              <div className={`text-xs font-bold mt-0.5 ${m.color}`}>{m.val}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Tech Stack Chips */}
+        <div className="flex flex-wrap gap-1.5 mb-5">
+          {project.stack.map((item, idx) => (
+            <span
+              key={idx}
+              className="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-[10px] font-mono text-[#1a1f22] font-semibold"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Action Footer */}
+      <div className="flex items-center gap-3 pt-3 border-t border-slate-100">
+        <button
+          onClick={() => onInspect(project)}
+          className="flex-1 py-3 px-4 rounded-xl font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 bg-[#1a1f22] hover:bg-amber-600 text-white shadow-sm transition-all cursor-pointer"
+        >
+          <span>View Blueprint &amp; Specs</span>
+          <ExternalLink className="w-3.5 h-3.5" />
+        </button>
+
+        <a
+          href="https://github.com/Tharun799337"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-[#1a1f22] transition-all cursor-pointer shadow-sm"
+          title="Source Code"
+        >
+          <GithubIcon className="w-4 h-4" />
+        </a>
       </div>
     </div>
   );
 };
 
 export const ProjectShowcase: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<'all' | 'genai' | 'vision' | 'enterprise'>('all');
+  const [activeFilter, setActiveFilter] = useState<'all' | 'festival' | 'fintech' | 'couple' | 'healthcare' | 'genai'>('all');
   const [inspectProject, setInspectProject] = useState<ProjectData | null>(null);
 
   const filteredProjects = activeFilter === 'all'
@@ -310,168 +306,126 @@ export const ProjectShowcase: React.FC = () => {
     : PROJECTS_DATA.filter(p => p.category === activeFilter);
 
   return (
-    <section id="projects" className="py-24 w-full">
-      {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-        <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono mb-3">
-            <Layers className="w-3.5 h-3.5" />
-            <span>FLAGSHIP ARCHITECTURES</span>
+    <section id="projects" className="py-20 sm:py-28 w-full bg-white border-b border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header (Raiseup Portfolio Style) */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200/90 text-amber-800 text-xs font-mono font-semibold mb-3 shadow-sm">
+              <Layers className="w-3.5 h-3.5" />
+              <span>✦ FEATURED WORK &amp; REAL CLIENT PLATFORMS</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-[#1a1f22]">
+              Our Featured Projects
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-display font-bold text-white">
-            Project Showcase
-          </h2>
+          <p className="text-slate-600 text-sm sm:text-base max-w-md">
+            Explore festival puja platforms, SaaS revenue tracking engines, heartfelt couple surprise portals, and end-to-end hospital management systems.
+          </p>
         </div>
-        <p className="text-slate-400 text-sm max-w-md">
-          Explore production-grade AI platforms and distributed systems. Hover to activate 3D dynamic tilt and click &quot;Inspect Architecture&quot; for system blueprints.
-        </p>
-      </div>
 
-      {/* Category Filter Tabs */}
-      <div className="flex flex-wrap items-center gap-2 mb-10 pb-2 border-b border-amber-500/15">
-        <button
-          onClick={() => setActiveFilter('all')}
-          className={`px-4 py-2 rounded-xl text-xs font-mono tracking-wider transition-all cursor-pointer ${
-            activeFilter === 'all'
-              ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold'
-              : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
-          }`}
-        >
-          ALL PROJECTS
-        </button>
-        <button
-          onClick={() => setActiveFilter('genai')}
-          className={`px-4 py-2 rounded-xl text-xs font-mono tracking-wider transition-all cursor-pointer ${
-            activeFilter === 'genai'
-              ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold'
-              : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
-          }`}
-        >
-          GENERATIVE AI &amp; RAG
-        </button>
-        <button
-          onClick={() => setActiveFilter('vision')}
-          className={`px-4 py-2 rounded-xl text-xs font-mono tracking-wider transition-all cursor-pointer ${
-            activeFilter === 'vision'
-              ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold'
-              : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
-          }`}
-        >
-          COMPUTER VISION
-        </button>
-        <button
-          onClick={() => setActiveFilter('enterprise')}
-          className={`px-4 py-2 rounded-xl text-xs font-mono tracking-wider transition-all cursor-pointer ${
-            activeFilter === 'enterprise'
-              ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold'
-              : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
-          }`}
-        >
-          ENTERPRISE SYSTEMS
-        </button>
-      </div>
-
-      {/* 3D Projects Showcase Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        {filteredProjects.map((project) => (
-          <TiltCard
-            key={project.id}
-            project={project}
-            onInspect={(p) => setInspectProject(p)}
-          />
-        ))}
-      </div>
-
-      {/* Interactive Architectural Inspect Modal */}
-      {inspectProject && (
-        <div
-          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-2xl flex items-center justify-center p-4 animate-in fade-in"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setInspectProject(null);
-          }}
-        >
-          <div className="glass-card max-w-3xl w-full rounded-3xl p-6 sm:p-9 border border-amber-500/35 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+        {/* Filter Pills */}
+        <div className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-slate-200">
+          {[
+            { id: 'all', label: 'ALL PROJECTS' },
+            { id: 'festival', label: 'FESTIVAL & COMMUNITY' },
+            { id: 'fintech', label: 'SAAS & REVENUE' },
+            { id: 'couple', label: 'COUPLE & SURPRISE' },
+            { id: 'healthcare', label: 'HOSPITAL & HMS' },
+            { id: 'genai', label: 'AI & CHATBOTS' },
+          ].map((tab) => (
             <button
-              onClick={() => setInspectProject(null)}
-              className="absolute top-5 right-5 p-2 rounded-full bg-white/10 text-slate-300 hover:text-white hover:bg-white/20 transition-colors cursor-pointer"
-              aria-label="Close modal"
+              key={tab.id}
+              onClick={() => setActiveFilter(tab.id as typeof activeFilter)}
+              className={`px-4 py-2 rounded-xl text-xs font-mono tracking-wider transition-all cursor-pointer ${
+                activeFilter === tab.id
+                  ? 'bg-amber-500 text-white font-bold shadow-md'
+                  : 'text-slate-600 hover:text-[#1a1f22] hover:bg-slate-100 border border-transparent'
+              }`}
             >
-              <X className="w-5 h-5" />
+              {tab.label}
             </button>
+          ))}
+        </div>
 
-            <div className="relative w-full h-56 sm:h-64 rounded-2xl overflow-hidden mb-6 border border-amber-500/30">
-              <img
-                src={inspectProject.image}
-                alt={inspectProject.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-mono">
-                  {inspectProject.categoryLabel}
-                </span>
-                <span className="text-xs font-mono text-emerald-400 bg-black/60 px-2.5 py-1 rounded-full border border-emerald-500/30">
-                  {inspectProject.modalStatus}
-                </span>
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {filteredProjects.map((project) => (
+            <TiltCard
+              key={project.id}
+              project={project}
+              onInspect={(p) => setInspectProject(p)}
+            />
+          ))}
+        </div>
+
+      </div>
+
+      {/* Blueprint Architecture Modal */}
+      {inspectProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-in fade-in duration-200">
+          <div className="relative w-full max-w-3xl rounded-3xl p-6 sm:p-8 bg-white border border-slate-200 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-200">
+              <div className="flex items-center gap-3">
+                <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+                <h3 className="font-display font-bold text-lg sm:text-xl text-[#1a1f22]">
+                  {inspectProject.title}
+                </h3>
               </div>
-            </div>
-
-            <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
-              {inspectProject.title}
-            </h3>
-            <p className="mt-3 text-slate-300 text-sm leading-relaxed">
-              {inspectProject.desc}
-            </p>
-
-            {/* Pipeline Dataflow Diagram */}
-            <div className="my-6 p-4 rounded-2xl bg-white/[0.03] border border-amber-500/20">
-              <div className="text-xs font-mono text-amber-400 uppercase tracking-wider mb-2 flex items-center gap-2">
-                <GitMerge className="w-3.5 h-3.5" /> End-to-End Pipeline Dataflow
-              </div>
-              <div className="text-xs font-mono text-slate-300 leading-relaxed bg-black/40 p-3 rounded-xl border border-white/5">
-                {inspectProject.architecture}
-              </div>
-            </div>
-
-            {/* Metric Badges */}
-            <div className="grid grid-cols-3 gap-3 my-6">
-              {inspectProject.metrics.map((m, idx) => (
-                <div
-                  key={idx}
-                  className="p-3 rounded-xl bg-white/5 border border-amber-500/20 text-center"
-                >
-                  <div className={`text-base font-bold font-display ${m.color}`}>{m.val}</div>
-                  <div className="text-[10px] text-slate-400 uppercase font-mono mt-0.5">
-                    {m.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Stack Pills */}
-            <div className="mb-6">
-              <div className="text-xs uppercase font-mono text-amber-200/80 mb-2">
-                Verified Production Stack:
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {inspectProject.stack.map((s, idx) => (
-                  <span
-                    key={idx}
-                    className="px-2.5 py-1 rounded-md bg-white/10 text-xs font-mono text-amber-100 border border-amber-500/20"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex gap-3">
               <button
                 onClick={() => setInspectProject(null)}
-                className="flex-1 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-medium text-xs transition-colors cursor-pointer"
+                className="p-2 rounded-full hover:bg-slate-100 text-slate-600 transition-colors cursor-pointer"
               >
-                Close Blueprint
+                <X className="w-5 h-5" />
               </button>
+            </div>
+
+            <div className="mt-5 space-y-6">
+              <div className="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
+                <img
+                  src={inspectProject.image}
+                  alt={inspectProject.title}
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-xs font-mono font-bold text-amber-600 uppercase mb-1">
+                  Architecture Dataflow &amp; Engineering Specs
+                </h4>
+                <p className="text-sm text-slate-700 bg-slate-50 p-4 rounded-xl font-mono leading-relaxed border border-slate-200">
+                  {inspectProject.architecture}
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-xs font-mono font-bold text-slate-500 uppercase mb-2">
+                  Integrated Technologies
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {inspectProject.stack.map((t, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-xs font-mono font-bold"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-4 flex items-center justify-between gap-4">
+                <span className="text-xs font-mono text-emerald-700 font-semibold">
+                  Status: {inspectProject.modalStatus}
+                </span>
+                <button
+                  onClick={() => setInspectProject(null)}
+                  className="btn-raiseup-gold px-6 py-2.5 rounded-full text-xs font-bold uppercase cursor-pointer"
+                >
+                  Done Inspecting
+                </button>
+              </div>
             </div>
           </div>
         </div>

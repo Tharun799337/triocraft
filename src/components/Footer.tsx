@@ -1,172 +1,172 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { PROFILE } from '../data/profile';
-import { SERVICES } from '../data/services';
+import { Sparkles, ArrowRight, Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
-import { 
-  Mail, 
-  MessageSquare, 
-  ArrowUpRight
-} from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#03050a] border-t border-slate-800/80 pt-16 pb-12 overflow-hidden">
-      {/* Ambient gradient top glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
-
+    <footer className="bg-[#EFEFEF] border-t border-slate-300 text-[#1a1f22] pt-16 pb-12 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 pb-12 border-b border-slate-800/60">
-          {/* Col 1: Identity & Bio (span 2) */}
-          <div className="lg:col-span-2 space-y-4">
-            <Link to="/" className="inline-flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[1.5px]">
-                <div className="w-full h-full bg-[#070b16] rounded-[10px] flex items-center justify-center font-mono font-bold text-cyan-400">
-                  T
-                </div>
+        
+        {/* Main Footer Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-300">
+          
+          {/* Col 1: Brand & About */}
+          <div className="space-y-4 text-left">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-indigo-600 flex items-center justify-center text-white shadow-sm">
+                <Sparkles className="w-4 h-4" />
               </div>
-              <span className="text-xl font-bold text-white tracking-tight">
-                {PROFILE.name}
+              <span className="font-display font-black text-2xl text-[#1a1f22] tracking-tight">
+                trio<span className="text-amber-600">craft</span>
               </span>
-            </Link>
+            </div>
 
-            <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-              Full-Stack &amp; AI Developer building high-performance websites, custom RAG pipelines, autonomous AI assistants, and enterprise automations for startups and businesses.
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Trio Craft is a full-service digital design, custom engineering, and AI agency. We create impactful web applications, hospital management systems, viral influencer campaigns, and revenue-scaling platforms.
             </p>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-2 pt-2">
               <a
-                href={PROFILE.github}
+                href="https://github.com/Tharun799337"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400/50 transition-colors"
-                aria-label="GitHub Profile"
+                className="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-amber-600 hover:border-amber-400 transition-colors shadow-xs"
+                title="GitHub"
               >
                 <GithubIcon className="w-4 h-4" />
               </a>
               <a
-                href={PROFILE.linkedin}
+                href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400/50 transition-colors"
-                aria-label="LinkedIn Profile"
+                className="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-amber-600 hover:border-amber-400 transition-colors shadow-xs"
+                title="LinkedIn"
               >
                 <LinkedinIcon className="w-4 h-4" />
               </a>
               <a
-                href={`mailto:${PROFILE.email}`}
-                className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400/50 transition-colors"
-                aria-label="Direct Email"
-              >
-                <Mail className="w-4 h-4" />
-              </a>
-              <a
-                href={`https://wa.me/${PROFILE.whatsapp.replace(/[^0-9]/g, '')}`}
+                href="https://wa.me/917993370000"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400 hover:text-emerald-300 hover:border-emerald-500/50 transition-colors"
-                aria-label="WhatsApp"
+                className="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-emerald-600 hover:border-emerald-400 transition-colors shadow-xs"
+                title="WhatsApp"
               >
-                <MessageSquare className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" />
               </a>
             </div>
           </div>
 
           {/* Col 2: Navigation Links */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-300">
-              Navigation
+          <div className="space-y-3 text-left">
+            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-[#1a1f22]">
+              Quick Links
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-600">
               <li>
-                <Link to="/" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                  Home
-                </Link>
+                <a href="#hero" className="hover:text-amber-600 transition-colors">Home</a>
               </li>
               <li>
-                <Link to="/about" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                  About &amp; Skills
-                </Link>
+                <a href="#about" className="hover:text-amber-600 transition-colors">About Trio Craft</a>
               </li>
               <li>
-                <Link to="/services" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                  All Services
-                </Link>
+                <a href="#services" className="hover:text-amber-600 transition-colors">Services &amp; Capabilities</a>
               </li>
               <li>
-                <Link to="/projects" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                  Featured Projects
-                </Link>
+                <a href="#projects" className="hover:text-amber-600 transition-colors">Projects &amp; Case Studies</a>
               </li>
               <li>
-                <Link to="/blog" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                  Articles &amp; Guides
-                </Link>
+                <a href="#how-we-do-it" className="hover:text-amber-600 transition-colors">How We Do It</a>
               </li>
               <li>
-                <Link to="/contact" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                  Hire / Contact
-                </Link>
+                <a href="#testimonials" className="hover:text-amber-600 transition-colors">Client Reviews</a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-amber-600 transition-colors">Get Free Quote</a>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Core Services */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-300">
-              Core Services
+          {/* Col 3: Services Directory */}
+          <div className="space-y-3 text-left">
+            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-[#1a1f22]">
+              Our Specialties
             </h4>
-            <ul className="space-y-2 text-sm">
-              {SERVICES.slice(0, 5).map((srv) => (
-                <li key={srv.id}>
-                  <Link
-                    to={`/contact?service=${srv.id}`}
-                    className="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1 group"
-                  >
-                    <span>{srv.title.split(' ')[0]} {srv.title.split(' ')[1]}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </Link>
-                </li>
-              ))}
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-600">
+              <li>
+                <a href="#services" className="hover:text-amber-600 transition-colors">Digital Marketing &amp; SEO</a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-amber-600 transition-colors">Influencer Marketing</a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-amber-600 transition-colors">Website &amp; App Development</a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-amber-600 transition-colors">Hospital Management (HMS)</a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-amber-600 transition-colors">Real-Time Clinical AI Chatbots</a>
+              </li>
+              <li>
+                <a href="#projects" className="hover:text-amber-600 transition-colors">Vinayaka Festival Puja Portals</a>
+              </li>
+              <li>
+                <a href="#projects" className="hover:text-amber-600 transition-colors">Couple Surprise &amp; Apology Sites</a>
+              </li>
             </ul>
           </div>
 
-          {/* Col 4: Work With Tharun */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-300">
-              Freelance Status
+          {/* Col 4: Contact & Office */}
+          <div className="space-y-3 text-left">
+            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-[#1a1f22]">
+              Contact Office
             </h4>
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2.5">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-                <span className="text-xs font-bold text-white">Accepting Clients</span>
+            <div className="space-y-3 text-xs sm:text-sm text-slate-600">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                <span>Hyderabad, Telangana, India (Global Remote Service)</span>
               </div>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Available for contract MVPs, full-stack website builds, and AI workflow integrations.
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400 hover:underline pt-1"
-              >
-                <span>Request Project Proposal</span>
-                <ArrowUpRight className="w-3 h-3" />
-              </Link>
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                <a href="tel:+917993370000" className="hover:text-emerald-700 font-semibold">
+                  +91 79933 70000
+                </a>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                <a href="mailto:contact@triocraft.studio" className="hover:text-amber-600 font-semibold">
+                  contact@triocraft.studio
+                </a>
+              </div>
+
+              <div className="pt-2">
+                <a
+                  href="#contact"
+                  className="btn-raiseup-gold w-full py-2.5 rounded-full text-xs uppercase font-bold inline-flex items-center justify-center gap-2 shadow-sm"
+                >
+                  <span>Start a Project</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
           </div>
+
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        {/* Bottom Bar: Copyright & Policy */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <div>
-            © {currentYear} {PROFILE.name}. All rights reserved.
+            &copy; {currentYear} TrioCraft Digital &amp; AI Agency. All rights reserved.
           </div>
-          <div className="flex items-center gap-1">
-            <span>Crafted with</span>
-            <span className="text-cyan-400 font-mono">React 19 + TypeScript + Tailwind</span>
+          <div className="flex items-center gap-6">
+            <a href="#hero" className="hover:text-[#1a1f22] transition-colors">Privacy Policy</a>
+            <a href="#hero" className="hover:text-[#1a1f22] transition-colors">Terms of Service</a>
+            <a href="#hero" className="hover:text-[#1a1f22] transition-colors">Back to Top ↑</a>
           </div>
         </div>
+
       </div>
     </footer>
   );

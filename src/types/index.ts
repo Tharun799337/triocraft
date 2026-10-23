@@ -1,9 +1,14 @@
 export type ProjectCategory = 
   | 'All Projects'
   | 'Web Development'
+  | 'Healthcare & HMS'
+  | 'Festival & Community'
+  | 'Fintech & Analytics'
+  | 'Couple & Lifestyle'
   | 'AI / Machine Learning'
   | 'Generative AI'
   | 'Agentic AI'
+  | 'Digital Marketing'
   | 'Chrome Extensions'
   | 'Automation';
 

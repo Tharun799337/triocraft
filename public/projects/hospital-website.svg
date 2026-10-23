@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hospWebBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050a12" />
+      <stop offset="100%" stop-color="#0a1524" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5c9" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#hospWebBg)" stroke="rgba(0,229,201,0.25)" stroke-width="2" />
+
+  <!-- Browser Header Bar -->
+  <rect width="800" height="46" rx="16" fill="#081422" />
+  <circle cx="28" cy="23" r="5.5" fill="#ef4444" />
+  <circle cx="48" cy="23" r="5.5" fill="#f59e0b" />
+  <circle cx="68" cy="23" r="5.5" fill="#10b981" />
+  
+  <rect x="130" y="11" width="360" height="24" rx="12" fill="#0c1f33" stroke="rgba(255,255,255,0.08)" />
+  <text x="150" y="27" fill="#64748b" font-family="sans-serif" font-size="11">https://novacare-hospital.triocraft.io</text>
+
+  <rect x="660" y="11" width="115" height="24" rx="12" fill="url(#cyanGrad)" />
+  <text x="717" y="27" fill="#04121a" font-family="sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">Book Telehealth</text>
+
+  <!-- Navbar inside website -->
+  <g transform="translate(30, 60)">
+    <text x="0" y="24" fill="#00e5c9" font-family="sans-serif" font-size="18" font-weight="800" letter-spacing="1">NOVACARE</text>
+    <text x="110" y="24" fill="#94a3b8" font-family="sans-serif" font-size="12">HEALTH SYSTEM</text>
+
+    <text x="320" y="22" fill="#e2e8f0" font-family="sans-serif" font-size="11" font-weight="600">Departments</text>
+    <text x="420" y="22" fill="#94a3b8" font-family="sans-serif" font-size="11">Find a Doctor</text>
+    <text x="520" y="22" fill="#94a3b8" font-family="sans-serif" font-size="11">Patient Portal</text>
+    <text x="630" y="22" fill="#f59e0b" font-family="sans-serif" font-size="11" font-weight="bold">24/7 ER Live: 0m Wait</text>
+  </g>
+
+  <!-- Hero Section -->
+  <g transform="translate(30, 110)">
+    <rect width="440" height="230" rx="12" fill="#081829" stroke="rgba(255,255,255,0.06)" />
+    
+    <rect x="25" y="25" width="140" height="22" rx="11" fill="rgba(0,229,201,0.12)" stroke="rgba(0,229,201,0.3)" />
+    <text x="95" y="40" fill="#00e5c9" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">NABH &amp; JCI ACCREDITED</text>
+
+    <text x="25" y="85" fill="#ffffff" font-family="sans-serif" font-size="22" font-weight="bold">Next-Generation</text>
+    <text x="25" y="115" fill="#00e5c9" font-family="sans-serif" font-size="22" font-weight="bold">Multi-Specialty Care</text>
+    
+    <text x="25" y="145" fill="#94a3b8" font-family="sans-serif" font-size="11" width="380">Instant digital OPD appointments, live doctor schedules, electronic prescriptions, and transparent surgery billing estimates.</text>
+
+    <rect x="25" y="175" width="150" height="36" rx="8" fill="url(#cyanGrad)" />
+    <text x="100" y="198" fill="#05151e" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Find Specialists</text>
+
+    <rect x="190" y="175" width="150" height="36" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" />
+    <text x="265" y="198" fill="#e2e8f0" font-family="sans-serif" font-size="12" text-anchor="middle">Patient Portal Login</text>
+  </g>
+
+  <!-- Right Hero Card: Doctor Live Slot Selector -->
+  <g transform="translate(490, 110)">
+    <rect width="280" height="230" rx="12" fill="#081b2e" stroke="rgba(0,229,201,0.2)" />
+    <text x="20" y="28" fill="#f8fafc" font-family="sans-serif" font-size="12" font-weight="bold">Featured Specialists on Duty</text>
+
+    <!-- Doctor 1 -->
+    <rect x="15" y="45" width="250" height="52" rx="8" fill="#0c253d" stroke="rgba(255,255,255,0.05)" />
+    <circle cx="42" cy="71" r="16" fill="#00e5c9" opacity="0.3" />
+    <text x="42" y="75" fill="#00e5c9" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">DR</text>
+    <text x="70" y="65" fill="#f1f5f9" font-family="sans-serif" font-size="11" font-weight="600">Dr. Sarah Jenkins, MD</text>
+    <text x="70" y="80" fill="#94a3b8" font-family="sans-serif" font-size="9.5">Chief of Cardiology • 4.9 ★</text>
+    <rect x="200" y="60" width="55" height="22" rx="6" fill="#10b981" />
+    <text x="227" y="75" fill="#ffffff" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">Book</text>
+
+    <!-- Doctor 2 -->
+    <rect x="15" y="105" width="250" height="52" rx="8" fill="#0c253d" stroke="rgba(255,255,255,0.05)" />
+    <circle cx="42" cy="131" r="16" fill="#f59e0b" opacity="0.3" />
+    <text x="42" y="135" fill="#f59e0b" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">DR</text>
+    <text x="70" y="125" fill="#f1f5f9" font-family="sans-serif" font-size="11" font-weight="600">Dr. Marcus Chen, MS</text>
+    <text x="70" y="140" fill="#94a3b8" font-family="sans-serif" font-size="9.5">Neurology &amp; Spine • 4.95 ★</text>
+    <rect x="200" y="120" width="55" height="22" rx="6" fill="#10b981" />
+    <text x="227" y="135" fill="#ffffff" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">Book</text>
+
+    <!-- Live Telehealth Badge -->
+    <rect x="15" y="170" width="250" height="45" rx="8" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.3)" />
+    <circle cx="32" cy="192" r="4.5" fill="#10b981" />
+    <text x="48" y="196" fill="#6ee7b7" font-family="sans-serif" font-size="10" font-weight="600">Instant Video Consult available now</text>
+  </g>
+
+  <!-- Bottom Department Showcase -->
+  <g transform="translate(30, 360)">
+    <!-- Cardiology -->
+    <rect x="0" width="170" height="110" rx="10" fill="#081829" stroke="rgba(255,255,255,0.06)" />
+    <text x="20" y="32" fill="#00e5c9" font-family="sans-serif" font-size="14">❤️</text>
+    <text x="45" y="32" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="bold">Cardiology</text>
+    <text x="20" y="58" fill="#94a3b8" font-family="sans-serif" font-size="10">Cath Lab &amp; Bypass</text>
+    <text x="20" y="88" fill="#38bdf8" font-family="sans-serif" font-size="9.5">14 Doctors on Call →</text>
+
+    <!-- Orthopedics -->
+    <rect x="190" width="170" height="110" rx="10" fill="#081829" stroke="rgba(255,255,255,0.06)" />
+    <text x="210" y="32" fill="#f59e0b" font-family="sans-serif" font-size="14">🦴</text>
+    <text x="235" y="32" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="bold">Orthopedics</text>
+    <text x="210" y="58" fill="#94a3b8" font-family="sans-serif" font-size="10">Robotic Joint Replacement</text>
+    <text x="210" y="88" fill="#38bdf8" font-family="sans-serif" font-size="9.5">8 Doctors on Call →</text>
+
+    <!-- Diagnostics -->
+    <rect x="380" width="170" height="110" rx="10" fill="#081829" stroke="rgba(255,255,255,0.06)" />
+    <text x="400" y="32" fill="#10b981" font-family="sans-serif" font-size="14">🔬</text>
+    <text x="425" y="32" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="bold">Lab &amp; Imaging</text>
+    <text x="400" y="58" fill="#94a3b8" font-family="sans-serif" font-size="10">3T MRI / 128 Slice CT</text>
+    <text x="400" y="88" fill="#38bdf8" font-family="sans-serif" font-size="9.5">Instant Digital Reports →</text>
+
+    <!-- Emergency 24x7 -->
+    <rect x="570" width="170" height="110" rx="10" fill="#170c14" stroke="rgba(244,63,94,0.3)" />
+    <text x="590" y="32" fill="#f43f5e" font-family="sans-serif" font-size="14">🚨</text>
+    <text x="615" y="32" fill="#fca5a5" font-family="sans-serif" font-size="12" font-weight="bold">Emergency 24/7</text>
+    <text x="590" y="58" fill="#f87171" font-family="sans-serif" font-size="10">Trauma &amp; Stroke Unit</text>
+    <text x="590" y="88" fill="#fca5a5" font-family="sans-serif" font-size="9.5" font-weight="bold">Call Ambulance: 108</text>
+  </g>
+</svg>

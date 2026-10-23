@@ -37,20 +37,20 @@ export const AboutPage: React.FC = () => {
           {/* Intro Section */}
           <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/70 border border-cyan-500/30 text-xs font-semibold text-cyan-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                Engineering Background &amp; Philosophy
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-indigo-200/90 text-xs font-semibold text-indigo-700 shadow-2xs font-mono">
+                <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 animate-pulse" />
+                ✦ Studio Background &amp; Philosophy
               </div>
 
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">{PROFILE.name}</span>.
+              <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-[#25263A] tracking-tight leading-tight">
+                Engineering <span className="text-gradient-extraordinary">Extraordinary Digital Experiences</span>.
               </h1>
 
-              <p className="text-xl text-slate-200 leading-relaxed font-normal">
+              <p className="text-xl text-[#25263A] leading-relaxed font-normal">
                 {PROFILE.bioIntro}
               </p>
 
-              <div className="space-y-4 text-slate-300 text-base leading-relaxed">
+              <div className="space-y-4 text-[#5B5D7A] text-base leading-relaxed">
                 {PROFILE.bioDetailed.map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
@@ -59,20 +59,20 @@ export const AboutPage: React.FC = () => {
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <Link to="/contact">
                   <Button variant="primary" size="lg" icon={Sparkles}>
-                    Work With Me
+                    Work With Trio Craft
                   </Button>
                 </Link>
                 <Link to="/projects">
                   <Button variant="secondary" size="lg" icon={ArrowRight}>
-                    Explore My Work
+                    Explore Selected Works
                   </Button>
                 </Link>
               </div>
             </div>
 
             <div className="lg:col-span-5 flex justify-center">
-              <div className="w-full max-w-sm rounded-2xl glass-card p-4 border border-slate-700/80 shadow-2xl relative">
-                <div className="aspect-square w-full rounded-xl overflow-hidden bg-slate-950 mb-4">
+              <div className="w-full max-w-sm rounded-2xl glass-card p-4 bg-white/95 border border-slate-200 shadow-card-3d relative">
+                <div className="aspect-square w-full rounded-xl overflow-hidden bg-slate-100 mb-4 border border-slate-200">
                   <img
                     src="/tharun-portrait-placeholder.svg"
                     alt="Tharun Portrait"
@@ -81,10 +81,10 @@ export const AboutPage: React.FC = () => {
                 </div>
 
                 <div className="space-y-2 px-2 pb-2">
-                  <div className="text-base font-bold text-white">{PROFILE.name}</div>
-                  <div className="text-xs text-cyan-400 font-mono">{PROFILE.role}</div>
-                  <div className="text-xs text-slate-400 flex items-center gap-1.5 pt-1">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                  <div className="text-base font-bold font-display text-[#25263A]">{PROFILE.name}</div>
+                  <div className="text-xs text-indigo-600 font-mono font-semibold">{PROFILE.role}</div>
+                  <div className="text-xs text-[#5B5D7A] flex items-center gap-1.5 pt-1">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
                     <span>{PROFILE.status}</span>
                   </div>
                 </div>
@@ -93,69 +93,69 @@ export const AboutPage: React.FC = () => {
           </section>
 
           {/* What Problems I Solve */}
-          <section className="py-12 border-t border-slate-800">
+          <section className="py-12 border-t border-slate-200">
             <SectionHeading
               badge="Client Impact"
               title="What Real-World Problems"
-              highlight="Do I Solve?"
+              highlight="Do We Solve?"
               description="Technology is only valuable when it moves the needle for your business."
               align="center"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="rounded-2xl glass-card p-8 border border-slate-800">
-                <div className="w-12 h-12 rounded-xl bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mb-6">
+              <div className="rounded-2xl glass-card p-8 bg-white/95 border border-slate-200 shadow-card-3d">
+                <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-600 flex items-center justify-center mb-6">
                   <TrendingUp className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">
-                  Underperforming &amp; Slow Websites
+                <h3 className="text-xl font-bold font-display text-[#25263A] mb-3">
+                  Underperforming Websites
                 </h3>
-                <p className="text-sm text-slate-300 leading-relaxed">
-                  I replace sluggish templates with bespoke React/TypeScript applications that load in under 1 second, showcase your services clearly, and convert visitors into paying clients.
+                <p className="text-sm text-[#5B5D7A] leading-relaxed">
+                  We replace sluggish templates with bespoke React/TypeScript applications that load in under 1 second, showcase your services clearly, and convert visitors into clients.
                 </p>
               </div>
 
-              <div className="rounded-2xl glass-card p-8 border border-slate-800">
-                <div className="w-12 h-12 rounded-xl bg-indigo-950/80 border border-indigo-500/30 text-indigo-400 flex items-center justify-center mb-6">
+              <div className="rounded-2xl glass-card p-8 bg-white/95 border border-slate-200 shadow-card-3d">
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mb-6">
                   <Cpu className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">
-                  Document Knowledge Fragmentation
+                <h3 className="text-xl font-bold font-display text-[#25263A] mb-3">
+                  Knowledge Fragmentation
                 </h3>
-                <p className="text-sm text-slate-300 leading-relaxed">
-                  I engineer custom RAG systems that allow your staff or customers to query complex company manuals and PDFs instantly with exact source citations and zero hallucinations.
+                <p className="text-sm text-[#5B5D7A] leading-relaxed">
+                  We engineer custom RAG systems that allow your staff or customers to query complex company manuals and clinical records instantly with exact source citations.
                 </p>
               </div>
 
-              <div className="rounded-2xl glass-card p-8 border border-slate-800">
-                <div className="w-12 h-12 rounded-xl bg-purple-950/80 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-6">
+              <div className="rounded-2xl glass-card p-8 bg-white/95 border border-slate-200 shadow-card-3d">
+                <div className="w-12 h-12 rounded-xl bg-rose-50 border border-rose-200 text-rose-500 flex items-center justify-center mb-6">
                   <Code2 className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-xl font-bold font-display text-[#25263A] mb-3">
                   Manual Workflow Bottlenecks
                 </h3>
-                <p className="text-sm text-slate-300 leading-relaxed">
-                  I build custom Chrome extensions and automated API pipelines that eliminate repetitive copy-pasting, data extraction, and manual reporting across your tools.
+                <p className="text-sm text-[#5B5D7A] leading-relaxed">
+                  We build custom Chrome extensions and automated API pipelines that eliminate repetitive copy-pasting, data extraction, and manual reporting across tools.
                 </p>
               </div>
             </div>
           </section>
 
           {/* Technical Skills Deep Dive */}
-          <section className="py-12 border-t border-slate-800">
+          <section className="py-12 border-t border-slate-200">
             <SectionHeading
               badge="Skill Matrix"
               title="Tools &amp; Technologies"
-              highlight="In My Toolkit"
-              description="A breakdown of languages, frameworks, AI libraries, and cloud infrastructure I work with daily."
+              highlight="In Our Toolkit"
+              description="A breakdown of languages, frameworks, AI libraries, and cloud infrastructure we work with daily."
               align="center"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {SKILL_GROUPS.map((group, idx) => (
-                <div key={idx} className="rounded-2xl glass-card p-8 border border-slate-800">
-                  <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" />
+                <div key={idx} className="rounded-2xl glass-card p-8 bg-white/95 border border-slate-200 shadow-card-3d">
+                  <h3 className="text-xl font-bold font-display text-[#25263A] mb-6 flex items-center gap-2.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-indigo-600" />
                     {group.category}
                   </h3>
                   <div className="grid grid-cols-2 gap-3">
@@ -164,11 +164,11 @@ export const AboutPage: React.FC = () => {
                         key={sIdx}
                         className={`p-3 rounded-xl border flex items-center gap-2 ${
                           skill.highlight
-                            ? 'bg-cyan-950/40 border-cyan-500/30 text-white font-medium'
-                            : 'bg-slate-900/60 border-slate-800 text-slate-300'
+                            ? 'bg-indigo-50 border-indigo-200 text-indigo-700 font-semibold'
+                            : 'bg-slate-50 border-slate-200 text-[#5B5D7A]'
                         }`}
                       >
-                        <CheckCircle2 className={`w-4 h-4 shrink-0 ${skill.highlight ? 'text-cyan-400' : 'text-slate-500'}`} />
+                        <CheckCircle2 className={`w-4 h-4 shrink-0 ${skill.highlight ? 'text-indigo-600' : 'text-slate-400'}`} />
                         <span className="text-xs font-mono">{skill.name}</span>
                       </div>
                     ))}
@@ -179,12 +179,12 @@ export const AboutPage: React.FC = () => {
           </section>
 
           {/* Professional Values */}
-          <section className="py-12 border-t border-slate-800">
+          <section className="py-12 border-t border-slate-200">
             <SectionHeading
               badge="Professional Ethos"
-              title="Standards &amp; Values I"
+              title="Standards &amp; Values We"
               highlight="Never Compromise On"
-              description="Why founders and clients appreciate working with me directly."
+              description="Why founders and enterprise clients appreciate working with Trio Craft."
               align="center"
             />
 
@@ -192,12 +192,12 @@ export const AboutPage: React.FC = () => {
               {VALUES.map((val, idx) => {
                 const IconComp = iconValueMap[val.iconName] || ShieldCheck;
                 return (
-                  <div key={idx} className="rounded-2xl glass-card p-6 border border-slate-800">
-                    <div className="w-10 h-10 rounded-xl bg-cyan-950/70 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mb-4">
+                  <div key={idx} className="rounded-2xl glass-card p-6 bg-white/95 border border-slate-200 shadow-card-3d">
+                    <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-600 flex items-center justify-center mb-4">
                       <IconComp className="w-5 h-5" />
                     </div>
-                    <h4 className="text-base font-bold text-white mb-2">{val.title}</h4>
-                    <p className="text-xs text-slate-300 leading-relaxed">{val.description}</p>
+                    <h4 className="text-base font-bold font-display text-[#25263A] mb-2">{val.title}</h4>
+                    <p className="text-xs text-[#5B5D7A] leading-relaxed">{val.description}</p>
                   </div>
                 );
               })}
@@ -205,10 +205,10 @@ export const AboutPage: React.FC = () => {
           </section>
 
           {/* Development Roadmap / Process */}
-          <section className="py-12 border-t border-slate-800">
+          <section className="py-12 border-t border-slate-200">
             <SectionHeading
               badge="Execution Flow"
-              title="My 5-Step"
+              title="Our 5-Step"
               highlight="Client Project Journey"
               description="How we move from your initial enquiry to a successful production deployment."
               align="center"
@@ -218,14 +218,14 @@ export const AboutPage: React.FC = () => {
               {PROCESS_STEPS.map((step) => (
                 <div
                   key={step.step}
-                  className="rounded-2xl glass-card p-6 sm:p-8 border border-slate-800 flex flex-col sm:flex-row gap-6 items-start"
+                  className="rounded-2xl glass-card p-6 sm:p-8 bg-white/95 border border-slate-200 flex flex-col sm:flex-row gap-6 items-start shadow-card-3d"
                 >
-                  <div className="text-4xl font-extrabold font-mono text-cyan-400/40 shrink-0">
+                  <div className="text-4xl font-extrabold font-mono text-indigo-600/40 shrink-0">
                     {step.step}
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-white mb-2">{step.title}</h4>
-                    <p className="text-sm text-slate-300 leading-relaxed">{step.description}</p>
+                    <h4 className="text-lg font-bold font-display text-[#25263A] mb-2">{step.title}</h4>
+                    <p className="text-sm text-[#5B5D7A] leading-relaxed">{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -233,16 +233,16 @@ export const AboutPage: React.FC = () => {
           </section>
 
           {/* Bottom CTA */}
-          <section className="p-8 sm:p-12 rounded-3xl glass-card border border-cyan-500/30 text-center space-y-6">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-              Ready to bring your website or AI concept to life?
+          <section className="p-8 sm:p-12 rounded-3xl glass-card bg-white/95 border border-slate-200 text-center space-y-6 shadow-card-3d">
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-display text-[#25263A]">
+              Ready to bring your digital concept to life?
             </h3>
-            <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
-              I am available for new freelance engagements. Tell me about your goals, and let's structure an actionable plan.
+            <p className="text-[#5B5D7A] text-sm sm:text-base max-w-xl mx-auto">
+              We are available for new client engagements. Tell us about your goals, and let&apos;s structure an actionable plan.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact">
-                <Button variant="glow" size="lg" icon={Sparkles}>
+                <Button variant="primary" size="lg" icon={Sparkles}>
                   Start a Conversation
                 </Button>
               </Link>

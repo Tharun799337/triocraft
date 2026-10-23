@@ -11,7 +11,7 @@ export const ThreeCanvas: React.FC = () => {
 
     // 1. Scene, Camera, High-Performance WebGL Renderer
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x050508, 0.0014);
+    scene.fog = new THREE.FogExp2(0xfffcf7, 0.0008);
 
     const camera = new THREE.PerspectiveCamera(
       60,
@@ -30,69 +30,69 @@ export const ThreeCanvas: React.FC = () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
-    // 2. Bioluminescent Colored Lights (TrioCraft Copper & Teal)
-    const ambientLight = new THREE.AmbientLight(0xfff6e5, 0.7);
+    // 2. Vibrant Studio Colorful Lights
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
     scene.add(ambientLight);
 
-    const copperLight = new THREE.PointLight(0xf59e0b, 3.5, 95);
-    copperLight.position.set(20, 20, 20);
-    scene.add(copperLight);
+    const cobaltLight = new THREE.PointLight(0x3b66f5, 4.0, 95);
+    cobaltLight.position.set(20, 20, 20);
+    scene.add(cobaltLight);
 
-    const tealLight = new THREE.PointLight(0x00e5c9, 3.0, 95);
-    tealLight.position.set(-20, -20, 20);
-    scene.add(tealLight);
+    const coralLight = new THREE.PointLight(0xff6b6b, 3.5, 95);
+    coralLight.position.set(-20, -20, 20);
+    scene.add(coralLight);
 
-    const cyanLight = new THREE.PointLight(0x0284c7, 2.2, 85);
-    cyanLight.position.set(0, 30, -10);
-    scene.add(cyanLight);
+    const lavenderLight = new THREE.PointLight(0x8b5cf6, 3.0, 85);
+    lavenderLight.position.set(0, 30, -10);
+    scene.add(lavenderLight);
 
-    // 3. Golden Faceted Polyhedron (Wireframe Icosahedron)
+    // 3. Central Faceted Polyhedron (Cobalt & Lavender Wireframe)
     const icoGeo = new THREE.IcosahedronGeometry(11.5, 1);
     const icoMat = new THREE.MeshStandardMaterial({
-      color: 0xf59e0b,
+      color: 0x3b66f5,
       wireframe: true,
       transparent: true,
-      opacity: 0.35,
+      opacity: 0.45,
       roughness: 0.2,
-      metalness: 0.9,
+      metalness: 0.8,
     });
     const icosahedronMesh = new THREE.Mesh(icoGeo, icoMat);
     scene.add(icosahedronMesh);
 
-    // 4. Inner Teal Concentric Torus Ring (Balanced radius & tube so it never clips or disappears)
+    // 4. Inner Concentric Torus Ring (Coral & Peach)
     const ringGeo = new THREE.TorusGeometry(15.5, 0.36, 16, 100);
     const ringMat = new THREE.MeshBasicMaterial({
-      color: 0x00e5c9,
+      color: 0xff6b6b,
       wireframe: true,
       transparent: true,
-      opacity: 0.45,
-      blending: THREE.AdditiveBlending,
+      opacity: 0.5,
     });
     const champagneRing = new THREE.Mesh(ringGeo, ringMat);
     champagneRing.rotation.x = Math.PI / 3.2;
     scene.add(champagneRing);
 
-    // 5. Outer Copper Concentric Torus Ring (Kept within viewport frustum with additive glow)
+    // 5. Outer Concentric Torus Ring (Cobalt & Mint)
     const outerRingGeo = new THREE.TorusGeometry(21.5, 0.32, 16, 120);
     const outerRingMat = new THREE.MeshBasicMaterial({
-      color: 0xf59e0b,
+      color: 0x8b5cf6,
       wireframe: true,
       transparent: true,
-      opacity: 0.4,
-      blending: THREE.AdditiveBlending,
+      opacity: 0.45,
     });
     const outerRing = new THREE.Mesh(outerRingGeo, outerRingMat);
     outerRing.rotation.x = -Math.PI / 3.5;
     scene.add(outerRing);
 
-    // 6. Stardust Particle Constellation (1,500 particles with copper, teal & cyan points)
+    // 6. Colorful Studio Confetti & Stardust Constellation (1,500 particles)
     const particleCount = 1500;
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
-    const colorCopper = new THREE.Color(0xf59e0b);
-    const colorTeal = new THREE.Color(0x00e5c9);
-    const colorCyan = new THREE.Color(0x38bdf8);
+    const colorCobalt = new THREE.Color(0x3b66f5);
+    const colorCoral = new THREE.Color(0xff6b6b);
+    const colorLavender = new THREE.Color(0x8b5cf6);
+    const colorMint = new THREE.Color(0x10b981);
+    const colorSunny = new THREE.Color(0xf59e0b);
 
     for (let i = 0; i < particleCount * 3; i += 3) {
       positions[i] = (Math.random() - 0.5) * 160;
@@ -100,9 +100,11 @@ export const ThreeCanvas: React.FC = () => {
       positions[i + 2] = (Math.random() - 0.5) * 160;
 
       const rand = Math.random();
-      let selectedColor = colorCopper;
-      if (rand > 0.6) selectedColor = colorTeal;
-      else if (rand > 0.35) selectedColor = colorCyan;
+      let selectedColor = colorCobalt;
+      if (rand > 0.8) selectedColor = colorCoral;
+      else if (rand > 0.6) selectedColor = colorLavender;
+      else if (rand > 0.4) selectedColor = colorMint;
+      else if (rand > 0.2) selectedColor = colorSunny;
 
       colors[i] = selectedColor.r;
       colors[i + 1] = selectedColor.g;
@@ -114,10 +116,10 @@ export const ThreeCanvas: React.FC = () => {
     particlesGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
     const particlesMat = new THREE.PointsMaterial({
-      size: 0.85,
+      size: 0.9,
       vertexColors: true,
       transparent: true,
-      opacity: 0.65,
+      opacity: 0.6,
     });
 
     const pointsMesh = new THREE.Points(particlesGeo, particlesMat);

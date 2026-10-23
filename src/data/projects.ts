@@ -2,6 +2,220 @@ import type { Project } from '../types';
 
 export const PROJECTS: Project[] = [
   {
+    id: "vinayaka-chaturthi-portal",
+    title: "Vinayaka Chavithi Maha Utsav Festival & Puja Portal",
+    category: "Festival & Community",
+    shortDescription: "Interactive community and temple festival platform with online puja bookings, live aarti streaming, UPI digital hundi, laddu auction bidding, and volunteer schedules.",
+    overview: 
+      "A high-traffic festival web application custom-engineered for community pandals and temples during Ganesh Chaturthi. Enables thousands of devotees to book personalized puja sankalpams, view 4K low-latency live aarti broadcasts, contribute to the temple digital hundi with instant automated tax-exempt e-receipts, and participate in real-time interactive laddu auctions.",
+    problemSolved: 
+      "During Ganesh Chaturthi, massive crowds face congested queues for puja registrations, manual cash donations lack transparency, and non-resident devotees miss out on live aartis and sacred festival events.",
+    solutionImplemented: 
+      "Built a high-concurrency event portal using React, Node.js, WebSockets, and Razorpay/UPI gateway integration. Features instantaneous digital token generation for pandal visits, live WebRTC video broadcast with interactive live chat prayer requests, real-time WebSocket bidding for the prestigious Maha Laddu auction, and automated SMS/WhatsApp prasadam delivery tracking.",
+    keyFeatures: [
+      "Online Puja & Archana Slot Booking with digital QR pass",
+      "Low-latency 4K Live Aarti & Cultural Event WebRTC Streaming",
+      "Digital Hundi with Instant UPI/QR payments & automated receipts",
+      "Real-time WebSocket Maha Laddu Live Bidding Auction Engine",
+      "Pandal photo gallery & devotee prayer request message wall",
+      "Volunteer duty roster & crowd safety density telemetry"
+    ],
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Node.js", "WebSockets", "Razorpay / UPI", "Redis", "Cloudflare Stream"],
+    architectureNote: "Devotee Client ➔ Cloudflare Edge / WAF ➔ Node.js WebSocket Cluster ➔ Redis Auction Pub/Sub ➔ PostgreSQL ACID Ledger ➔ WhatsApp/SMS Notification Engine",
+    challengesAndSolutions: [
+      {
+        challenge: "Handling extreme sudden traffic spikes (50,000+ simultaneous viewers) during evening Maha Mangala Aarti.",
+        solution: "Employed Cloudflare CDN video caching with geo-distributed edge distribution and WebSocket clustering across multi-core workers."
+      },
+      {
+        challenge: "Ensuring zero latency and fraud prevention during high-stakes competitive Laddu auction bidding.",
+        solution: "Engineered an in-memory Redis mutex bidding engine with OTP phone verification for authorized bidders."
+      }
+    ],
+    image: "/projects/vinayaka-chaturthi.svg",
+    imageAlt: "Vinayaka Chavithi Maha Utsav Festival and Puja Portal",
+    status: "Live Demo Available",
+    featured: true
+  },
+  {
+    id: "saas-revenue-tracker",
+    title: "RevPulse SaaS Revenue & Financial Intelligence Platform",
+    category: "Fintech & Analytics",
+    shortDescription: "Real-time SaaS recurring revenue (MRR/ARR) analytics platform with Stripe & PayPal webhook sync, churn alerts, payout forecasting, and cohort retention charts.",
+    overview: 
+      "A mission-critical financial analytics platform designed for modern SaaS companies and digital agencies. Connects directly to payment gateways to compute real-time Monthly Recurring Revenue (MRR), Annual Run Rate (ARR), net revenue churn, Customer Lifetime Value (LTV), Customer Acquisition Cost (CAC), and cash flow forecasts with millisecond precision.",
+    problemSolved: 
+      "SaaS founders and financial teams waste hours reconciling spreadsheets across Stripe, PayPal, and bank accounts, often discovering customer churn and payment failures days after they occur.",
+    solutionImplemented: 
+      "Engineered an event-driven ingestion engine that listens to streaming payment webhooks, deduplicates event payloads, calculates rolling financial metrics, and renders interactive GPU-accelerated charts. Features automated smart dunning alerts that recover up to 45% of failed credit card renewals.",
+    keyFeatures: [
+      "Real-time Live MRR, ARR, ARPU, and LTV telemetry dashboard",
+      "Automated Stripe, PayPal, and Razorpay webhook synchronization",
+      "Cohort retention analysis and predictive churn risk scoring",
+      "Cash flow forecasting with multi-currency conversion support",
+      "Smart failed-payment recovery (Dunning) with automated email sequences",
+      "Instant Slack and WhatsApp revenue notifications for new subscriptions"
+    ],
+    techStack: ["React 19", "TypeScript", "Tailwind CSS", "FastAPI / Python", "PostgreSQL", "TimescaleDB", "Chart.js", "Redis"],
+    architectureNote: "Stripe/PayPal Webhooks ➔ Event Ingress Queue ➔ TimescaleDB Financial Ledger ➔ Aggregation Worker ➔ Redis Cache ➔ Real-Time Web Client",
+    challengesAndSolutions: [
+      {
+        challenge: "Reconciling multi-currency international subscriptions with fluctuating foreign exchange rates in real-time.",
+        solution: "Integrated automated central bank currency sync with historical exchange rate snapshotting per transaction."
+      },
+      {
+        challenge: "Calculating complex cohort retention graphs across hundreds of thousands of historical billing events without blocking queries.",
+        solution: "Utilized TimescaleDB hypertable continuous aggregates for instantaneous query response under 40ms."
+      }
+    ],
+    image: "/projects/revenue-tracker.svg",
+    imageAlt: "RevPulse SaaS Revenue and Financial Intelligence Platform",
+    status: "Live Demo Available",
+    featured: true
+  },
+  {
+    id: "couple-surprise-portal",
+    title: "ForeverAfter — Romantic Couple Surprise & Apology Web Portals",
+    category: "Couple & Lifestyle",
+    shortDescription: "Personalized couple web experiences featuring romantic interactive photo journeys, anniversary surprises, heartfelt apology letters, secret password unlocks, and dynamic music.",
+    overview: 
+      "A boutique digital craftsmanship service creating deeply memorable, emotionally resonant web experiences for couples. Built for anniversary midnight surprises, romantic marriage proposals, long-distance relationships, and heartfelt sincere apology letters with interactive forgiveness reveals, custom background songs, and hidden memory vaults.",
+    problemSolved: 
+      "Standard gifts like chocolates or flowers are forgotten quickly. Couples looking to express deep love, plan a grand surprise, or seek heartfelt forgiveness lack a modern, lasting, deeply personal digital way to celebrate their unique journey.",
+    solutionImplemented: 
+      "Designed and developed highly customizable, cinematic web portals featuring interactive milestone timelines, audio-synced photobooks, animated scratch-off surprise cards, interactive 'Will You Forgive Me?' / 'Will You Marry Me?' interactive choices, password-protected memory vaults, and automated midnight countdown timers that pop celebratory virtual balloons.",
+    keyFeatures: [
+      "Interactive Romance Timeline with custom milestone dates and photos",
+      "Heartfelt Apology Letter module with interactive forgiveness acceptance actions",
+      "Midnight Surprise Countdown with automated virtual balloon pops & music reveal",
+      "Secret Password-protected Memory Vault with voice notes and video messages",
+      "Custom floating audio player synced with couple's favorite romantic playlist",
+      "Interactive Love Quiz and '100 Reasons Why I Love You' digital card deck"
+    ],
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Canvas Confetti", "Howler.js", "Vite", "Cloudinary"],
+    architectureNote: "Couple Web Client ➔ Cloudinary Optimized Media CDN ➔ Framer Motion Animation Orchestrator ➔ Interactive Sound Engine ➔ Mobile Responsive UI",
+    challengesAndSolutions: [
+      {
+        challenge: "Creating an emotionally touching, cinematic feel on mobile screens with fast loading of 100+ high-resolution couple photos.",
+        solution: "Implemented progressive WebP image blur-up loading and client-side memory caching with smooth gesture swiping."
+      },
+      {
+        challenge: "Handling midnight time-zone differences so the surprise reveals exactly at 12:00:00 AM in the recipient's local time.",
+        solution: "Created client-side localized timestamp triggers with fallback countdown synchronizers."
+      }
+    ],
+    image: "/projects/couple-surprise.svg",
+    imageAlt: "ForeverAfter Couple Surprise and Apology Web Portal",
+    status: "Live Demo Available",
+    featured: true
+  },
+  {
+    id: "caregrid-hospital-hms",
+    title: "CareGrid End-to-End Hospital Management System (HMS)",
+    category: "Healthcare & HMS",
+    shortDescription: "Comprehensive enterprise hospital management system featuring live bed occupancy, inpatient/outpatient EHR, doctor schedules, pharmacy POS, and lab diagnostics.",
+    overview: 
+      "An enterprise-grade, cloud-native Hospital Information System (HIS/HMS) engineered for modern hospitals and healthcare chains. Streamlines all clinical and administrative operations into a single cohesive platform—from emergency patient triage and bed ward allocation to digital prescriptions, pharmacy inventory, laboratory reports, and insurance TPA billing.",
+    problemSolved: 
+      "Hospitals suffer from fragmented legacy software, manual paperwork errors, uncoordinated bed allocations, delayed patient handovers, and revenue leakages in pharmacy billing and diagnostic labs.",
+    solutionImplemented: 
+      "Delivered a centralized modular hospital ERP featuring interactive floor-by-floor bed ward maps, real-time doctor consultation queues, digital electronic health records (EHR) with ICD-10 coding, barcode-integrated pharmacy inventory dispensing, and automated insurance claim workflows with audit trails.",
+    keyFeatures: [
+      "Interactive Floor-by-Floor Live Bed Occupancy & Ward Transfer Telemetry",
+      "Unified Electronic Health Records (EHR/EMR) with medical history tracking",
+      "Digital Doctor Consultation Queue with e-Prescription & dosage calculators",
+      "Pharmacy Point-of-Sale (POS) with automated batch expiry & reorder alerts",
+      "Diagnostic Lab Information System (LIS) with direct PDF report generation",
+      "NABH & HIPAA compliance with role-based access control and audit logs"
+    ],
+    techStack: ["React 19", "TypeScript", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Redis", "Docker", "Socket.io"],
+    architectureNote: "Hospital Ward Terminals ➔ Reverse Proxy / SSL ➔ Node.js HMS API Cluster ➔ PostgreSQL Relational Clinical DB ➔ Redis State Cache ➔ Thermal Receipt & Lab Printers",
+    challengesAndSolutions: [
+      {
+        challenge: "Zero-downtime requirement: medical staff must access patient records 24/7 without interruption.",
+        solution: "Engineered database read-replicas, automatic failover clustering, and local offline-first browser sync for critical ward terminals."
+      },
+      {
+        challenge: "Preventing medical prescription errors and medication drug-interaction conflicts.",
+        solution: "Integrated automated clinical safety cross-checking rules that flag adverse drug interactions before pharmacy dispensing."
+      }
+    ],
+    image: "/projects/hospital-hms.svg",
+    imageAlt: "CareGrid End-to-End Hospital Management System (HMS)",
+    status: "Live Demo Available",
+    featured: true
+  },
+  {
+    id: "hospital-website-portal",
+    title: "NovaCare Multi-Specialty Hospital Website & Patient Portal",
+    category: "Web Development",
+    shortDescription: "Next-generation healthcare web platform with live doctor rosters, specialty departments, real-time OPD booking, and patient portal.",
+    overview: 
+      "A flagship multi-specialty hospital web application engineered for maximum patient conversion and seamless clinical onboarding. Features instantaneous digital appointment booking, live physician duty schedules, automated emergency triage queues, and HIPAA/NABH-compliant patient record access.",
+    problemSolved: 
+      "Traditional hospital websites are static digital brochures with cumbersome phone-in appointment booking, causing high patient drop-off rates and overwhelming reception switchboards with routine queries.",
+    solutionImplemented: 
+      "Architected a responsive, accessible React 19 application backed by high-throughput REST APIs and WebSocket queues. Patients can filter 80+ doctors by specialty, check real-time OPD consultation slots, book telehealth video calls, and access laboratory diagnostic reports directly in an encrypted portal.",
+    keyFeatures: [
+      "Dynamic Doctor Directory & Calendar Slot Mutex Booking",
+      "Multi-Specialty Department showcase (Cardiology, Neurology, Oncology, Orthopedics)",
+      "24/7 Emergency Room wait-time telemetry and 1-tap ambulance dispatch",
+      "Interactive Telehealth video consultation portal with WebRTC",
+      "Instant WhatsApp & SMS appointment confirmation tickets with QR check-in"
+    ],
+    techStack: ["React 19", "TypeScript", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "WebSockets", "Vite"],
+    architectureNote: "Client React Portal ➔ Cloudflare Edge CDN ➔ Node.js API Gateway ➔ Doctor Schedule Mutex Lock (Redis) ➔ PostgreSQL Relational Store ➔ Twilio/WhatsApp Notification Worker",
+    challengesAndSolutions: [
+      {
+        challenge: "Managing surge appointment bookings when outpatient slots open at 8:00 AM without race conditions.",
+        solution: "Implemented Redis distributed locks and pessimistic database transactions ensuring doctor time-slots cannot be double-booked."
+      },
+      {
+        challenge: "Delivering sub-1s initial page loads for patients on slow mobile 3G/4G network connections.",
+        solution: "Optimized modern asset pipelines with Brotli compression, lazy-loaded route chunks, and WebP responsive image sets scoring 98+ on Google Lighthouse."
+      }
+    ],
+    image: "/projects/hospital-website.svg",
+    imageAlt: "NovaCare Hospital Website and Patient Telehealth Portal",
+    status: "Live Demo Available",
+    featured: true
+  },
+  {
+    id: "realtime-hospital-chatbot",
+    title: "MediPulse Real-Time Clinical AI Chatbot & Triage Assistant",
+    category: "Generative AI",
+    shortDescription: "Autonomous 24/7 clinical triage chatbot with streaming WebSocket conversational LLM, symptom checker, and instant doctor booking.",
+    overview: 
+      "An intelligent hospital intake copilot engineered to conduct patient pre-triage, parse symptom severity, match patients with optimal medical specialties, and handle hospital FAQ inquiries in over 12 languages with sub-20ms streaming latency.",
+    problemSolved: 
+      "Hospital call centers and emergency waiting rooms are clogged with non-critical inquiries, causing prolonged wait times for acute patients and delaying life-saving triage assessments.",
+    solutionImplemented: 
+      "Developed an event-driven conversational AI pipeline combining streaming WebSockets, clinical protocol RAG retrieval, and emergency guardrail classifiers. The bot guides patients through empathetic multi-turn symptom screening, assigns emergency triage severity scores, and routes them directly to doctor appointment scheduling.",
+    keyFeatures: [
+      "Sub-20ms streaming response generation via full-duplex WebSockets",
+      "Clinical protocol RAG system grounded in NHS/CDC triage guidelines",
+      "Automated red-flag emergency detection with instant ER hotline trigger",
+      "Multi-lingual NLP supporting 12+ international and regional languages",
+      "Direct integration with hospital EHR database for appointment booking and prescription refills"
+    ],
+    techStack: ["Python", "FastAPI", "LangChain", "WebSockets", "Llama-3", "OpenAI API", "Redis Streams", "React", "TypeScript"],
+    architectureNote: "Patient Web Client ➔ WebSocket Ingress ➔ HIPAA Token Redactor ➔ Protocol RAG Index ➔ Guardrailed LLM Stream ➔ Clinical Triage Engine ➔ Hospital EHR API",
+    challengesAndSolutions: [
+      {
+        challenge: "Strict medical safety: preventing AI hallucination or false medical advice during acute emergencies.",
+        solution: "Built a dual-layer classifier that intercepts emergency keywords (chest pain, stroke signs) before LLM generation and presents immediate 911/ER dispatch alerts."
+      },
+      {
+        challenge: "Maintaining low latency during peak multi-user conversational streaming.",
+        solution: "Employed asynchronous FastAPI coroutines backed by Redis Streams for state caching and token buffering."
+      }
+    ],
+    image: "/projects/hospital-chatbot.svg",
+    imageAlt: "MediPulse Real-Time Clinical AI Chatbot and Patient Triage",
+    status: "Live Demo Available",
+    featured: true
+  },
+  {
     id: "rag-pdf-assistant",
     title: "RAG PDF Assistant & Document Intelligence",
     category: "Generative AI",

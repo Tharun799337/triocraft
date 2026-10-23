@@ -76,57 +76,57 @@ export const ContactPage: React.FC = () => {
             <div className="lg:col-span-5 space-y-6">
               
               {/* Availability & Response Box */}
-              <div className="rounded-2xl glass-card p-6 border border-slate-800 space-y-4">
+              <div className="rounded-2xl glass-card p-6 bg-white/95 border border-slate-200 shadow-card-3d space-y-4">
                 <div className="flex items-center gap-2.5">
-                  <span className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
-                  <h3 className="text-base font-bold text-white">Freelance Availability</h3>
+                  <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+                  <h3 className="text-base font-bold font-display text-[#25263A]">Studio Availability</h3>
                 </div>
 
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  Currently accepting new freelance projects for Q4 &amp; 2027. Available for direct contracts, advisory consultations, and rapid MVP builds.
+                <p className="text-xs text-[#5B5D7A] leading-relaxed">
+                  Currently accepting new projects for Q4 &amp; 2027. Available for direct contracts, advisory consultations, healthcare platforms, and rapid MVP builds.
                 </p>
 
-                <div className="pt-2 border-t border-slate-800/80 space-y-2.5 text-xs text-slate-300 font-mono">
+                <div className="pt-2 border-t border-slate-200 space-y-2.5 text-xs text-[#5B5D7A] font-mono">
                   <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <Clock className="w-4 h-4 text-indigo-600 shrink-0" />
                     <span>Response Time: &lt; 24 hours guaranteed</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <MapPin className="w-4 h-4 text-indigo-600 shrink-0" />
                     <span>{PROFILE.location}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>NDA &amp; IP Protection Friendly</span>
                   </div>
                 </div>
               </div>
 
               {/* Direct Channels Cards */}
-              <div className="rounded-2xl glass-card p-6 border border-slate-800 space-y-4">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-300">
+              <div className="rounded-2xl glass-card p-6 bg-white/95 border border-slate-200 shadow-card-3d space-y-4">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-[#25263A] font-mono">
                   Direct Contact Channels
                 </h3>
 
                 {/* Email with copy */}
-                <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between gap-3">
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3 overflow-hidden">
-                    <div className="w-9 h-9 rounded-lg bg-cyan-950 flex items-center justify-center text-cyan-400 shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 shrink-0">
                       <Mail className="w-4 h-4" />
                     </div>
                     <div className="truncate">
-                      <div className="text-[11px] text-slate-400 font-medium">Direct Email</div>
-                      <a href={`mailto:${PROFILE.email}`} className="text-xs font-semibold text-white hover:text-cyan-400 truncate block">
+                      <div className="text-[11px] text-[#5B5D7A] font-medium font-mono">Direct Email</div>
+                      <a href={`mailto:${PROFILE.email}`} className="text-xs font-semibold text-[#25263A] hover:text-indigo-600 truncate block">
                         {PROFILE.email}
                       </a>
                     </div>
                   </div>
                   <button
                     onClick={copyEmail}
-                    className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer shrink-0"
+                    className="p-2 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-[#25263A] transition-colors cursor-pointer shrink-0 shadow-2xs"
                     title="Copy Email"
                   >
-                    {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                    {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
                   </button>
                 </div>
 
@@ -135,20 +135,20 @@ export const ContactPage: React.FC = () => {
                   href={`https://wa.me/${cleanWhatsapp.replace('+', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between gap-3 hover:border-emerald-500/40 transition-colors group"
+                  className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3 hover:border-emerald-500 transition-colors group"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-emerald-950 flex items-center justify-center text-emerald-400 shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
                       <MessageSquare className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-[11px] text-slate-400 font-medium">WhatsApp Chat</div>
-                      <div className="text-xs font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                      <div className="text-[11px] text-[#5B5D7A] font-medium font-mono">WhatsApp Direct</div>
+                      <div className="text-xs font-semibold text-[#25263A] group-hover:text-emerald-700 transition-colors">
                         {PROFILE.whatsapp}
                       </div>
                     </div>
                   </div>
-                  <span className="text-xs text-emerald-400 font-semibold font-mono">Chat ➔</span>
+                  <span className="text-xs text-emerald-700 font-semibold font-mono">Chat ➔</span>
                 </a>
 
                 {/* Social Profiles */}
@@ -157,9 +157,9 @@ export const ContactPage: React.FC = () => {
                     href={PROFILE.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center gap-2.5 text-xs text-slate-300 hover:text-white hover:border-cyan-500/40 transition-colors"
+                    className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2.5 text-xs text-[#25263A] hover:text-indigo-600 hover:border-indigo-400 transition-colors"
                   >
-                    <GithubIcon className="w-4 h-4 text-cyan-400" />
+                    <GithubIcon className="w-4 h-4 text-[#25263A]" />
                     <span>GitHub Profile</span>
                   </a>
 
@@ -167,28 +167,28 @@ export const ContactPage: React.FC = () => {
                     href={PROFILE.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center gap-2.5 text-xs text-slate-300 hover:text-white hover:border-cyan-500/40 transition-colors"
+                    className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2.5 text-xs text-[#25263A] hover:text-indigo-600 hover:border-indigo-400 transition-colors"
                   >
-                    <LinkedinIcon className="w-4 h-4 text-cyan-400" />
+                    <LinkedinIcon className="w-4 h-4 text-[#25263A]" />
                     <span>LinkedIn Profile</span>
                   </a>
                 </div>
               </div>
 
               {/* FAQ Accordion Box */}
-              <div className="rounded-2xl glass-card p-6 border border-slate-800 space-y-4">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
-                  <HelpCircle className="w-4 h-4 text-cyan-400" />
+              <div className="rounded-2xl glass-card p-6 bg-white/95 border border-slate-200 shadow-card-3d space-y-4">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-[#25263A] flex items-center gap-2 font-mono">
+                  <HelpCircle className="w-4 h-4 text-indigo-600" />
                   Frequently Asked Questions
                 </h3>
 
                 <div className="space-y-3">
                   {faqs.map((faq, idx) => (
-                    <div key={idx} className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1.5">
-                      <div className="text-xs font-bold text-white">
+                    <div key={idx} className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                      <div className="text-xs font-bold text-[#25263A]">
                         {faq.q}
                       </div>
-                      <div className="text-xs text-slate-300 leading-relaxed">
+                      <div className="text-xs text-[#5B5D7A] leading-relaxed">
                         {faq.a}
                       </div>
                     </div>
