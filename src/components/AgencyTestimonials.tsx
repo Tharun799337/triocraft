@@ -17,7 +17,7 @@ const testimonials = [
     tag: 'Festival & Live Auction',
   },
   {
-    quote: 'The RevPulse SaaS analytics platform gave us instant visibility into our MRR, churn cohorts, and cash flow. Their automated dunning workflow recovered over $14,000 in failed credit card renewals in month one.',
+    quote: 'The Revenue Tracker platform gave us instant visibility into our MRR, churn cohorts, and cash flow. Their automated dunning workflow recovered over $14,000 in failed credit card renewals in month one.',
     name: 'Karthik Subramanian',
     role: 'Founder & CEO, CloudScale Systems',
     rating: 5,

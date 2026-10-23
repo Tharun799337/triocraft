@@ -39,7 +39,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "saas-revenue-tracker",
-    title: "RevPulse SaaS Revenue & Financial Intelligence Platform",
+    title: "Revenue Tracker — SaaS Financial Intelligence Platform",
     category: "Fintech & Analytics",
     shortDescription: "Real-time SaaS recurring revenue (MRR/ARR) analytics platform with Stripe & PayPal webhook sync, churn alerts, payout forecasting, and cohort retention charts.",
     overview: 
@@ -69,7 +69,7 @@ export const PROJECTS: Project[] = [
       }
     ],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "RevPulse SaaS Revenue and Financial Intelligence Platform",
+    imageAlt: "Revenue Tracker SaaS Financial Intelligence Platform",
     status: "Live Demo Available",
     featured: true
   },

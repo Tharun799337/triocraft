@@ -86,7 +86,7 @@ const projectsList: SubItem[] = [
     icon: Sparkles
   },
   {
-    name: 'RevPulse SaaS Revenue Intelligence',
+    name: 'Revenue Tracker',
     desc: 'Real-time MRR/ARR analytics & Stripe webhook sync',
     href: '#projects',
     icon: LineChart

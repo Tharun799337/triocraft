@@ -63,7 +63,7 @@ const PROJECTS_LIST: ProjectItem[] = [
     id: 'revenue-pulse',
     category: 'fintech',
     categoryLabel: 'Fintech & SaaS',
-    title: 'RevPulse SaaS Revenue Intelligence',
+    title: 'Revenue Tracker',
     desc: 'Recurring revenue telemetry platform with Stripe/PayPal webhook sync, MRR/ARR analytics, churn prediction, and automated dunning.',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
     badge: 'Stripe & PayPal Sync',
