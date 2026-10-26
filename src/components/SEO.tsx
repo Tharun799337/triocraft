@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const BASE_URL = 'https://triocraft-5cix.onrender.com';
 const DEFAULT_IMAGE = `${BASE_URL}/triocraft-logo.png`;
+const SITE_NAME = 'TrioCraft';
 
 interface SEOProps {
   title?: string;
@@ -15,7 +16,7 @@ interface SEOProps {
 }
 
 export const SEO: React.FC<SEOProps> = ({
-  title = 'TrioCraft — Digital Marketing, Web Development & AI Agency',
+  title = 'TrioCraft | Design & Development',
   description = 'TrioCraft is a full-service digital design, custom engineering, and AI agency in Hyderabad. We build web applications, hospital management systems, AI chatbots, and revenue-scaling platforms.',
   image = DEFAULT_IMAGE,
   canonical,
@@ -61,6 +62,7 @@ export const SEO: React.FC<SEOProps> = ({
 
     // ── Open Graph ──────────────────────────────────────────
     const ogUrl = `${BASE_URL}${location.pathname}`;
+    setMeta("meta[property='og:site_name']", 'content', SITE_NAME);
     setMeta("meta[property='og:title']", 'content', title);
     setMeta("meta[property='og:description']", 'content', description);
     setMeta("meta[property='og:url']", 'content', ogUrl);
@@ -84,9 +86,6 @@ export const SEO: React.FC<SEOProps> = ({
     } else if (existingLd) {
       existingLd.remove();
     }
-
-    // ── Scroll to top on route change ───────────────────────
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [title, description, image, canonical, structuredData, location.pathname]);
 
   return null;

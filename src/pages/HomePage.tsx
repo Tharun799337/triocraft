@@ -16,29 +16,44 @@ export const HomePage: React.FC = () => {
   return (
     <div className="relative min-h-screen text-[#1a1f22] font-sans selection:bg-[#FEE2E2] selection:text-[#991B1B] overflow-x-hidden bg-[#FFFFFF]">
       <SEO
-        title="TrioCraft — Web Development, Digital Marketing & AI Agency in Hyderabad"
+        title="TrioCraft | Design & Development"
         description="TrioCraft is a full-service digital agency in Hyderabad. We build custom websites, hospital management systems (HMS), real-time AI chatbots, influencer marketing campaigns, and revenue intelligence platforms."
         structuredData={{
           '@context': 'https://schema.org',
-          '@type': 'ProfessionalService',
-          name: 'TrioCraft',
-          alternateName: ['Trio Craft', 'TrioCraft Digital Agency', 'TrioCraft Design & Development'],
-          url: 'https://triocraft-5cix.onrender.com/',
-          logo: 'https://triocraft-5cix.onrender.com/triocraft-logo.png',
-          image: 'https://triocraft-5cix.onrender.com/triocraft-logo.png',
-          description: 'TrioCraft is a full-service digital design, custom engineering, and AI agency based in Hyderabad, India. We build web applications, hospital management systems, AI chatbots, influencer marketing campaigns, and revenue-scaling platforms.',
-          telephone: '+91-79933-76939',
-          email: 'trioocraaft@gmail.com',
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: 'Hyderabad',
-            addressRegion: 'Telangana',
-            addressCountry: 'IN',
-          },
-          areaServed: 'Worldwide',
-          serviceType: ['Web Development', 'Digital Marketing', 'AI Chatbot Development', 'Hospital Management Systems', 'Influencer Marketing'],
-          sameAs: ['https://github.com/Tharun799337'],
-          priceRange: '₹₹',
+          '@graph': [
+            {
+              '@type': 'WebSite',
+              name: 'TrioCraft',
+              alternateName: 'TrioCraft Design & Development',
+              url: 'https://triocraft-5cix.onrender.com/',
+            },
+            {
+              '@type': 'ProfessionalService',
+              name: 'TrioCraft',
+              alternateName: ['Trio Craft', 'TrioCraft Digital Agency', 'TrioCraft Design & Development'],
+              url: 'https://triocraft-5cix.onrender.com/',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://triocraft-5cix.onrender.com/triocraft-logo.png',
+                width: 512,
+                height: 512,
+              },
+              image: 'https://triocraft-5cix.onrender.com/triocraft-logo.png',
+              description: 'TrioCraft is a full-service digital design, custom engineering, and AI agency based in Hyderabad, India. We build web applications, hospital management systems, AI chatbots, influencer marketing campaigns, and revenue-scaling platforms.',
+              telephone: '+91-79933-76939',
+              email: 'trioocraaft@gmail.com',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Hyderabad',
+                addressRegion: 'Telangana',
+                addressCountry: 'IN',
+              },
+              areaServed: 'Worldwide',
+              serviceType: ['Web Development', 'Digital Marketing', 'AI Chatbot Development', 'Hospital Management Systems', 'Influencer Marketing'],
+              sameAs: ['https://github.com/Tharun799337'],
+              priceRange: '₹₹',
+            },
+          ],
         }}
       />
 
