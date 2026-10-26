@@ -1,43 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Layers, ExternalLink, X, ArrowLeft, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
 
-// ── Ornate Baroque Filigree Corner (Matches Image 2 Antique Gold Frame) ──────
-const BaroqueFiligreeCorner: React.FC<{ position: 'tl' | 'tr' | 'bl' | 'br' }> = ({ position }) => {
-  const rotation = {
-    tl: '',
-    tr: 'scale-x-[-1]',
-    bl: 'scale-y-[-1]',
-    br: 'scale-[-1]',
-  }[position];
-
+// ── Modern High-Tech Corner HUD Accents (Harmonious with Trio Craft Theme) ─────
+const ModernCornerBracket: React.FC<{ position: 'tl' | 'tr' | 'bl' | 'br' }> = ({ position }) => {
   const posClasses = {
-    tl: '-top-2 -left-2',
-    tr: '-top-2 -right-2',
-    bl: '-bottom-2 -left-2',
-    br: '-bottom-2 -right-2',
+    tl: 'top-2.5 left-2.5 border-t-2 border-l-2 rounded-tl-[4px]',
+    tr: 'top-2.5 right-2.5 border-t-2 border-r-2 rounded-tr-[4px]',
+    bl: 'bottom-2.5 left-2.5 border-b-2 border-l-2 rounded-bl-[4px]',
+    br: 'bottom-2.5 right-2.5 border-b-2 border-r-2 rounded-br-[4px]',
   }[position];
 
   return (
-    <svg
-      className={`absolute ${posClasses} w-9 h-9 pointer-events-none z-30 transform ${rotation} filter drop-shadow-[0_2px_4px_rgba(140,109,31,0.7)]`}
-      viewBox="0 0 48 48"
-      fill="none"
-    >
-      <path
-        d="M6 6 C18 6 24 10 26 22 C28 14 36 10 44 10 C36 14 34 26 34 42 C28 30 18 28 12 42 C12 32 16 22 6 22 C12 22 6 18 6 6 Z"
-        fill="url(#baroqueGoldGrad)"
-      />
-      <circle cx="10" cy="10" r="3.2" fill="#FFF4BD" />
-      <circle cx="10" cy="10" r="1.5" fill="#785913" />
-      <defs>
-        <linearGradient id="baroqueGoldGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#FFF2A3" />
-          <stop offset="35%" stopColor="#D4AF37" />
-          <stop offset="70%" stopColor="#B8860B" />
-          <stop offset="100%" stopColor="#785913" />
-        </linearGradient>
-      </defs>
-    </svg>
+    <span
+      className={`absolute ${posClasses} w-3 h-3 border-[#32C8BF] pointer-events-none z-30 transition-all opacity-85 shadow-[0_0_8px_rgba(50,200,191,0.5)]`}
+    />
   );
 };
 
@@ -276,31 +252,36 @@ export const ProjectShowcase: React.FC = () => {
                     : 'w-[230px] sm:w-[265px] scale-[0.96] opacity-75 hover:opacity-100 z-10'
                 }`}
               >
-                {/* Ornate Baroque Gold Frame Wrapper for the Middle Card (Image 2 Theme) */}
+                {/* Modern High-End Spotlight Frame (Trio Craft Theme: #32C8BF Teal & Amber Dual-Glow) */}
                 <div
                   className={`w-full h-full flex flex-col justify-between transition-all duration-500 relative ${
                     isMiddle
-                      ? 'p-[3px] rounded-[28px] bg-gradient-to-b from-[#FFF4B8] via-[#D4AF37] via-[#B8860B] to-[#785913] shadow-[0_16px_45px_rgba(212,175,55,0.45),0_0_30px_rgba(255,215,0,0.3)] ring-1 ring-[#FFF8CC]/80 overflow-visible'
+                      ? 'p-[2.5px] rounded-3xl bg-gradient-to-br from-[#32C8BF] via-amber-400 to-[#32C8BF] shadow-[0_20px_50px_-10px_rgba(50,200,191,0.38),0_10px_30px_-5px_rgba(245,158,11,0.22)] ring-2 ring-[#32C8BF]/30 overflow-visible'
                       : 'rounded-2xl bg-white border border-slate-200/90 shadow-sm card-hover-smooth card-shine overflow-hidden'
                   }`}
                 >
                   {isMiddle && (
                     <>
-                      <BaroqueFiligreeCorner position="tl" />
-                      <BaroqueFiligreeCorner position="tr" />
-                      <BaroqueFiligreeCorner position="bl" />
-                      <BaroqueFiligreeCorner position="br" />
-                      {/* Ornate Gold Crown Crest */}
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-40 px-3 py-0.5 rounded-full bg-gradient-to-r from-[#785913] via-[#D4AF37] via-[#FFF4B8] via-[#D4AF37] to-[#785913] text-[#3D2802] font-black font-mono text-[9px] uppercase tracking-widest shadow-[0_4px_14px_rgba(212,175,55,0.6)] border border-[#FFF8CC] flex items-center gap-1.5 whitespace-nowrap">
-                        <Sparkles className="w-3 h-3 text-[#3D2802] fill-[#3D2802]" />
-                        <span>SPOTLIGHT</span>
-                        <Sparkles className="w-3 h-3 text-[#3D2802] fill-[#3D2802]" />
+                      <ModernCornerBracket position="tl" />
+                      <ModernCornerBracket position="tr" />
+                      <ModernCornerBracket position="bl" />
+                      <ModernCornerBracket position="br" />
+                      {/* Modern High-Tech Spotlight Pill */}
+                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-40 px-3.5 py-1 rounded-full bg-slate-900 border border-[#32C8BF]/60 text-white shadow-[0_4px_16px_rgba(50,200,191,0.35)] flex items-center gap-1.5 whitespace-nowrap">
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#32C8BF] opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#32C8BF]"></span>
+                        </span>
+                        <span className="font-mono font-bold text-[9.5px] tracking-widest uppercase bg-gradient-to-r from-white via-amber-200 to-[#32C8BF] bg-clip-text text-transparent">
+                          SPOTLIGHT
+                        </span>
+                        <Sparkles className="w-3 h-3 text-amber-400 fill-amber-400" />
                       </div>
                     </>
                   )}
 
                   {/* Card Interior */}
-                  <div className={`w-full h-full bg-white flex flex-col justify-between overflow-hidden ${isMiddle ? 'rounded-[25px]' : 'rounded-2xl'}`}>
+                  <div className={`w-full h-full bg-white flex flex-col justify-between overflow-hidden ${isMiddle ? 'rounded-[21px]' : 'rounded-2xl'}`}>
                     <div>
                       {/* Compact Photographic Image */}
                       <div className="relative w-full h-36 sm:h-40 overflow-hidden bg-slate-100">
@@ -333,7 +314,7 @@ export const ProjectShowcase: React.FC = () => {
                       {/* Compact Card Body */}
                       <div className="p-4 sm:p-5">
                         <h3 className={`font-display font-bold text-sm sm:text-base mb-1.5 line-clamp-1 transition-colors ${
-                          isMiddle ? 'text-amber-900 font-extrabold' : 'text-[#1a1f22] group-hover:text-amber-600'
+                          isMiddle ? 'text-[#1a1f22] font-extrabold group-hover:text-[#32C8BF]' : 'text-[#1a1f22] group-hover:text-amber-600'
                         }`}>
                           {project.title}
                         </h3>
@@ -363,12 +344,16 @@ export const ProjectShowcase: React.FC = () => {
 
                     {/* Compact Card Footer Action */}
                     <div className="p-4 sm:p-5 pt-0">
-                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-amber-600 group-hover:text-amber-700">
+                      <div className={`pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold ${
+                        isMiddle ? 'text-[#32C8BF] group-hover:text-amber-500' : 'text-amber-600 group-hover:text-amber-700'
+                      }`}>
                         <span className="flex items-center gap-1.5">
                           <span>View Specs</span>
                           <ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                         </span>
-                        <span className="text-[9px] font-mono text-slate-400 uppercase">Live Demo</span>
+                        <span className={`text-[9px] font-mono uppercase ${isMiddle ? 'text-[#32C8BF] font-semibold' : 'text-slate-400'}`}>
+                          {isMiddle ? '★ Spotlight' : 'Live Demo'}
+                        </span>
                       </div>
                     </div>
                   </div>
