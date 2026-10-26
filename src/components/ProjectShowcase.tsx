@@ -158,7 +158,7 @@ export const ProjectShowcase: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-white w-full border-b border-slate-100 overflow-hidden">
+    <section id="projects" className="py-20 bg-[#f8f9fc] w-full border-b border-slate-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

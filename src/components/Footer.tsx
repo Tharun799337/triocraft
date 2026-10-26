@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t border-slate-200 text-[#1a1f22] pt-16 pb-12 w-full">
+    <footer className="bg-[#f8f9fc] border-t border-slate-200 text-[#1a1f22] pt-16 pb-12 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Columns */}

@@ -42,7 +42,7 @@ const steps = [
 
 export const HowWeDoIt: React.FC = () => {
   return (
-    <section id="how-we-do-it" className="py-20 sm:py-28 bg-white w-full border-b border-slate-100">
+    <section id="how-we-do-it" className="py-20 sm:py-28 bg-[#f8f9fc] w-full border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading (Raiseup "How we do it" Style) */}

@@ -32,7 +32,7 @@ export const AgencyFAQ: React.FC = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-white w-full border-b border-slate-100">
+    <section id="faq" className="py-20 sm:py-28 bg-[#f8f9fc] w-full border-b border-slate-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}

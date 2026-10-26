@@ -42,7 +42,7 @@ const offers = [
 
 export const QuickOffers: React.FC = () => {
   return (
-    <section className="py-16 bg-white w-full border-b border-slate-100">
+    <section className="py-16 bg-[#f8f9fc] w-full border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
