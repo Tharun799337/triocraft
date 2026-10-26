@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Sparkles, ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react';
 import { DeveloperHero3D } from './DeveloperHero3D';
 
@@ -37,20 +38,20 @@ export const LuxuryHero: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="mt-8 flex flex-wrap items-center gap-4 w-full sm:w-auto">
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="btn-raiseup-gold px-8 py-4 rounded-full text-sm uppercase tracking-wider font-bold inline-flex items-center gap-2.5 cursor-pointer"
               >
                 <span>Get Started</span>
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
 
-              <a
-                href="#projects"
+              <Link
+                to="/projects"
                 className="px-7 py-4 rounded-full bg-white hover:bg-slate-50 text-[#1a1f22] border border-slate-300 font-bold text-sm shadow-sm hover:border-amber-400 transition-all cursor-pointer inline-flex items-center gap-2"
               >
                 <span>Explore Projects</span>
-              </a>
+              </Link>
 
               <a
                 href="https://wa.me/917993370000?text=Hello%20TrioCraft%20Team,%20I%20would%20like%20to%20discuss%20a%20project"

@@ -14,11 +14,11 @@ export const Footer: React.FC = () => {
 
           {/* Col 1: Brand & About */}
           <div className="space-y-4 text-left">
-            <Link to="/home" className="flex items-center gap-3 group inline-flex">
+            <div className="flex items-center gap-3">
               <img
                 src="/triocraft-emblem.png"
                 alt="TrioCraft Official Emblem"
-                className="w-10 h-10 object-contain drop-shadow-xs group-hover:scale-105 transition-transform"
+                className="w-10 h-10 object-contain drop-shadow-xs"
               />
               <div className="flex flex-col text-left">
                 <span className="font-display font-medium text-2xl text-slate-900 tracking-tight leading-none">
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
                   Design &amp; Development
                 </span>
               </div>
-            </Link>
+            </div>
 
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Trio Craft is a full-service digital design, custom engineering, and AI agency. We create impactful web applications, hospital management systems, viral influencer campaigns, and revenue-scaling platforms.
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-slate-600">
               <li>
-                <Link to="/home" className="hover:text-amber-600 transition-colors">Home</Link>
+                <Link to="/" className="hover:text-amber-600 transition-colors">Home</Link>
               </li>
               <li>
                 <Link to="/about" className="hover:text-amber-600 transition-colors">About TrioCraft</Link>
@@ -136,7 +136,6 @@ export const Footer: React.FC = () => {
                 <Phone className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                 <a href="tel:+917993376939" className="hover:text-emerald-700 font-semibold">
                   +91 79933 76939
-
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
@@ -147,13 +146,13 @@ export const Footer: React.FC = () => {
               </div>
 
               <div className="pt-2">
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
                   className="btn-raiseup-gold w-full py-2.5 rounded-full text-xs uppercase font-bold inline-flex items-center justify-center gap-2 shadow-sm"
                 >
                   <span>Start a Project</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

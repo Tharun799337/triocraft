@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { TrendingUp, Users, Globe, Building2, Bot, Video, ArrowRight, Check } from 'lucide-react';
 
 const agencyServices = [
@@ -122,13 +123,13 @@ export const AgencyServices: React.FC = () => {
                   </div>
                 </div>
 
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
                   className="w-full py-3 px-4 rounded-xl font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 bg-slate-50 hover:bg-[#32C8BF] hover:text-white text-[#1a1f22] border border-slate-200 transition-all cursor-pointer group-hover:border-[#32C8BF]"
                 >
                   <span>Request Proposal</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </Link>
               </div>
             );
           })}

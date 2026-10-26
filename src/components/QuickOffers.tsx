@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { TrendingUp, Globe, HeartHandshake, Bot, ArrowRight } from 'lucide-react';
 
 const offers = [
@@ -9,7 +10,7 @@ const offers = [
     color: 'text-amber-600',
     bg: 'bg-amber-50',
     border: 'border-amber-200',
-    href: '#services',
+    href: '/services',
   },
   {
     icon: Globe,
@@ -18,7 +19,7 @@ const offers = [
     color: 'text-blue-600',
     bg: 'bg-blue-50',
     border: 'border-blue-200',
-    href: '#services',
+    href: '/services',
   },
   {
     icon: HeartHandshake,
@@ -27,7 +28,7 @@ const offers = [
     color: 'text-rose-600',
     bg: 'bg-rose-50',
     border: 'border-rose-200',
-    href: '#services',
+    href: '/services',
   },
   {
     icon: Bot,
@@ -36,7 +37,7 @@ const offers = [
     color: 'text-emerald-600',
     bg: 'bg-emerald-50',
     border: 'border-emerald-200',
-    href: '#services',
+    href: '/services',
   },
 ];
 
@@ -63,9 +64,9 @@ export const QuickOffers: React.FC = () => {
           {offers.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <a
+              <Link
                 key={idx}
-                href={item.href}
+                to={item.href}
                 className="card-hover-smooth card-shine group p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm block text-left cursor-pointer"
               >
                 <div className={`w-14 h-14 rounded-2xl ${item.bg} ${item.border} border flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
@@ -81,7 +82,7 @@ export const QuickOffers: React.FC = () => {
                   <span>Learn More</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>

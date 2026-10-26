@@ -23,7 +23,7 @@ export const Navbar: React.FC = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { label: 'Home', path: '/home' },
+    { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
     { label: 'Services', path: '/services' },
     { label: 'Projects', path: '/projects' },
@@ -32,7 +32,7 @@ export const Navbar: React.FC = () => {
   ];
 
   const isActive = (path: string) => {
-    if (path === '/home') return location.pathname === '/' || location.pathname === '/home';
+    if (path === '/') return location.pathname === '/';
     return location.pathname.startsWith(path);
   };
 
@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo / Brand Name */}
-          <Link to="/home" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-purple-600 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-md shadow-cyan-500/20">
               <div className="w-full h-full bg-[#070b16] rounded-[10px] flex items-center justify-center">
                 <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400 font-mono text-lg">

@@ -27,7 +27,7 @@ export const NotFoundPage: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-            <Link to="/home">
+            <Link to="/">
               <Button variant="primary" size="md" icon={Home} iconPosition="left">
                 Return Home
               </Button>

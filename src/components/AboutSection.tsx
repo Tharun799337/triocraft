@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, ShieldCheck } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
@@ -95,13 +96,13 @@ export const AboutSection: React.FC = () => {
 
             {/* CTA Link */}
             <div className="mt-8">
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="btn-raiseup-gold px-8 py-3.5 rounded-full text-xs uppercase tracking-wider font-bold inline-flex items-center gap-2 cursor-pointer"
               >
                 <span>Work With Us</span>
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
 
           </div>

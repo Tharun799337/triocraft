@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { RootLayout } from './layouts/RootLayout';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
@@ -16,9 +16,7 @@ export function App() {
       <Routes>
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/" element={<RootLayout />}>
-          {/* Redirect bare / → /home so the URL always shows /home */}
-          <Route index element={<Navigate to="/home" replace />} />
-          <Route path="home" element={<HomePage />} />
+          <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="services" element={<ServicesPage />} />
           <Route path="projects" element={<ProjectsPage />} />

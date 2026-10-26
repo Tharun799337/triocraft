@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import {
   Menu,
   X,
@@ -26,42 +26,42 @@ interface SubItem {
   icon: React.ElementType;
 }
 
-// ONLY Services in the Services Dropdown
+// Services in the Services Dropdown
 const servicesList: SubItem[] = [
   {
     name: 'Digital Marketing & SEO',
     desc: 'Google Search, Meta Ads, and ROI conversion funnels',
-    href: '#services',
+    href: '/services',
     icon: TrendingUp
   },
   {
     name: 'Influencer Marketing',
     desc: 'Verified creator matchmaking & viral short-form reels',
-    href: '#services',
+    href: '/services',
     icon: Megaphone
   },
   {
     name: 'Website & App Development',
     desc: 'Modern React 19, Next.js, and high-performance apps',
-    href: '#services',
+    href: '/services',
     icon: Globe
   },
   {
     name: 'Hospital & Healthcare HMS',
     desc: 'CareGrid clinical ERP, bed telemetry & patient portal',
-    href: '#services',
+    href: '/services',
     icon: Building2
   },
   {
     name: 'Real-Time AI & Chatbots',
     desc: '24/7 autonomous triage copilot & WhatsApp automation',
-    href: '#services',
+    href: '/services',
     icon: Bot
   },
   {
     name: 'Creative Design & Video',
     desc: 'Viral reels video editing, brand identity & UI/UX',
-    href: '#services',
+    href: '/services',
     icon: Video
   },
 ];
@@ -71,37 +71,37 @@ const projectsList: SubItem[] = [
   {
     name: 'Hospital Management System',
     desc: 'Enterprise bed telemetry, EHR records & pharmacy POS',
-    href: '#projects',
+    href: '/projects',
     icon: Building2
   },
   {
     name: 'Hospital Website',
     desc: '24/7 OPD doctor booking & encrypted medical records',
-    href: '#projects',
+    href: '/projects',
     icon: HeartPulse
   },
   {
     name: 'Vinayaka Chavithi Maha Utsav Portal',
     desc: 'Online puja bookings, 4K aarti stream & laddu auction',
-    href: '#projects',
+    href: '/projects',
     icon: Sparkles
   },
   {
     name: 'Revenue Tracker',
     desc: 'Real-time MRR/ARR analytics & Stripe webhook sync',
-    href: '#projects',
+    href: '/projects',
     icon: LineChart
   },
   {
     name: 'ForeverAfter Couple Surprise & Apology',
     desc: 'Romantic milestone journeys & midnight music reveals',
-    href: '#projects',
+    href: '/projects',
     icon: Heart
   },
   {
     name: 'Real-Time Chatbots',
     desc: '18ms streaming conversational triage & symptom check',
-    href: '#projects',
+    href: '/projects',
     icon: Cpu
   },
 ];
@@ -111,8 +111,6 @@ export const FloatingNavbar: React.FC = () => {
   const [servicesOpen, setServicesOpen] = useState<boolean>(false);
   const [projectsOpen, setProjectsOpen] = useState<boolean>(false);
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
-
-  const navigate = useNavigate();
   const location = useLocation();
 
   const servicesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -126,18 +124,12 @@ export const FloatingNavbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Smooth scroll to hash anchor after routing
+  // Close dropdowns on route change
   useEffect(() => {
-    if (location.hash) {
-      const timer = setTimeout(() => {
-        const target = document.querySelector(location.hash);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-      return () => clearTimeout(timer);
-    }
-  }, [location.pathname, location.hash]);
+    setMobileOpen(false);
+    setServicesOpen(false);
+    setProjectsOpen(false);
+  }, [location.pathname]);
 
   const handleServicesEnter = () => {
     if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
@@ -165,28 +157,10 @@ export const FloatingNavbar: React.FC = () => {
     }, 150);
   };
 
-  const handleHomeClick = () => {
+  const closeAll = () => {
     setMobileOpen(false);
     setServicesOpen(false);
     setProjectsOpen(false);
-    if (location.pathname === '/home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  const handleNavClick = (href: string) => {
-    setMobileOpen(false);
-    setServicesOpen(false);
-    setProjectsOpen(false);
-
-    if (location.pathname === '/home' || location.pathname === '/') {
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      navigate(`/home${href}`);
-    }
   };
 
   return (
@@ -201,8 +175,8 @@ export const FloatingNavbar: React.FC = () => {
         
         {/* Brand Logo with Official Transparent Emblem */}
         <Link
-          to="/home"
-          onClick={handleHomeClick}
+          to="/"
+          onClick={closeAll}
           className="flex items-center gap-3 group cursor-pointer"
         >
           <img
@@ -220,48 +194,82 @@ export const FloatingNavbar: React.FC = () => {
           </div>
         </Link>
 
-        {/* Desktop Navigation Links — Attractive Medium Weight & Modern Spacing */}
+        {/* Desktop Navigation Links — Multi-Page Routes */}
         <nav className="hidden lg:flex items-center space-x-7 text-[16px] font-medium text-slate-700">
-          <Link
-            to="/home"
-            onClick={handleHomeClick}
-            className="hover:text-amber-600 transition-colors py-1.5 px-1 relative group"
+          <NavLink
+            to="/"
+            end
+            onClick={closeAll}
+            className={({ isActive }) =>
+              `hover:text-amber-600 transition-colors py-1.5 px-1 relative group ${
+                isActive ? 'text-amber-600 font-semibold' : 'text-slate-700'
+              }`
+            }
           >
-            <span>Home</span>
-            <span className="absolute bottom-0 left-1 right-1 h-0.5 bg-amber-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
-          </Link>
+            {({ isActive }) => (
+              <>
+                <span>Home</span>
+                <span
+                  className={`absolute bottom-0 left-1 right-1 h-0.5 bg-amber-500 transition-transform origin-left duration-200 ${
+                    isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}
+                />
+              </>
+            )}
+          </NavLink>
 
-          <a
-            href="#about"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('#about');
-            }}
-            className="hover:text-amber-600 transition-colors py-1.5 px-1 relative group"
+          <NavLink
+            to="/about"
+            onClick={closeAll}
+            className={({ isActive }) =>
+              `hover:text-amber-600 transition-colors py-1.5 px-1 relative group ${
+                isActive ? 'text-amber-600 font-semibold' : 'text-slate-700'
+              }`
+            }
           >
-            <span>About</span>
-            <span className="absolute bottom-0 left-1 right-1 h-0.5 bg-amber-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
-          </a>
+            {({ isActive }) => (
+              <>
+                <span>About</span>
+                <span
+                  className={`absolute bottom-0 left-1 right-1 h-0.5 bg-amber-500 transition-transform origin-left duration-200 ${
+                    isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}
+                />
+              </>
+            )}
+          </NavLink>
 
-          {/* 1. SERVICES DROPDOWN (ONLY SERVICES) — BUTTERY SMOOTH HOVER */}
+          {/* 1. SERVICES DROPDOWN */}
           <div
             className="relative py-1.5"
             onMouseEnter={handleServicesEnter}
             onMouseLeave={handleServicesLeave}
           >
-            <button
-              onClick={() => setServicesOpen(!servicesOpen)}
-              className={`flex items-center gap-1.5 py-0.5 px-1 transition-colors cursor-pointer ${
-                servicesOpen ? 'text-amber-600' : 'hover:text-amber-600'
-              }`}
+            <NavLink
+              to="/services"
+              onClick={closeAll}
+              className={({ isActive }) =>
+                `flex items-center gap-1.5 py-0.5 px-1 transition-colors cursor-pointer relative group ${
+                  isActive || servicesOpen ? 'text-amber-600 font-semibold' : 'text-slate-700 hover:text-amber-600'
+                }`
+              }
             >
-              <span>Services</span>
-              <ChevronDown
-                className={`w-4 h-4 text-slate-400 transition-transform duration-300 ease-out ${
-                  servicesOpen ? 'rotate-180 text-amber-600' : ''
-                }`}
-              />
-            </button>
+              {({ isActive }) => (
+                <>
+                  <span>Services</span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-slate-400 transition-transform duration-300 ease-out ${
+                      servicesOpen ? 'rotate-180 text-amber-600' : ''
+                    }`}
+                  />
+                  <span
+                    className={`absolute bottom-0 left-1 right-1 h-0.5 bg-amber-500 transition-transform origin-left duration-200 ${
+                      isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    }`}
+                  />
+                </>
+              )}
+            </NavLink>
 
             {/* Smooth Animated Dropdown Container */}
             <div
@@ -271,25 +279,27 @@ export const FloatingNavbar: React.FC = () => {
                   : 'opacity-0 translate-y-0 pointer-events-none invisible scale-[0.98]'
               }`}
             >
-              {/* Invisible Hover Bridge to prevent gap jitter */}
               <div className="absolute -top-3 left-0 w-full h-3" />
 
               <div className="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-amber-600 border-b border-slate-100 mb-1 flex items-center justify-between">
                 <span>Our Capabilities</span>
-                <span className="text-[10px] text-slate-400 font-normal">Full-Service Studio</span>
+                <Link
+                  to="/services"
+                  onClick={closeAll}
+                  className="text-[10px] text-amber-600 hover:underline font-semibold"
+                >
+                  View All &rarr;
+                </Link>
               </div>
 
               <div className="space-y-1">
                 {servicesList.map((item, idx) => {
                   const Icon = item.icon;
                   return (
-                    <a
+                    <Link
                       key={idx}
-                      href={item.href}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavClick(item.href);
-                      }}
+                      to={item.href}
+                      onClick={closeAll}
                       className="p-2.5 rounded-xl hover:bg-amber-50/70 border border-transparent hover:border-amber-200/60 transition-all duration-150 group cursor-pointer flex items-start gap-3 text-left"
                     >
                       <div className="w-8 h-8 rounded-lg bg-amber-100/70 text-amber-600 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-200 mt-0.5">
@@ -304,32 +314,44 @@ export const FloatingNavbar: React.FC = () => {
                           {item.desc}
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
             </div>
           </div>
 
-          {/* 2. PROJECTS DROPDOWN (ONLY PROJECTS) — BUTTERY SMOOTH HOVER */}
+          {/* 2. PROJECTS DROPDOWN */}
           <div
             className="relative py-1.5"
             onMouseEnter={handleProjectsEnter}
             onMouseLeave={handleProjectsLeave}
           >
-            <button
-              onClick={() => setProjectsOpen(!projectsOpen)}
-              className={`flex items-center gap-1.5 py-0.5 px-1 transition-colors cursor-pointer ${
-                projectsOpen ? 'text-amber-600' : 'hover:text-amber-600'
-              }`}
+            <NavLink
+              to="/projects"
+              onClick={closeAll}
+              className={({ isActive }) =>
+                `flex items-center gap-1.5 py-0.5 px-1 transition-colors cursor-pointer relative group ${
+                  isActive || projectsOpen ? 'text-amber-600 font-semibold' : 'text-slate-700 hover:text-amber-600'
+                }`
+              }
             >
-              <span>Projects</span>
-              <ChevronDown
-                className={`w-4 h-4 text-slate-400 transition-transform duration-300 ease-out ${
-                  projectsOpen ? 'rotate-180 text-amber-600' : ''
-                }`}
-              />
-            </button>
+              {({ isActive }) => (
+                <>
+                  <span>Projects</span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-slate-400 transition-transform duration-300 ease-out ${
+                      projectsOpen ? 'rotate-180 text-amber-600' : ''
+                    }`}
+                  />
+                  <span
+                    className={`absolute bottom-0 left-1 right-1 h-0.5 bg-amber-500 transition-transform origin-left duration-200 ${
+                      isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    }`}
+                  />
+                </>
+              )}
+            </NavLink>
 
             {/* Smooth Animated Dropdown Container */}
             <div
@@ -339,25 +361,27 @@ export const FloatingNavbar: React.FC = () => {
                   : 'opacity-0 translate-y-0 pointer-events-none invisible scale-[0.98]'
               }`}
             >
-              {/* Invisible Hover Bridge to prevent gap jitter */}
               <div className="absolute -top-3 left-0 w-full h-3" />
 
               <div className="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-amber-600 border-b border-slate-100 mb-1 flex items-center justify-between">
                 <span>Featured Case Studies</span>
-                <span className="text-[10px] text-slate-400 font-normal">Recent Work</span>
+                <Link
+                  to="/projects"
+                  onClick={closeAll}
+                  className="text-[10px] text-amber-600 hover:underline font-semibold"
+                >
+                  View All &rarr;
+                </Link>
               </div>
 
               <div className="space-y-1">
                 {projectsList.map((item, idx) => {
                   const Icon = item.icon;
                   return (
-                    <a
+                    <Link
                       key={idx}
-                      href={item.href}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavClick(item.href);
-                      }}
+                      to={item.href}
+                      onClick={closeAll}
                       className="p-2.5 rounded-xl hover:bg-amber-50/70 border border-transparent hover:border-amber-200/60 transition-all duration-150 group cursor-pointer flex items-start gap-3 text-left"
                     >
                       <div className="w-8 h-8 rounded-lg bg-amber-100/70 text-amber-600 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-200 mt-0.5">
@@ -372,65 +396,77 @@ export const FloatingNavbar: React.FC = () => {
                           {item.desc}
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
             </div>
           </div>
 
-          <a
-            href="#how-we-do-it"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('#how-we-do-it');
-            }}
-            className="hover:text-amber-600 transition-colors py-1.5 px-1 relative group"
+          <NavLink
+            to="/blog"
+            onClick={closeAll}
+            className={({ isActive }) =>
+              `hover:text-amber-600 transition-colors py-1.5 px-1 relative group ${
+                isActive ? 'text-amber-600 font-semibold' : 'text-slate-700'
+              }`
+            }
           >
-            <span>How We Do It</span>
-            <span className="absolute bottom-0 left-1 right-1 h-0.5 bg-amber-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
-          </a>
+            {({ isActive }) => (
+              <>
+                <span>Blog</span>
+                <span
+                  className={`absolute bottom-0 left-1 right-1 h-0.5 bg-amber-500 transition-transform origin-left duration-200 ${
+                    isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}
+                />
+              </>
+            )}
+          </NavLink>
 
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('#contact');
-            }}
-            className="hover:text-amber-600 transition-colors py-1.5 px-1 relative group"
+          <NavLink
+            to="/contact"
+            onClick={closeAll}
+            className={({ isActive }) =>
+              `hover:text-amber-600 transition-colors py-1.5 px-1 relative group ${
+                isActive ? 'text-amber-600 font-semibold' : 'text-slate-700'
+              }`
+            }
           >
-            <span>Contact</span>
-            <span className="absolute bottom-0 left-1 right-1 h-0.5 bg-amber-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
-          </a>
+            {({ isActive }) => (
+              <>
+                <span>Contact</span>
+                <span
+                  className={`absolute bottom-0 left-1 right-1 h-0.5 bg-amber-500 transition-transform origin-left duration-200 ${
+                    isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}
+                />
+              </>
+            )}
+          </NavLink>
         </nav>
 
         {/* Right CTA Button */}
         <div className="hidden sm:flex items-center gap-4">
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('#contact');
-            }}
+          <Link
+            to="/contact"
+            onClick={closeAll}
             className="btn-raiseup-gold px-6 py-2.5 rounded-full text-xs uppercase tracking-wider font-semibold inline-flex items-center gap-2 cursor-pointer shadow-md hover:shadow-lg transition-all"
           >
             <span>Get Started</span>
             <ArrowRight className="w-3.5 h-3.5" />
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Hamburger Button */}
         <div className="flex items-center gap-2 lg:hidden">
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('#contact');
-            }}
+          <Link
+            to="/contact"
+            onClick={closeAll}
             className="btn-raiseup-gold px-4 py-2 rounded-full text-xs font-semibold inline-flex items-center"
           >
             Get Started
-          </a>
+          </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="p-2 rounded-xl text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
@@ -445,91 +481,103 @@ export const FloatingNavbar: React.FC = () => {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-b border-slate-200 px-6 py-5 shadow-2xl animate-in slide-in-from-top-4 max-h-[85vh] overflow-y-auto text-left">
           <div className="flex flex-col space-y-3 font-medium text-[16px] text-slate-800">
-            <Link
-              to="/home"
-              onClick={handleHomeClick}
-              className="py-2 border-b border-slate-100 hover:text-amber-600 transition-colors"
+            <NavLink
+              to="/"
+              end
+              onClick={closeAll}
+              className={({ isActive }) =>
+                `py-2 border-b border-slate-100 transition-colors ${
+                  isActive ? 'text-amber-600 font-semibold' : 'hover:text-amber-600'
+                }`
+              }
             >
               Home
-            </Link>
-            <a
-              href="#about"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('#about');
-              }}
-              className="py-2 border-b border-slate-100 hover:text-amber-600 transition-colors"
+            </NavLink>
+            <NavLink
+              to="/about"
+              onClick={closeAll}
+              className={({ isActive }) =>
+                `py-2 border-b border-slate-100 transition-colors ${
+                  isActive ? 'text-amber-600 font-semibold' : 'hover:text-amber-600'
+                }`
+              }
             >
               About
-            </a>
+            </NavLink>
 
             {/* Mobile Services List */}
             <div className="py-2 border-b border-slate-100">
-              <span className="text-amber-600 uppercase text-xs font-semibold tracking-wider block mb-2">
-                Services
-              </span>
+              <Link
+                to="/services"
+                onClick={closeAll}
+                className="text-amber-600 uppercase text-xs font-semibold tracking-wider block mb-2 hover:underline"
+              >
+                Services &rarr;
+              </Link>
               <div className="space-y-1.5 pl-2">
                 {servicesList.map((s, i) => (
-                  <a
+                  <Link
                     key={i}
-                    href={s.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(s.href);
-                    }}
+                    to={s.href}
+                    onClick={closeAll}
                     className="block py-1 text-sm text-slate-600 hover:text-amber-600 font-medium"
                   >
                     • {s.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
 
             {/* Mobile Projects List */}
             <div className="py-2 border-b border-slate-100">
-              <span className="text-amber-600 uppercase text-xs font-semibold tracking-wider block mb-2">
-                Projects
-              </span>
+              <Link
+                to="/projects"
+                onClick={closeAll}
+                className="text-amber-600 uppercase text-xs font-semibold tracking-wider block mb-2 hover:underline"
+              >
+                Projects &rarr;
+              </Link>
               <div className="space-y-1.5 pl-2">
                 {projectsList.map((p, i) => (
-                  <a
+                  <Link
                     key={i}
-                    href={p.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(p.href);
-                    }}
+                    to={p.href}
+                    onClick={closeAll}
                     className="block py-1 text-sm text-slate-600 hover:text-amber-600 font-medium"
                   >
                     • {p.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
 
-            <a
-              href="#how-we-do-it"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('#how-we-do-it');
-              }}
-              className="py-2 border-b border-slate-100 hover:text-amber-600 transition-colors"
+            <NavLink
+              to="/blog"
+              onClick={closeAll}
+              className={({ isActive }) =>
+                `py-2 border-b border-slate-100 transition-colors ${
+                  isActive ? 'text-amber-600 font-semibold' : 'hover:text-amber-600'
+                }`
+              }
             >
-              How We Do It
-            </a>
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('#contact');
-              }}
-              className="py-2 hover:text-amber-600 transition-colors"
+              Blog
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              onClick={closeAll}
+              className={({ isActive }) =>
+                `py-2 hover:text-amber-600 transition-colors ${
+                  isActive ? 'text-amber-600 font-semibold' : ''
+                }`
+              }
             >
               Contact Us
-            </a>
+            </NavLink>
           </div>
         </div>
       )}
     </header>
   );
 };
+export default FloatingNavbar;
