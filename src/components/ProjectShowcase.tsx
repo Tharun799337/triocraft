@@ -290,10 +290,10 @@ export const ProjectShowcase: React.FC = () => {
                       <BaroqueFiligreeCorner position="tr" />
                       <BaroqueFiligreeCorner position="bl" />
                       <BaroqueFiligreeCorner position="br" />
-                      {/* Ornate Gold Crown Crest (Fully Visible without clipping!) */}
+                      {/* Ornate Gold Crown Crest */}
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-40 px-3 py-0.5 rounded-full bg-gradient-to-r from-[#785913] via-[#D4AF37] via-[#FFF4B8] via-[#D4AF37] to-[#785913] text-[#3D2802] font-black font-mono text-[9px] uppercase tracking-widest shadow-[0_4px_14px_rgba(212,175,55,0.6)] border border-[#FFF8CC] flex items-center gap-1.5 whitespace-nowrap">
                         <Sparkles className="w-3 h-3 text-[#3D2802] fill-[#3D2802]" />
-                        <span>ROYAL SPOTLIGHT</span>
+                        <span>SPOTLIGHT</span>
                         <Sparkles className="w-3 h-3 text-[#3D2802] fill-[#3D2802]" />
                       </div>
                     </>
