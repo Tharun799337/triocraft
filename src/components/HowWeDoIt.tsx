@@ -69,7 +69,7 @@ export const HowWeDoIt: React.FC = () => {
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-display font-black text-3xl sm:text-4xl text-emerald-500 group-hover:text-[#32C8BF] transition-colors">
+                    <span className="font-display font-black text-3xl sm:text-4xl text-emerald-500 group-hover:text-amber-500 transition-colors">
                       {item.step}
                     </span>
                     <div className={`w-12 h-12 rounded-2xl ${item.bg} ${item.border} border flex items-center justify-center group-hover:scale-110 transition-transform`}>
@@ -77,7 +77,7 @@ export const HowWeDoIt: React.FC = () => {
                     </div>
                   </div>
 
-                  <h3 className="font-display font-bold text-lg text-[#1a1f22] mb-3 group-hover:text-[#32C8BF] transition-colors">
+                  <h3 className="font-display font-bold text-lg text-[#1a1f22] mb-3 group-hover:text-amber-500 transition-colors">
                     {item.title}
                   </h3>
 
@@ -86,7 +86,7 @@ export const HowWeDoIt: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-200/70 flex items-center gap-1.5 text-xs font-bold text-[#32C8BF]">
+                <div className="mt-6 pt-4 border-t border-slate-200/70 flex items-center gap-1.5 text-xs font-bold text-amber-500 group-hover:text-amber-600 transition-colors">
                   <span>Phase {item.step}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
