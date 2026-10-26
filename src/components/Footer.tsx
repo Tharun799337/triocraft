@@ -8,10 +8,10 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#FFFFFF] border-t border-slate-200 text-[#1a1f22] pt-16 pb-12 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Main Footer Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-200">
-          
+
           {/* Col 1: Brand & About */}
           <div className="space-y-4 text-left">
             <div className="flex items-center gap-3">
@@ -143,14 +143,15 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <a href="tel:+917993370000" className="hover:text-emerald-700 font-semibold">
-                  +91 79933 70000
+                <a href="tel:+917993376939" className="hover:text-emerald-700 font-semibold">
+                  +91 79933 76939
+
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                <a href="mailto:contact@triocraft.studio" className="hover:text-amber-600 font-semibold">
-                  contact@triocraft.studio
+                <a href="mailto:trioocraaft@gmail.com" className="hover:text-amber-600 font-semibold">
+                  trioocraaft@gmail.com
                 </a>
               </div>
 
