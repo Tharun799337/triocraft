@@ -14,7 +14,7 @@ import { SEO } from '../components/SEO';
 
 export const HomePage: React.FC = () => {
   return (
-    <div className="relative min-h-screen text-[#1a1f22] font-sans selection:bg-[#FEE2E2] selection:text-[#991B1B] overflow-x-hidden bg-white">
+    <div className="relative min-h-screen text-[#1a1f22] font-sans selection:bg-[#FEE2E2] selection:text-[#991B1B] overflow-x-hidden bg-[#FFFFFF]">
       <SEO
         title="Trio Craft — Digital Marketing, Web Development & AI Agency in Hyderabad"
         description="360-degree digital solutions: custom web development, hospital management systems (HMS), real-time AI chatbots, influencer marketing, festival puja portals, and revenue intelligence."

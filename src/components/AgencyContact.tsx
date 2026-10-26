@@ -39,7 +39,7 @@ export const AgencyContact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 bg-white w-full border-b border-slate-100">
+    <section id="contact" className="py-20 sm:py-28 bg-[#FFFFFF] w-full border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
