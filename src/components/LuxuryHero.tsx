@@ -5,10 +5,10 @@ import { DeveloperHero3D } from './DeveloperHero3D';
 export const LuxuryHero: React.FC = () => {
   return (
     <section id="hero" className="pt-28 pb-16 sm:pb-24 w-full relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF7F2] to-[#FFFFFF]">
-      {/* Curved crimson accent background wing on the right (Raiseup Banner Style) */}
-      <div className="absolute right-0 top-0 w-full lg:w-1/2 h-full pointer-events-none overflow-hidden z-0 opacity-90">
-        <div className="absolute -right-24 -top-24 w-[640px] h-[640px] rounded-full bg-gradient-to-br from-[#881337] via-[#991B1B] to-[#7F1D1D] opacity-95 blur-2xl transform rotate-12 scale-110" />
-        <div className="absolute right-12 top-32 w-[480px] h-[480px] rounded-full bg-gradient-to-tr from-[#991B1B] to-[#BE123C] opacity-80 blur-xl" />
+      {/* Curved warm accent background wing on the right (Softened, non-dominating) */}
+      <div className="absolute right-0 top-0 w-full lg:w-1/2 h-full pointer-events-none overflow-hidden z-0 opacity-50">
+        <div className="absolute -right-24 -top-24 w-[460px] h-[460px] rounded-full bg-gradient-to-br from-[#BE123C]/30 via-[#EA580C]/20 to-[#F59E0B]/20 blur-3xl transform rotate-12" />
+        <div className="absolute right-12 top-32 w-[360px] h-[360px] rounded-full bg-gradient-to-tr from-[#EA580C]/20 to-[#F59E0B]/25 blur-2xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -65,19 +65,9 @@ export const LuxuryHero: React.FC = () => {
             </div>
 
             {/* Trust Bullet Items */}
-            <div className="mt-10 pt-6 border-t border-slate-200/90 w-full grid grid-cols-3 gap-4 text-xs font-semibold text-[#334155]">
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>50+ Shipped</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>99.8% Retention</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>24/7 Support</span>
-              </div>
+            <div className="mt-10 pt-6 border-t border-slate-200/90 w-full flex items-center gap-2 text-xs font-semibold text-[#334155]">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+              <span>24/7 Dedicated Client Support &amp; Architecture Guarantee</span>
             </div>
 
           </div>

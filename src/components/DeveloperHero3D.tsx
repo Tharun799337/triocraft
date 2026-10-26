@@ -350,7 +350,26 @@ export const DeveloperHero3D: React.FC = () => {
       targetRotX = -y * 0.12;
     };
 
+    // Instant touch support without long-press
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!e.touches || e.touches.length === 0) return;
+      const touch = e.touches[0];
+      const rect = container.getBoundingClientRect();
+      const x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
+      const y = -(((touch.clientY - rect.top) / rect.height) * 2 - 1);
+      targetRotY = x * 0.4;
+      targetRotX = -y * 0.2;
+    };
+
+    const handleTouchEnd = () => {
+      targetRotY = 0;
+      targetRotX = 0;
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
+    container.addEventListener('touchstart', handleTouchMove, { passive: true });
+    container.addEventListener('touchmove', handleTouchMove, { passive: true });
+    container.addEventListener('touchend', handleTouchEnd, { passive: true });
 
     let animationFrameId: number;
 
@@ -360,9 +379,9 @@ export const DeveloperHero3D: React.FC = () => {
       const delta = clock.getDelta();
       const elapsed = clock.getElapsedTime();
 
-      // Smooth Mouse Parallax with dynamic 3/4 isometric baseline
-      masterGroup.rotation.y += ((0.42 + targetRotY) - masterGroup.rotation.y) * 0.05;
-      masterGroup.rotation.x += ((0.04 + targetRotX) - masterGroup.rotation.x) * 0.05;
+      // Smooth Mouse & Touch Parallax with dynamic 3/4 isometric baseline
+      masterGroup.rotation.y += ((0.42 + targetRotY) - masterGroup.rotation.y) * 0.06;
+      masterGroup.rotation.x += ((0.04 + targetRotX) - masterGroup.rotation.x) * 0.06;
 
       // Character Typing Micro-Motion
       handL.position.y = 0.42 + Math.sin(elapsed * 18) * 0.015;
@@ -401,6 +420,9 @@ export const DeveloperHero3D: React.FC = () => {
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      container.removeEventListener('touchstart', handleTouchMove);
+      container.removeEventListener('touchmove', handleTouchMove);
+      container.removeEventListener('touchend', handleTouchEnd);
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
       if (container.contains(renderer.domElement)) {
@@ -411,46 +433,46 @@ export const DeveloperHero3D: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[460px] sm:h-[520px] lg:h-[580px] flex items-center justify-center">
-      {/* 3D WebGL Canvas Container */}
+    <div className="relative w-full h-[360px] sm:h-[480px] lg:h-[580px] flex items-center justify-center">
+      {/* 3D WebGL Canvas Container with immediate touch support */}
       <div
         ref={mountRef}
-        className="w-full h-full cursor-grab active:cursor-grabbing"
+        className="w-full h-full cursor-grab active:cursor-grabbing touch-pan-y"
       />
 
-      {/* Floating Modern Skill Badges with Framer Motion (Raiseup Agency Style) */}
+      {/* Floating Modern Skill Badges with Framer Motion (Responsive phone scaling) */}
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-8 left-4 sm:left-8 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-slate-200/80 flex items-center gap-2.5 z-20 pointer-events-none"
+        className="absolute top-4 left-2 sm:top-8 sm:left-8 bg-white/95 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl shadow-lg border border-slate-200/80 flex items-center gap-2 z-20 pointer-events-none scale-90 sm:scale-100 origin-top-left"
       >
-        <div className="w-8 h-8 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600">
-          <Code2 className="w-4 h-4" />
+        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600">
+          <Code2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         </div>
         <div className="text-left">
-          <div className="text-xs font-bold text-[#1a1f22]">Full-Stack Web &amp; Apps</div>
-          <div className="text-[10px] text-slate-500 font-mono">React 19 • Next.js • Node</div>
+          <div className="text-[11px] sm:text-xs font-bold text-[#1a1f22]">Full-Stack Web &amp; Apps</div>
+          <div className="text-[9px] sm:text-[10px] text-slate-500 font-mono">React 19 • Next.js • Node</div>
         </div>
       </motion.div>
 
       <motion.div
         animate={{ y: [0, 9, 0] }}
         transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-        className="absolute top-24 right-2 sm:right-6 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-lg border border-slate-200/80 flex items-center gap-2.5 z-20 pointer-events-none"
+        className="absolute top-16 right-2 sm:top-24 sm:right-6 bg-white/95 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-lg border border-slate-200/80 flex items-center gap-2 z-20 pointer-events-none scale-90 sm:scale-100 origin-top-right"
       >
-        <div className="w-8 h-8 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-600">
-          <TrendingUp className="w-4 h-4" />
+        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-600">
+          <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         </div>
         <div className="text-left">
-          <div className="text-xs font-bold text-[#1a1f22]">Digital Marketing &amp; ROI</div>
-          <div className="text-[10px] text-emerald-600 font-bold">▲ 10X Customer Reach</div>
+          <div className="text-[11px] sm:text-xs font-bold text-[#1a1f22]">Digital Growth &amp; ROI</div>
+          <div className="text-[9px] sm:text-[10px] text-emerald-600 font-bold">▲ 10X Reach</div>
         </div>
       </motion.div>
 
       <motion.div
         animate={{ y: [0, -7, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-        className="absolute bottom-12 left-6 sm:left-12 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-slate-200/80 flex items-center gap-2.5 z-20 pointer-events-none"
+        className="hidden sm:flex absolute bottom-12 left-6 sm:left-12 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-slate-200/80 items-center gap-2.5 z-20 pointer-events-none"
       >
         <div className="w-8 h-8 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-600">
           <HeartHandshake className="w-4 h-4" />
@@ -464,14 +486,14 @@ export const DeveloperHero3D: React.FC = () => {
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-        className="absolute bottom-16 right-4 sm:right-10 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-slate-200/80 flex items-center gap-2.5 z-20 pointer-events-none"
+        className="absolute bottom-4 right-2 sm:bottom-16 sm:right-10 bg-white/95 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl shadow-lg border border-slate-200/80 flex items-center gap-2 z-20 pointer-events-none scale-90 sm:scale-100 origin-bottom-right"
       >
-        <div className="w-8 h-8 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-600">
-          <Cpu className="w-4 h-4" />
+        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-600">
+          <Cpu className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         </div>
         <div className="text-left">
-          <div className="text-xs font-bold text-[#1a1f22]">AI &amp; Hospital Systems</div>
-          <div className="text-[10px] text-indigo-600 font-mono">24/7 Smart Triage</div>
+          <div className="text-[11px] sm:text-xs font-bold text-[#1a1f22]">AI &amp; Hospital Systems</div>
+          <div className="text-[9px] sm:text-[10px] text-indigo-600 font-mono">24/7 Smart Triage</div>
         </div>
       </motion.div>
     </div>
