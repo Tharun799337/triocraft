@@ -107,34 +107,54 @@ export const ProjectShowcase: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [inspectProject, setInspectProject] = useState<ProjectItem | null>(null);
   const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [isCardHovered, setIsCardHovered] = useState<boolean>(false);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const filteredProjects = activeFilter === 'all'
     ? PROJECTS_LIST
     : PROJECTS_LIST.filter(p => p.category === activeFilter);
 
-  // Auto-scroll logic with smooth gentle continuous translation
+  // Reset index when filter changes
+  useEffect(() => {
+    setCurrentIndex(0);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+    }
+  }, [activeFilter]);
+
+  // Smooth Reliable Auto-Scroll Timer
+  useEffect(() => {
+    if (isPaused || isCardHovered || filteredProjects.length <= 1) return;
+
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % filteredProjects.length);
+    }, 2800);
+
+    return () => clearInterval(timer);
+  }, [isPaused, isCardHovered, filteredProjects.length]);
+
+  // Smoothly scroll to the active card
   useEffect(() => {
     const container = scrollContainerRef.current;
-    if (!container || isPaused) return;
+    if (!container || !container.children || container.children.length === 0) return;
 
-    const interval = setInterval(() => {
-      if (!container) return;
-      const maxScroll = container.scrollWidth - container.clientWidth;
-      if (container.scrollLeft >= maxScroll - 5) {
-        container.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        container.scrollBy({ left: 340, behavior: 'smooth' });
-      }
-    }, 3200);
-
-    return () => clearInterval(interval);
-  }, [isPaused, filteredProjects]);
+    const targetCard = container.children[currentIndex] as HTMLElement | undefined;
+    if (targetCard) {
+      const scrollPos = targetCard.offsetLeft - container.offsetLeft;
+      container.scrollTo({
+        left: Math.max(0, scrollPos),
+        behavior: 'smooth',
+      });
+    }
+  }, [currentIndex]);
 
   const handleScroll = (direction: 'left' | 'right') => {
-    if (!scrollContainerRef.current) return;
-    const offset = direction === 'left' ? -340 : 340;
-    scrollContainerRef.current.scrollBy({ left: offset, behavior: 'smooth' });
+    if (direction === 'left') {
+      setCurrentIndex((prev) => (prev - 1 + filteredProjects.length) % filteredProjects.length);
+    } else {
+      setCurrentIndex((prev) => (prev + 1) % filteredProjects.length);
+    }
   };
 
   return (
@@ -161,12 +181,12 @@ export const ProjectShowcase: React.FC = () => {
               title={isPaused ? "Resume Auto Scroll" : "Pause Auto Scroll"}
             >
               {isPaused ? <Play className="w-4 h-4 text-emerald-600" /> : <Pause className="w-4 h-4 text-amber-600" />}
-              <span className="hidden sm:inline font-semibold">{isPaused ? "Play" : "Pause"}</span>
+              <span className="hidden sm:inline font-semibold">{isPaused ? "Play" : "Auto Scroll"}</span>
             </button>
 
             <button
               onClick={() => handleScroll('left')}
-              className="p-3 rounded-full bg-slate-100 hover:bg-amber-500 hover:text-white text-slate-700 transition-colors cursor-pointer shadow-xs"
+              className="p-3 rounded-full bg-slate-100 hover:bg-amber-500 hover:text-white text-slate-700 transition-all cursor-pointer shadow-xs active:scale-95"
               aria-label="Previous Project"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -174,7 +194,7 @@ export const ProjectShowcase: React.FC = () => {
 
             <button
               onClick={() => handleScroll('right')}
-              className="p-3 rounded-full bg-slate-100 hover:bg-amber-500 hover:text-white text-slate-700 transition-colors cursor-pointer shadow-xs"
+              className="p-3 rounded-full bg-slate-100 hover:bg-amber-500 hover:text-white text-slate-700 transition-all cursor-pointer shadow-xs active:scale-95"
               aria-label="Next Project"
             >
               <ArrowRight className="w-4 h-4" />
@@ -209,27 +229,29 @@ export const ProjectShowcase: React.FC = () => {
         {/* Minimal Auto-Scrolling Carousel Container */}
         <div
           ref={scrollContainerRef}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-6 pt-2 -mx-4 px-4 sm:mx-0 sm:px-0"
+          className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-8 pt-2 -mx-4 px-4 sm:mx-0 sm:px-0"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, idx) => (
             <div
               key={project.id}
-              className="w-[310px] sm:w-[340px] flex-shrink-0 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between overflow-hidden group cursor-pointer"
+              onMouseEnter={() => setIsCardHovered(true)}
+              onMouseLeave={() => setIsCardHovered(false)}
+              className={`card-hover-smooth card-shine w-[310px] sm:w-[350px] flex-shrink-0 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between overflow-hidden group cursor-pointer ${
+                idx === currentIndex ? 'ring-2 ring-amber-400/40' : ''
+              }`}
               onClick={() => setInspectProject(project)}
             >
               <div>
                 {/* Real High-Resolution Photographic Image */}
-                <div className="relative w-full h-44 overflow-hidden bg-slate-100">
+                <div className="relative w-full h-48 overflow-hidden bg-slate-100">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
                   
                   {/* Category Pill Over Image */}
                   <div className="absolute top-3 left-3">
@@ -243,34 +265,34 @@ export const ProjectShowcase: React.FC = () => {
                     <span className="text-xs font-bold drop-shadow-sm truncate">
                       {project.metric}
                     </span>
-                    <span className={`px-2 py-0.5 rounded-full text-[9px] font-mono font-bold border backdrop-blur-xs bg-white/90 text-slate-800`}>
+                    <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold border backdrop-blur-xs bg-white/90 text-slate-800">
                       {project.badge}
                     </span>
                   </div>
                 </div>
 
                 {/* Minimal Card Body */}
-                <div className="p-5">
-                  <h3 className="font-display font-bold text-base text-[#1a1f22] group-hover:text-amber-600 transition-colors line-clamp-1 mb-2">
+                <div className="p-6">
+                  <h3 className="font-display font-bold text-base sm:text-lg text-[#1a1f22] group-hover:text-amber-600 transition-colors line-clamp-1 mb-2">
                     {project.title}
                   </h3>
 
-                  <p className="text-xs text-slate-500 leading-relaxed line-clamp-2 mb-4">
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed line-clamp-2 mb-4">
                     {project.desc}
                   </p>
 
                   {/* Concise Tech Stack */}
                   <div className="flex flex-wrap gap-1.5">
-                    {project.stack.slice(0, 3).map((item, idx) => (
+                    {project.stack.slice(0, 3).map((item, i) => (
                       <span
-                        key={idx}
-                        className="px-2 py-0.5 rounded-md bg-slate-50 border border-slate-200 text-[10px] font-mono text-slate-700"
+                        key={i}
+                        className="px-2.5 py-0.5 rounded-lg bg-slate-50 border border-slate-200 text-[10px] font-mono text-slate-700"
                       >
                         {item}
                       </span>
                     ))}
                     {project.stack.length > 3 && (
-                      <span className="px-1.5 py-0.5 rounded-md bg-slate-50 text-[10px] font-mono text-slate-400">
+                      <span className="px-2 py-0.5 rounded-lg bg-slate-50 text-[10px] font-mono text-slate-400">
                         +{project.stack.length - 3}
                       </span>
                     )}
@@ -279,11 +301,11 @@ export const ProjectShowcase: React.FC = () => {
               </div>
 
               {/* Minimal Card Footer Action */}
-              <div className="p-4 pt-0">
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-amber-600 group-hover:text-amber-700">
+              <div className="p-6 pt-0">
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-amber-600 group-hover:text-amber-700">
                   <span className="flex items-center gap-1.5">
                     <span>View Project Specs</span>
-                    <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                    <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <span className="text-[10px] font-mono text-slate-400 uppercase">Live Demo</span>
                 </div>
@@ -292,10 +314,27 @@ export const ProjectShowcase: React.FC = () => {
           ))}
         </div>
 
-        {/* Small Navigation Hint */}
-        <div className="mt-4 flex items-center justify-between text-xs text-slate-400 font-mono">
-          <span>← Swipe or scroll horizontally to explore all works →</span>
-          <span>{filteredProjects.length} Projects Live</span>
+        {/* Interactive Pagination Dot Indicators & Hint */}
+        <div className="mt-2 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-mono">
+          <div className="flex items-center gap-2">
+            {filteredProjects.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentIndex(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  i === currentIndex
+                    ? 'w-7 bg-amber-500 shadow-xs'
+                    : 'w-2 bg-slate-200 hover:bg-slate-300'
+                }`}
+              />
+            ))}
+          </div>
+
+          <div className="flex items-center gap-4">
+            <span className="hidden sm:inline">● Auto-advancing carousel</span>
+            <span>{filteredProjects.length} Projects Live</span>
+          </div>
         </div>
 
       </div>

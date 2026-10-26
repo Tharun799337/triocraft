@@ -65,7 +65,7 @@ export const HowWeDoIt: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="p-8 rounded-3xl bg-slate-50 border border-slate-200/90 hover:border-amber-400 hover:bg-white shadow-sm hover:shadow-xl transition-all duration-300 relative group flex flex-col justify-between"
+                className="card-hover-smooth card-shine p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm relative group flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">

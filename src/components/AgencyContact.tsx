@@ -39,7 +39,7 @@ export const AgencyContact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 bg-[#FAFAFA] w-full border-b border-slate-100">
+    <section id="contact" className="py-20 sm:py-28 bg-white w-full border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -59,7 +59,7 @@ export const AgencyContact: React.FC = () => {
 
             <div className="mt-8 space-y-6 w-full">
               {/* Channel 1: Location */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-xs">
+              <div className="card-hover-smooth card-shine flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs">
                 <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 flex-shrink-0">
                   <MapPin className="w-6 h-6" />
                 </div>
@@ -75,7 +75,7 @@ export const AgencyContact: React.FC = () => {
                 href="https://wa.me/917993370000?text=Hello%20TrioCraft%20Team,%20I%20would%20like%20to%20discuss%20a%20project"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 hover:border-emerald-400 shadow-xs transition-colors block text-left group"
+                className="card-hover-smooth card-shine flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs block text-left group"
               >
                 <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 flex-shrink-0 group-hover:scale-110 transition-transform">
                   <MessageCircle className="w-6 h-6" />
@@ -92,7 +92,7 @@ export const AgencyContact: React.FC = () => {
               {/* Channel 3: Email */}
               <a
                 href="mailto:trioocraaft@gmail.com"
-                className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 hover:border-amber-400 shadow-xs transition-colors block text-left group"
+                className="card-hover-smooth card-shine flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs block text-left group"
               >
                 <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 flex-shrink-0 group-hover:scale-110 transition-transform">
                   <Mail className="w-6 h-6" />

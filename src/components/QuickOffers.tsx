@@ -66,7 +66,7 @@ export const QuickOffers: React.FC = () => {
               <a
                 key={idx}
                 href={item.href}
-                className="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-amber-400 shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 block text-left cursor-pointer"
+                className="card-hover-smooth card-shine group p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm block text-left cursor-pointer"
               >
                 <div className={`w-14 h-14 rounded-2xl ${item.bg} ${item.border} border flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
                   <Icon className={`w-7 h-7 ${item.color}`} />

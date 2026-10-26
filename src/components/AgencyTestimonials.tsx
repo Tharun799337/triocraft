@@ -87,7 +87,7 @@ const SkeletonCard: React.FC = () => (
 
 // ── Review Card ───────────────────────────────────────────────────────────────
 const ReviewCard: React.FC<{ t: Review }> = ({ t }) => (
-  <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-amber-400 hover:bg-white transition-all duration-300 flex flex-col justify-between">
+  <div className="card-hover-smooth card-shine p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between">
     <div>
       <div className="flex items-center justify-between mb-3 sm:mb-5">
         <div className="flex items-center gap-1 text-amber-500">

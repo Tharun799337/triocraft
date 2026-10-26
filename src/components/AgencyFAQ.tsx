@@ -32,7 +32,7 @@ export const AgencyFAQ: React.FC = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-[#FFFDF9] w-full border-b border-slate-100">
+    <section id="faq" className="py-20 sm:py-28 bg-white w-full border-b border-slate-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
@@ -56,7 +56,7 @@ export const AgencyFAQ: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden transition-all"
+                className="card-hover-smooth rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-amber-400 overflow-hidden"
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}

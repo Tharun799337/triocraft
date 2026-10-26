@@ -66,7 +66,7 @@ const agencyServices = [
 
 export const AgencyServices: React.FC = () => {
   return (
-    <section id="services" className="py-20 sm:py-28 bg-[#FAFAFA] w-full border-b border-slate-100">
+    <section id="services" className="py-20 sm:py-28 bg-white w-full border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header (Raiseup Digital Services Section Style) */}
@@ -89,7 +89,7 @@ export const AgencyServices: React.FC = () => {
             return (
               <div
                 key={service.id}
-                className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 flex flex-col justify-between group"
+                className="card-hover-smooth card-shine p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
