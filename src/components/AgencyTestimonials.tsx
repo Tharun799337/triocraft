@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Star, Quote, PenLine, CheckCircle2, MessageSquareQuote, Send, Sparkles } from 'lucide-react';
+import React, { useEffect, useState, useRef } from 'react';
+import { Star, Quote, PenLine, CheckCircle2, MessageSquareQuote, Send, Sparkles, ArrowLeft, ArrowRight } from 'lucide-react';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface Review {
@@ -23,6 +23,14 @@ const FALLBACK_REVIEWS: Review[] = [
   },
   {
     id: 2,
+    quote: 'The patient queue management and real-time WhatsApp triage bot built by Trio Craft cut our outpatient wait times by 60% while handling 3,500+ monthly OPD bookings effortlessly.',
+    name: 'Dr. Ananya Sharma',
+    role: 'Chief Medical Officer, CarePlus Health Network',
+    rating: 5,
+    tag: 'Hospital & HMS Systems',
+  },
+  {
+    id: 3,
     quote: 'Our Vinayaka Chavithi Maha Utsav portal handled over 50,000 simultaneous devotees during evening aarti. The live laddu auction with real-time WebSocket bidding generated record community participation.',
     name: 'Venkata Ramana Rao',
     role: 'General Secretary, Central Utsav Committee',
@@ -30,7 +38,7 @@ const FALLBACK_REVIEWS: Review[] = [
     tag: 'Festival & Live Auction',
   },
   {
-    id: 3,
+    id: 4,
     quote: 'The Revenue Tracker platform gave us instant visibility into our MRR, churn cohorts, and cash flow. Their automated dunning workflow recovered over $14,000 in failed credit card renewals in month one.',
     name: 'Karthik Subramanian',
     role: 'Founder & CEO, CloudScale Systems',
@@ -38,12 +46,44 @@ const FALLBACK_REVIEWS: Review[] = [
     tag: 'FinTech & Revenue Engine',
   },
   {
-    id: 4,
+    id: 5,
+    quote: 'Trio Craft engineered our custom multi-outlet online ordering platform and loyalty engine. Our direct orders surged by 220% in 60 days, significantly reducing aggregator commissions.',
+    name: 'Rohit Reddy',
+    role: 'Co-Founder, Hyderabadi Spice Kitchen',
+    rating: 5,
+    tag: 'Website & App Development',
+  },
+  {
+    id: 6,
     quote: 'I wanted to plan an unforgettable anniversary surprise for my fiancé. The personalized romantic timeline, custom background song, and midnight balloon reveal brought tears of joy to her eyes. Truly priceless.',
     name: 'Sai Preetham',
     role: 'Verified Couple Client',
     rating: 5,
     tag: 'Couple Surprise Portal',
+  },
+  {
+    id: 7,
+    quote: 'Their team built a high-fashion bespoke e-commerce experience with interactive 3D product previews. International bridal inquiries jumped 300% within the first month.',
+    name: 'Meera Nambiar',
+    role: 'Creative Director, Silk & Saffron Couture',
+    rating: 5,
+    tag: 'Digital Marketing & SEO',
+  },
+  {
+    id: 8,
+    quote: 'The SaaS revenue dashboard and dunning recovery pipelines built by Trio Craft gave our enterprise customers real-time auditability. Onboarding cycle dropped from 3 weeks to 4 days.',
+    name: 'Arvind Chawla',
+    role: 'Head of Product, FinLedger Technologies',
+    rating: 5,
+    tag: 'FinTech & Revenue Engine',
+  },
+  {
+    id: 9,
+    quote: 'Managing 25,000+ pass reservations and fast QR-code gate verifications was 100% crash-free thanks to Trio Craft high-concurrency event ticketing engine.',
+    name: 'Deepa Iyer',
+    role: 'Convenor, Navratri Dandiya Mahotsav',
+    rating: 5,
+    tag: 'Festival & Live Auction',
   },
 ];
 
@@ -60,60 +100,64 @@ const SERVICE_TAGS = [
 
 // ── Skeleton Card ─────────────────────────────────────────────────────────────
 const SkeletonCard: React.FC = () => (
-  <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200/90 animate-pulse flex flex-col gap-4">
-    <div className="flex items-center justify-between">
+  <div className="w-[290px] sm:w-[340px] flex-shrink-0 min-h-[225px] p-5 rounded-2xl bg-slate-50 border border-slate-200/90 animate-pulse flex flex-col justify-between">
+    <div className="flex items-center justify-between mb-3">
       <div className="flex gap-1">
         {[...Array(5)].map((_, i) => (
-          <div key={i} className="w-4 h-4 rounded bg-slate-200" />
+          <div key={i} className="w-3.5 h-3.5 rounded bg-slate-200" />
         ))}
       </div>
-      <div className="w-24 h-5 rounded-full bg-slate-200" />
+      <div className="w-20 h-4 rounded-full bg-slate-200" />
     </div>
-    <div className="w-8 h-8 rounded bg-slate-200" />
+    <div className="w-6 h-6 rounded bg-slate-200 mb-2" />
     <div className="space-y-2">
       <div className="h-3 bg-slate-200 rounded w-full" />
       <div className="h-3 bg-slate-200 rounded w-5/6" />
       <div className="h-3 bg-slate-200 rounded w-4/6" />
     </div>
-    <div className="pt-4 border-t border-slate-200 flex items-center gap-3">
-      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-200 flex-shrink-0" />
-      <div className="space-y-1.5 flex-1">
-        <div className="h-3 bg-slate-200 rounded w-32" />
-        <div className="h-2.5 bg-slate-200 rounded w-48" />
+    <div className="pt-3 border-t border-slate-200 flex items-center gap-2.5">
+      <div className="w-8 h-8 rounded-full bg-slate-200 flex-shrink-0" />
+      <div className="space-y-1 flex-1">
+        <div className="h-3 bg-slate-200 rounded w-28" />
+        <div className="h-2 bg-slate-200 rounded w-40" />
       </div>
     </div>
   </div>
 );
 
-// ── Review Card ───────────────────────────────────────────────────────────────
-const ReviewCard: React.FC<{ t: Review }> = ({ t }) => (
-  <div className="card-hover-smooth card-shine p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between">
+// ── Compact Review Card ───────────────────────────────────────────────────────
+const ReviewCard: React.FC<{ t: Review; isCurrent?: boolean }> = ({ t, isCurrent }) => (
+  <div
+    className={`card-hover-smooth card-shine p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between w-[290px] sm:w-[340px] flex-shrink-0 transition-all duration-300 min-h-[225px] ${
+      isCurrent ? 'ring-2 ring-amber-400/60 shadow-md' : ''
+    }`}
+  >
     <div>
-      <div className="flex items-center justify-between mb-3 sm:mb-5">
-        <div className="flex items-center gap-1 text-amber-500">
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center gap-0.5 text-amber-500">
           {[...Array(t.rating)].map((_, i) => (
-            <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
+            <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
           ))}
         </div>
-        <span className="text-[9px] sm:text-[10px] font-mono font-bold px-2 sm:px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 uppercase truncate max-w-[140px] sm:max-w-none">
+        <span className="text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 uppercase truncate max-w-[140px]">
           {t.tag}
         </span>
       </div>
 
-      <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-slate-300 mb-2 sm:mb-3" />
+      <Quote className="w-5 h-5 text-amber-500/60 mb-2" />
 
-      <p className="text-xs sm:text-sm lg:text-base text-slate-700 leading-relaxed italic mb-3 sm:mb-6">
+      <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic line-clamp-4">
         &ldquo;{t.quote}&rdquo;
       </p>
     </div>
 
-    <div className="pt-3 sm:pt-4 border-t border-slate-200/80 flex items-center gap-2.5 sm:gap-3">
-      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-amber-500 to-rose-600 flex items-center justify-center text-white font-bold text-xs sm:text-sm flex-shrink-0">
-        {t.name[0]}
+    <div className="pt-3 mt-3 border-t border-slate-100 flex items-center gap-2.5">
+      <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold text-xs flex-shrink-0 shadow-xs">
+        {t.name.charAt(0)}
       </div>
       <div className="min-w-0">
-        <div className="font-display font-bold text-xs sm:text-sm text-[#1a1f22] truncate">{t.name}</div>
-        <div className="text-[10px] sm:text-xs text-slate-500 truncate">{t.role}</div>
+        <div className="font-display font-bold text-xs text-[#1a1f22] truncate">{t.name}</div>
+        <div className="text-[10px] text-slate-500 truncate">{t.role}</div>
       </div>
     </div>
   </div>
@@ -124,6 +168,9 @@ export const AgencyTestimonials: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'stories' | 'write'>('stories');
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const storiesContainerRef = useRef<HTMLDivElement>(null);
 
   // Form State
   const [form, setForm] = useState({
@@ -155,6 +202,40 @@ export const AgencyTestimonials: React.FC = () => {
       })
       .finally(() => setLoading(false));
   }, [apiBase]);
+
+  // Smooth Auto-scroll for client stories carousel
+  useEffect(() => {
+    if (activeTab !== 'stories' || isHovered || reviews.length <= 1) return;
+
+    const timer = setInterval(() => {
+      setCurrentIdx((prev) => (prev + 1) % reviews.length);
+    }, 3200);
+
+    return () => clearInterval(timer);
+  }, [activeTab, isHovered, reviews.length]);
+
+  // Center active story card smoothly
+  useEffect(() => {
+    const container = storiesContainerRef.current;
+    if (!container || !container.children || container.children.length === 0) return;
+
+    const targetCard = container.children[currentIdx] as HTMLElement | undefined;
+    if (targetCard) {
+      const scrollPos = targetCard.offsetLeft - (container.clientWidth / 2) + (targetCard.clientWidth / 2);
+      container.scrollTo({
+        left: Math.max(0, scrollPos),
+        behavior: 'smooth',
+      });
+    }
+  }, [currentIdx]);
+
+  const handleScrollStories = (direction: 'left' | 'right') => {
+    if (direction === 'left') {
+      setCurrentIdx((prev) => (prev - 1 + reviews.length) % reviews.length);
+    } else {
+      setCurrentIdx((prev) => (prev + 1) % reviews.length);
+    }
+  };
 
   const handleSubmitReview = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -238,13 +319,45 @@ export const AgencyTestimonials: React.FC = () => {
           </div>
         </div>
 
-        {/* Tab 1: Stories Grid */}
+        {/* Tab 1: Stories Auto-Scroll Carousel */}
         {activeTab === 'stories' && (
           <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
+            {/* Carousel Controls */}
+            <div className="flex items-center justify-between mb-4 px-2">
+              <div className="text-xs font-mono font-medium text-slate-500">
+                <span>Story <strong className="text-amber-600 font-bold">{currentIdx + 1}</strong> of {reviews.length}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => handleScrollStories('left')}
+                  className="p-2.5 rounded-full bg-slate-100 hover:bg-amber-500 hover:text-white text-slate-700 transition-all cursor-pointer shadow-xs active:scale-95"
+                  aria-label="Previous Review"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => handleScrollStories('right')}
+                  className="p-2.5 rounded-full bg-slate-100 hover:bg-amber-500 hover:text-white text-slate-700 transition-all cursor-pointer shadow-xs active:scale-95"
+                  aria-label="Next Review"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+
+            {/* Scrollable Container with Compact Cards */}
+            <div
+              ref={storiesContainerRef}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="flex gap-5 overflow-x-auto scrollbar-none scroll-smooth pb-6 pt-2 px-2 -mx-4 sm:mx-0 sm:px-0"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
               {loading
                 ? [...Array(4)].map((_, i) => <SkeletonCard key={i} />)
-                : reviews.map((t) => <ReviewCard key={t.id} t={t} />)
+                : reviews.map((t, idx) => (
+                    <ReviewCard key={t.id} t={t} isCurrent={idx === currentIdx} />
+                  ))
               }
             </div>
 
