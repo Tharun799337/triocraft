@@ -9,6 +9,13 @@ services:
     envVars:
       - key: VITE_API_URL
         value: https://triocraft-api.onrender.com
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
     routes:
       - type: rewrite
         source: /*
@@ -25,6 +32,6 @@ services:
       - key: DATABASE_URL
         sync: false          # Set this as a Secret in Render Dashboard
       - key: FRONTEND_URL
-        value: https://triocraft-portfolio.onrender.com
+        value: https://triocraft-5cix.onrender.com
       - key: NODE_ENV
         value: production

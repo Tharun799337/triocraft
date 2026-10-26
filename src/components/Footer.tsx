@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mail, Phone, MapPin, MessageCircle, Shield } from 'lucide-react';
+import { ArrowRight, Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 export const Footer: React.FC = () => {
@@ -72,31 +72,22 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-slate-600">
               <li>
-                <a href="#hero" className="hover:text-amber-600 transition-colors">Home</a>
+                <Link to="/" className="hover:text-amber-600 transition-colors">Home</Link>
               </li>
               <li>
-                <a href="#about" className="hover:text-amber-600 transition-colors">About Trio Craft</a>
+                <Link to="/about" className="hover:text-amber-600 transition-colors">About TrioCraft</Link>
               </li>
               <li>
-                <a href="#services" className="hover:text-amber-600 transition-colors">Services &amp; Capabilities</a>
+                <Link to="/services" className="hover:text-amber-600 transition-colors">Services &amp; Capabilities</Link>
               </li>
               <li>
-                <a href="#projects" className="hover:text-amber-600 transition-colors">Projects &amp; Case Studies</a>
+                <Link to="/projects" className="hover:text-amber-600 transition-colors">Projects &amp; Case Studies</Link>
               </li>
               <li>
-                <a href="#how-we-do-it" className="hover:text-amber-600 transition-colors">How We Do It</a>
+                <Link to="/blog" className="hover:text-amber-600 transition-colors">Engineering Blog</Link>
               </li>
               <li>
-                <a href="#testimonials" className="hover:text-amber-600 transition-colors">Client Reviews</a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-amber-600 transition-colors">Get Free Quote</a>
-              </li>
-              <li>
-                <Link to="/admin" className="hover:text-amber-600 transition-colors inline-flex items-center gap-1.5 font-medium text-amber-700">
-                  <Shield className="w-3.5 h-3.5" />
-                  <span>Admin Portal</span>
-                </Link>
+                <Link to="/contact" className="hover:text-amber-600 transition-colors">Contact &amp; Get a Quote</Link>
               </li>
             </ul>
           </div>
@@ -175,17 +166,14 @@ export const Footer: React.FC = () => {
             &copy; {currentYear} TrioCraft Digital &amp; AI Agency. All rights reserved.
           </div>
           <div className="flex items-center gap-5 sm:gap-6">
-            <a href="#hero" className="hover:text-[#1a1f22] transition-colors">Privacy Policy</a>
-            <a href="#hero" className="hover:text-[#1a1f22] transition-colors">Terms of Service</a>
-            <Link
-              to="/admin"
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-200/80 hover:bg-amber-100 text-slate-700 hover:text-amber-800 transition-all font-semibold text-[11px] shadow-2xs"
-              title="Admin Login & Management Portal"
+            <span className="text-slate-400">Privacy Policy</span>
+            <span className="text-slate-400">Terms of Service</span>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="hover:text-[#1a1f22] transition-colors cursor-pointer"
             >
-              <Shield className="w-3.5 h-3.5 text-amber-600" />
-              <span>Admin Login</span>
-            </Link>
-            <a href="#hero" className="hover:text-[#1a1f22] transition-colors">Back to Top ↑</a>
+              Back to Top ↑
+            </button>
           </div>
         </div>
 

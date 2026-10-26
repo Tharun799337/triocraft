@@ -14,8 +14,8 @@ export const BlogPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Technical Articles & AI Engineering Guides | Tharun Portfolio"
-        description="Practical tutorials and architectural case study notes on RAG systems, Chrome extensions, LLM guardrails, and full-stack development."
+        title="Engineering Articles & AI Development Guides | TrioCraft Blog"
+        description="Practical tutorials and technical case studies from TrioCraft on RAG systems, hospital management software, Chrome extensions, LLM guardrails, and full-stack web development."
       />
 
       <div className="py-16 md:py-24">

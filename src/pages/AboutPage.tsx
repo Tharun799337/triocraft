@@ -27,8 +27,8 @@ export const AboutPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="About Tharun | AI Engineer & Full-Stack Developer"
-        description="Learn about Tharun's background in AI application engineering, full-stack web development, technical values, and problem-solving process."
+        title="About TrioCraft | Web Design & AI Development Agency in Hyderabad"
+        description="Learn about TrioCraft — a full-service web design, development, and AI agency in Hyderabad. We build custom websites, HMS systems, AI chatbots, and influencer marketing campaigns for businesses."
       />
 
       <div className="py-16 md:py-24">

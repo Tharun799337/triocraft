@@ -26,8 +26,8 @@ export const ProjectsPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Projects & Case Studies | Tharun Portfolio"
-        description="Browse real-world projects and case studies by Tharun across Web Development, Generative AI, RAG Systems, Chrome Extensions, and Computer Vision."
+        title="Projects & Case Studies | Web, AI & HMS Builds — TrioCraft Portfolio"
+        description="Browse TrioCraft's real-world project portfolio: hospital management systems, AI chatbots, influencer portals, React web apps, RAG pipelines, Chrome extensions, and computer vision tools."
       />
 
       <div className="py-16 md:py-24">

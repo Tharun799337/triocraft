@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Disallow admin and API routes from being crawled
+Disallow: /admin
+Disallow: /api/
+
 Sitemap: https://triocraft-5cix.onrender.com/sitemap.xml

@@ -48,8 +48,8 @@ export const ContactPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Hire Tharun | Contact for Web Development & AI Engineering"
-        description="Get in touch with Tharun to discuss your website design, full-stack React app, RAG pipeline, or custom AI automation project. Fast 24-hour response."
+        title="Contact TrioCraft | Hire Our Web Development & AI Agency in Hyderabad"
+        description="Get in touch with TrioCraft to discuss your website, hospital management system, AI chatbot, influencer campaign, or digital marketing project. Fast 24-hour response guaranteed."
       />
 
       <div className="py-16 md:py-24">

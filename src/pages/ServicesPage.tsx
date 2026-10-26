@@ -11,8 +11,8 @@ export const ServicesPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Freelance Services | Web Development & AI Engineering by Tharun"
-        description="Comprehensive freelance services: custom landing pages, React web applications, RAG document systems, intelligent AI chatbots, Chrome extensions, and workflow automations."
+        title="Our Services | Web Development, AI Chatbots & Digital Marketing — TrioCraft"
+        description="Explore TrioCraft's full service portfolio: custom websites, hospital management systems, real-time AI chatbots, influencer marketing campaigns, RAG pipelines, Chrome extensions, and workflow automations."
       />
 
       <div className="py-16 md:py-24">
