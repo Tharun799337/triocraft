@@ -8,7 +8,7 @@ export const RootLayout: React.FC = () => {
   const isHome = location.pathname === '/';
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8f9fc] text-[#1a1f22] selection:bg-[#FEE2E2] selection:text-[#991B1B] relative">
+    <div className="min-h-screen flex flex-col bg-white text-[#1a1f22] selection:bg-[#FEE2E2] selection:text-[#991B1B] relative">
 
       {isHome ? (
         <Outlet />

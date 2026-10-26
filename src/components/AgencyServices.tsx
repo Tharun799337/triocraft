@@ -66,7 +66,7 @@ const agencyServices = [
 
 export const AgencyServices: React.FC = () => {
   return (
-    <section id="services" className="py-20 sm:py-28 bg-[#f8f9fc] w-full border-b border-slate-100">
+    <section id="services" className="py-20 sm:py-28 bg-white w-full border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header (Raiseup Digital Services Section Style) */}

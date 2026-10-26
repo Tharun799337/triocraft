@@ -280,7 +280,7 @@ export const AdminPage: React.FC = () => {
   const approvedReviews = reviews.filter(r => r.approved);
 
   return (
-    <div className="min-h-screen bg-[#f8f9fc]">
+    <div className="min-h-screen bg-white">
       {/* Header */}
       <div className="bg-gradient-to-r from-[#0f172a] to-[#1e1b4b] text-white px-4 sm:px-8 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">

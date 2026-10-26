@@ -21,7 +21,7 @@
   html {
     scroll-behavior: smooth;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f8f9fc;
+    background-color: #ffffff;
     color: #1a1f22;
     color-scheme: light;
   }
@@ -29,7 +29,7 @@
   body {
     min-height: 100vh;
     overflow-x: hidden;
-    background-color: #f8f9fc;
+    background-color: #ffffff;
     color: #1a1f22;
   }
 
@@ -45,12 +45,12 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f8f9fc;
+  background: #ffffff;
 }
 ::-webkit-scrollbar-thumb {
   background: #E2E8F0;
   border-radius: 9999px;
-  border: 2px solid #f8f9fc;
+  border: 2px solid #ffffff;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #F59E0B;
