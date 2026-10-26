@@ -5,7 +5,7 @@ import { Footer } from '../components/Footer';
 
 export const RootLayout: React.FC = () => {
   const location = useLocation();
-  const isHome = location.pathname === '/';
+  const isHome = location.pathname === '/' || location.pathname === '/home';
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FFFFFF] text-[#1a1f22] selection:bg-[#FEE2E2] selection:text-[#991B1B] relative">

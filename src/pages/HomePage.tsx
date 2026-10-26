@@ -18,12 +18,13 @@ export const HomePage: React.FC = () => {
       <SEO
         title="TrioCraft — Web Development, Digital Marketing & AI Agency in Hyderabad"
         description="TrioCraft is a full-service digital agency in Hyderabad. We build custom websites, hospital management systems (HMS), real-time AI chatbots, influencer marketing campaigns, and revenue intelligence platforms."
+        canonical="https://triocraft-5cix.onrender.com/home"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'ProfessionalService',
           name: 'TrioCraft',
           alternateName: ['Trio Craft', 'TrioCraft Digital Agency', 'TrioCraft Design & Development'],
-          url: 'https://triocraft-5cix.onrender.com/',
+          url: 'https://triocraft-5cix.onrender.com/home',
           logo: 'https://triocraft-5cix.onrender.com/triocraft-logo.png',
           image: 'https://triocraft-5cix.onrender.com/triocraft-logo.png',
           description: 'TrioCraft is a full-service digital design, custom engineering, and AI agency based in Hyderabad, India. We build web applications, hospital management systems, AI chatbots, influencer marketing campaigns, and revenue-scaling platforms.',

@@ -14,11 +14,11 @@ export const Footer: React.FC = () => {
 
           {/* Col 1: Brand & About */}
           <div className="space-y-4 text-left">
-            <div className="flex items-center gap-3">
+            <Link to="/home" className="flex items-center gap-3 group inline-flex">
               <img
                 src="/triocraft-emblem.png"
                 alt="TrioCraft Official Emblem"
-                className="w-10 h-10 object-contain drop-shadow-xs"
+                className="w-10 h-10 object-contain drop-shadow-xs group-hover:scale-105 transition-transform"
               />
               <div className="flex flex-col text-left">
                 <span className="font-display font-medium text-2xl text-slate-900 tracking-tight leading-none">
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
                   Design &amp; Development
                 </span>
               </div>
-            </div>
+            </Link>
 
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Trio Craft is a full-service digital design, custom engineering, and AI agency. We create impactful web applications, hospital management systems, viral influencer campaigns, and revenue-scaling platforms.
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-slate-600">
               <li>
-                <Link to="/" className="hover:text-amber-600 transition-colors">Home</Link>
+                <Link to="/home" className="hover:text-amber-600 transition-colors">Home</Link>
               </li>
               <li>
                 <Link to="/about" className="hover:text-amber-600 transition-colors">About TrioCraft</Link>
@@ -99,25 +99,25 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-slate-600">
               <li>
-                <a href="#services" className="hover:text-amber-600 transition-colors">Digital Marketing &amp; SEO</a>
+                <Link to="/services" className="hover:text-amber-600 transition-colors">Digital Marketing &amp; SEO</Link>
               </li>
               <li>
-                <a href="#services" className="hover:text-amber-600 transition-colors">Influencer Marketing</a>
+                <Link to="/services" className="hover:text-amber-600 transition-colors">Influencer Marketing</Link>
               </li>
               <li>
-                <a href="#services" className="hover:text-amber-600 transition-colors">Website &amp; App Development</a>
+                <Link to="/services" className="hover:text-amber-600 transition-colors">Website &amp; App Development</Link>
               </li>
               <li>
-                <a href="#services" className="hover:text-amber-600 transition-colors">Hospital Management (HMS)</a>
+                <Link to="/services" className="hover:text-amber-600 transition-colors">Hospital Management (HMS)</Link>
               </li>
               <li>
-                <a href="#services" className="hover:text-amber-600 transition-colors">Real-Time Clinical AI Chatbots</a>
+                <Link to="/services" className="hover:text-amber-600 transition-colors">Real-Time Clinical AI Chatbots</Link>
               </li>
               <li>
-                <a href="#projects" className="hover:text-amber-600 transition-colors">Vinayaka Festival Puja Portals</a>
+                <Link to="/projects" className="hover:text-amber-600 transition-colors">Vinayaka Festival Puja Portals</Link>
               </li>
               <li>
-                <a href="#projects" className="hover:text-amber-600 transition-colors">Couple Surprise &amp; Apology Sites</a>
+                <Link to="/projects" className="hover:text-amber-600 transition-colors">Couple Surprise &amp; Apology Sites</Link>
               </li>
             </ul>
           </div>

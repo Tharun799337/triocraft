@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   Menu,
   X,
@@ -111,6 +112,9 @@ export const FloatingNavbar: React.FC = () => {
   const [projectsOpen, setProjectsOpen] = useState<boolean>(false);
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const servicesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const projectsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -121,6 +125,19 @@ export const FloatingNavbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Smooth scroll to hash anchor after routing
+  useEffect(() => {
+    if (location.hash) {
+      const timer = setTimeout(() => {
+        const target = document.querySelector(location.hash);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname, location.hash]);
 
   const handleServicesEnter = () => {
     if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
@@ -148,13 +165,27 @@ export const FloatingNavbar: React.FC = () => {
     }, 150);
   };
 
-  const scrollTo = (href: string) => {
+  const handleHomeClick = () => {
     setMobileOpen(false);
     setServicesOpen(false);
     setProjectsOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname === '/home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleNavClick = (href: string) => {
+    setMobileOpen(false);
+    setServicesOpen(false);
+    setProjectsOpen(false);
+
+    if (location.pathname === '/home' || location.pathname === '/') {
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(`/home${href}`);
     }
   };
 
@@ -169,12 +200,9 @@ export const FloatingNavbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
         {/* Brand Logo with Official Transparent Emblem */}
-        <a
-          href="#hero"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollTo('#hero');
-          }}
+        <Link
+          to="/home"
+          onClick={handleHomeClick}
           className="flex items-center gap-3 group cursor-pointer"
         >
           <img
@@ -190,27 +218,24 @@ export const FloatingNavbar: React.FC = () => {
               Design &amp; Development
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links — Attractive Medium Weight & Modern Spacing */}
         <nav className="hidden lg:flex items-center space-x-7 text-[16px] font-medium text-slate-700">
-          <a
-            href="#hero"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollTo('#hero');
-            }}
+          <Link
+            to="/home"
+            onClick={handleHomeClick}
             className="hover:text-amber-600 transition-colors py-1.5 px-1 relative group"
           >
             <span>Home</span>
             <span className="absolute bottom-0 left-1 right-1 h-0.5 bg-amber-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
-          </a>
+          </Link>
 
           <a
             href="#about"
             onClick={(e) => {
               e.preventDefault();
-              scrollTo('#about');
+              handleNavClick('#about');
             }}
             className="hover:text-amber-600 transition-colors py-1.5 px-1 relative group"
           >
@@ -263,7 +288,7 @@ export const FloatingNavbar: React.FC = () => {
                       href={item.href}
                       onClick={(e) => {
                         e.preventDefault();
-                        scrollTo(item.href);
+                        handleNavClick(item.href);
                       }}
                       className="p-2.5 rounded-xl hover:bg-amber-50/70 border border-transparent hover:border-amber-200/60 transition-all duration-150 group cursor-pointer flex items-start gap-3 text-left"
                     >
@@ -331,7 +356,7 @@ export const FloatingNavbar: React.FC = () => {
                       href={item.href}
                       onClick={(e) => {
                         e.preventDefault();
-                        scrollTo(item.href);
+                        handleNavClick(item.href);
                       }}
                       className="p-2.5 rounded-xl hover:bg-amber-50/70 border border-transparent hover:border-amber-200/60 transition-all duration-150 group cursor-pointer flex items-start gap-3 text-left"
                     >
@@ -358,7 +383,7 @@ export const FloatingNavbar: React.FC = () => {
             href="#how-we-do-it"
             onClick={(e) => {
               e.preventDefault();
-              scrollTo('#how-we-do-it');
+              handleNavClick('#how-we-do-it');
             }}
             className="hover:text-amber-600 transition-colors py-1.5 px-1 relative group"
           >
@@ -370,7 +395,7 @@ export const FloatingNavbar: React.FC = () => {
             href="#contact"
             onClick={(e) => {
               e.preventDefault();
-              scrollTo('#contact');
+              handleNavClick('#contact');
             }}
             className="hover:text-amber-600 transition-colors py-1.5 px-1 relative group"
           >
@@ -385,7 +410,7 @@ export const FloatingNavbar: React.FC = () => {
             href="#contact"
             onClick={(e) => {
               e.preventDefault();
-              scrollTo('#contact');
+              handleNavClick('#contact');
             }}
             className="btn-raiseup-gold px-6 py-2.5 rounded-full text-xs uppercase tracking-wider font-semibold inline-flex items-center gap-2 cursor-pointer shadow-md hover:shadow-lg transition-all"
           >
@@ -400,7 +425,7 @@ export const FloatingNavbar: React.FC = () => {
             href="#contact"
             onClick={(e) => {
               e.preventDefault();
-              scrollTo('#contact');
+              handleNavClick('#contact');
             }}
             className="btn-raiseup-gold px-4 py-2 rounded-full text-xs font-semibold inline-flex items-center"
           >
@@ -420,21 +445,18 @@ export const FloatingNavbar: React.FC = () => {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-b border-slate-200 px-6 py-5 shadow-2xl animate-in slide-in-from-top-4 max-h-[85vh] overflow-y-auto text-left">
           <div className="flex flex-col space-y-3 font-medium text-[16px] text-slate-800">
-            <a
-              href="#hero"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo('#hero');
-              }}
+            <Link
+              to="/home"
+              onClick={handleHomeClick}
               className="py-2 border-b border-slate-100 hover:text-amber-600 transition-colors"
             >
               Home
-            </a>
+            </Link>
             <a
               href="#about"
               onClick={(e) => {
                 e.preventDefault();
-                scrollTo('#about');
+                handleNavClick('#about');
               }}
               className="py-2 border-b border-slate-100 hover:text-amber-600 transition-colors"
             >
@@ -453,7 +475,7 @@ export const FloatingNavbar: React.FC = () => {
                     href={s.href}
                     onClick={(e) => {
                       e.preventDefault();
-                      scrollTo(s.href);
+                      handleNavClick(s.href);
                     }}
                     className="block py-1 text-sm text-slate-600 hover:text-amber-600 font-medium"
                   >
@@ -475,7 +497,7 @@ export const FloatingNavbar: React.FC = () => {
                     href={p.href}
                     onClick={(e) => {
                       e.preventDefault();
-                      scrollTo(p.href);
+                      handleNavClick(p.href);
                     }}
                     className="block py-1 text-sm text-slate-600 hover:text-amber-600 font-medium"
                   >
@@ -489,7 +511,7 @@ export const FloatingNavbar: React.FC = () => {
               href="#how-we-do-it"
               onClick={(e) => {
                 e.preventDefault();
-                scrollTo('#how-we-do-it');
+                handleNavClick('#how-we-do-it');
               }}
               className="py-2 border-b border-slate-100 hover:text-amber-600 transition-colors"
             >
@@ -499,7 +521,7 @@ export const FloatingNavbar: React.FC = () => {
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
-                scrollTo('#contact');
+                handleNavClick('#contact');
               }}
               className="py-2 hover:text-amber-600 transition-colors"
             >
