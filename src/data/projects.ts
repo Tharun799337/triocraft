@@ -111,7 +111,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "caregrid-hospital-hms",
-    title: "CareGrid End-to-End Hospital Management System (HMS)",
+    title: "Hospital Management System (HMS)",
     category: "Healthcare & HMS",
     shortDescription: "Comprehensive enterprise hospital management system featuring live bed occupancy, inpatient/outpatient EHR, doctor schedules, pharmacy POS, and lab diagnostics.",
     overview: 
@@ -141,7 +141,7 @@ export const PROJECTS: Project[] = [
       }
     ],
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "CareGrid End-to-End Hospital Management System (HMS)",
+    imageAlt: "Hospital Management System (HMS)",
     status: "Live Demo Available",
     featured: true
   },
@@ -182,7 +182,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "realtime-hospital-chatbot",
-    title: "MediPulse Real-Time Clinical AI Chatbot & Triage Assistant",
+    title: "Real-Time Chatbots — Clinical AI & Triage Assistant",
     category: "Generative AI",
     shortDescription: "Autonomous 24/7 clinical triage chatbot with streaming WebSocket conversational LLM, symptom checker, and instant doctor booking.",
     overview: 
@@ -211,7 +211,7 @@ export const PROJECTS: Project[] = [
       }
     ],
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "MediPulse Real-Time Clinical AI Chatbot and Patient Triage",
+    imageAlt: "Real-Time Chatbots and Patient Triage",
     status: "Live Demo Available",
     featured: true
   },

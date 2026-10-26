@@ -1,11 +1,30 @@
 services:
+  # ── Frontend Static Site ────────────────────────────────────────────────────
   - type: web
     name: triocraft-portfolio
     runtime: static
     buildCommand: npm run build
     staticPublishPath: ./dist
     pullRequestPreviewsEnabled: false
+    envVars:
+      - key: VITE_API_URL
+        value: https://triocraft-api.onrender.com
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
+
+  # ── Express API Backend (Neon DB) ───────────────────────────────────────────
+  - type: web
+    name: triocraft-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false          # Set this as a Secret in Render Dashboard
+      - key: FRONTEND_URL
+        value: https://triocraft-portfolio.onrender.com
+      - key: NODE_ENV
+        value: production

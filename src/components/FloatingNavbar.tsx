@@ -68,7 +68,7 @@ const servicesList: SubItem[] = [
 // Dedicated Projects Dropdown
 const projectsList: SubItem[] = [
   {
-    name: 'CareGrid Hospital Management System',
+    name: 'Hospital Management System',
     desc: 'Enterprise bed telemetry, EHR records & pharmacy POS',
     href: '#projects',
     icon: Building2
@@ -98,7 +98,7 @@ const projectsList: SubItem[] = [
     icon: Heart
   },
   {
-    name: 'MediPulse Real-Time Clinical AI Bot',
+    name: 'Real-Time Chatbots',
     desc: '18ms streaming conversational triage & symptom check',
     href: '#projects',
     icon: Cpu

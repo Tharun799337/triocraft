@@ -68,7 +68,7 @@ export const AgencyContact: React.FC = () => {
                 <div>
                   <div className="text-xs font-mono font-bold text-slate-400 uppercase">Direct WhatsApp &amp; Call</div>
                   <div className="text-sm font-bold text-[#1a1f22] group-hover:text-emerald-700 transition-colors mt-0.5">
-                    +91 79933 70000
+                    +91 7993376939
                   </div>
                   <div className="text-xs text-emerald-600 font-semibold">Available for instant project consultation ➔</div>
                 </div>
@@ -76,7 +76,7 @@ export const AgencyContact: React.FC = () => {
 
               {/* Channel 3: Email */}
               <a
-                href="mailto:contact@triocraft.studio"
+                href="mailto:trioocraaft@gmail.com"
                 className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 hover:border-amber-400 shadow-xs transition-colors block text-left group"
               >
                 <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -85,7 +85,7 @@ export const AgencyContact: React.FC = () => {
                 <div>
                   <div className="text-xs font-mono font-bold text-slate-400 uppercase">Official Inquiries</div>
                   <div className="text-sm font-bold text-[#1a1f22] group-hover:text-amber-600 transition-colors mt-0.5">
-                    contact@triocraft.studio
+                   trioocraaft@gmail.com
                   </div>
                   <div className="text-xs text-slate-500">Fast 2-hour response guarantee</div>
                 </div>
