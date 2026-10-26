@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, MessageCircle, CheckCircle2, Clock } from 'lucide-react';
 
+const API = import.meta.env.VITE_API_URL ?? '';
+
 export const AgencyContact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -12,15 +14,28 @@ export const AgencyContact: React.FC = () => {
 
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
-    setTimeout(() => {
-      setLoading(false);
+    setError('');
+    try {
+      const res = await fetch(`${API}/api/contacts`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) {
+        const d = await res.json();
+        throw new Error(d.error || 'Submission failed');
+      }
       setSubmitted(true);
-    }, 1000);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -118,6 +133,7 @@ export const AgencyContact: React.FC = () => {
                   <button
                     onClick={() => {
                       setSubmitted(false);
+                      setError('');
                       setFormData({
                         name: '',
                         email: '',
@@ -218,6 +234,12 @@ export const AgencyContact: React.FC = () => {
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none text-sm transition-all"
                     />
                   </div>
+
+                  {error && (
+                    <div className="flex items-center gap-2 text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm">
+                      <span>⚠️</span> {error}
+                    </div>
+                  )}
 
                   <button
                     type="submit"

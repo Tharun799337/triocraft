@@ -2,6 +2,8 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import reviewsRouter from './routes/reviews.js';
+import contactsRouter from './routes/contacts.js';
+import adminRouter from './routes/admin.js';
 
 const app = express();
 
@@ -15,18 +17,19 @@ const allowedOrigins = process.env.FRONTEND_URL
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (e.g. curl, Postman, Render health checks)
       if (!origin || allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
       callback(new Error(`CORS: origin "${origin}" not allowed`));
     },
-    methods: ['GET', 'POST', 'OPTIONS'],
+    methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
   })
 );
 
 // ── Routes ──────────────────────────────────────
 app.use('/api/reviews', reviewsRouter);
+app.use('/api/contacts', contactsRouter);
+app.use('/api/admin', adminRouter);
 
 // Health check for Render uptime monitoring
 app.get('/health', (_req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
@@ -40,3 +43,4 @@ app.listen(PORT, () => {
   console.log(`🚀 Trio Craft API listening on port ${PORT}`);
   console.log(`   Allowed origins: ${allowedOrigins.join(', ')}`);
 });
+

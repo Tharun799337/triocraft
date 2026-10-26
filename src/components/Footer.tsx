@@ -1,4 +1,5 @@
-import { ArrowRight, Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Mail, Phone, MapPin, MessageCircle, Shield } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 export const Footer: React.FC = () => {
@@ -91,6 +92,12 @@ export const Footer: React.FC = () => {
               <li>
                 <a href="#contact" className="hover:text-amber-600 transition-colors">Get Free Quote</a>
               </li>
+              <li>
+                <Link to="/admin" className="hover:text-amber-600 transition-colors inline-flex items-center gap-1.5 font-medium text-amber-700">
+                  <Shield className="w-3.5 h-3.5" />
+                  <span>Admin Portal</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -166,9 +173,17 @@ export const Footer: React.FC = () => {
           <div>
             &copy; {currentYear} TrioCraft Digital &amp; AI Agency. All rights reserved.
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5 sm:gap-6">
             <a href="#hero" className="hover:text-[#1a1f22] transition-colors">Privacy Policy</a>
             <a href="#hero" className="hover:text-[#1a1f22] transition-colors">Terms of Service</a>
+            <Link
+              to="/admin"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-200/80 hover:bg-amber-100 text-slate-700 hover:text-amber-800 transition-all font-semibold text-[11px] shadow-2xs"
+              title="Admin Login & Management Portal"
+            >
+              <Shield className="w-3.5 h-3.5 text-amber-600" />
+              <span>Admin Login</span>
+            </Link>
             <a href="#hero" className="hover:text-[#1a1f22] transition-colors">Back to Top ↑</a>
           </div>
         </div>

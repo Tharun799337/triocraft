@@ -8,11 +8,13 @@ import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import { ContactPage } from './pages/ContactPage';
 import { BlogPage } from './pages/BlogPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { AdminPage } from './pages/AdminPage';
 
 export function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/admin" element={<AdminPage />} />
         <Route path="/" element={<RootLayout />}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
