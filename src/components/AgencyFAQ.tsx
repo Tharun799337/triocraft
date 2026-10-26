@@ -56,7 +56,7 @@ export const AgencyFAQ: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="card-hover-smooth rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-amber-400 overflow-hidden"
+                className="card-hover-smooth rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#32C8BF] overflow-hidden"
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}

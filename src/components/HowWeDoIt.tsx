@@ -7,9 +7,9 @@ const steps = [
     title: 'Discovery & Consultation',
     desc: 'We analyze your business goals, target audience, competitors, and technical requirements to build an airtight execution roadmap.',
     icon: Search,
-    color: 'text-amber-600',
-    border: 'border-amber-200',
-    bg: 'bg-amber-50',
+    color: 'text-[#32C8BF]',
+    border: 'border-[#32C8BF]/30',
+    bg: 'bg-[#32C8BF]/10',
   },
   {
     step: '02',
@@ -47,7 +47,7 @@ export const HowWeDoIt: React.FC = () => {
         
         {/* Section Heading (Raiseup "How we do it" Style) */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-bold tracking-widest text-amber-600 uppercase">
+          <span className="text-xs font-mono font-bold tracking-widest text-[#32C8BF] uppercase">
             ✦ PROVEN WORKFLOW
           </span>
           <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-[#1a1f22] mt-2">
@@ -65,11 +65,11 @@ export const HowWeDoIt: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="card-hover-smooth card-shine p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm relative group flex flex-col justify-between"
+                className="card-hover-smooth card-shine p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm relative group flex flex-col justify-between hover:border-[#32C8BF] transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-display font-black text-3xl sm:text-4xl text-slate-200 group-hover:text-amber-500 transition-colors">
+                    <span className="font-display font-black text-3xl sm:text-4xl text-emerald-500 group-hover:text-[#32C8BF] transition-colors">
                       {item.step}
                     </span>
                     <div className={`w-12 h-12 rounded-2xl ${item.bg} ${item.border} border flex items-center justify-center group-hover:scale-110 transition-transform`}>
@@ -77,7 +77,7 @@ export const HowWeDoIt: React.FC = () => {
                     </div>
                   </div>
 
-                  <h3 className="font-display font-bold text-lg text-[#1a1f22] mb-3 group-hover:text-amber-600 transition-colors">
+                  <h3 className="font-display font-bold text-lg text-[#1a1f22] mb-3 group-hover:text-[#32C8BF] transition-colors">
                     {item.title}
                   </h3>
 
@@ -86,7 +86,7 @@ export const HowWeDoIt: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-200/70 flex items-center gap-1.5 text-xs font-bold text-amber-600">
+                <div className="mt-6 pt-4 border-t border-slate-200/70 flex items-center gap-1.5 text-xs font-bold text-[#32C8BF]">
                   <span>Phase {item.step}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>

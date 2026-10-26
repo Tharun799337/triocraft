@@ -76,22 +76,8 @@ export const AboutSection: React.FC = () => {
               In order to provide demonstrable outcomes for all of our clients, we strategize to create digital solutions that are driven by a combination of consultative strategy, modern technology tactics, incredibly creative concepts, and cutting-edge engineering.
             </p>
 
-            {/* 4 Counter Metrics Cards */}
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
-              <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm text-left">
-                <div className="text-2xl sm:text-3xl font-display font-extrabold text-[#1a1f22]">
-                  100<span className="text-amber-500">+</span>
-                </div>
-                <div className="text-xs text-slate-500 font-medium mt-1">Projects Delivered</div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm text-left">
-                <div className="text-2xl sm:text-3xl font-display font-extrabold text-[#1a1f22]">
-                  99<span className="text-rose-500">%</span>
-                </div>
-                <div className="text-xs text-slate-500 font-medium mt-1">Client Satisfaction</div>
-              </div>
-
+            {/* Counter Metrics Cards */}
+            <div className="mt-8 grid grid-cols-2 gap-4 max-w-sm w-full">
               <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm text-left">
                 <div className="text-2xl sm:text-3xl font-display font-extrabold text-[#1a1f22]">
                   24<span className="text-blue-500">/7</span>
