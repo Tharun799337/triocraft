@@ -32,6 +32,6 @@ services:
       - key: DATABASE_URL
         sync: false          # Set this as a Secret in Render Dashboard
       - key: FRONTEND_URL
-        value: https://triocraft-5cix.onrender.com
+        value: https://triocraft.in
       - key: NODE_ENV
         value: production

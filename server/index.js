@@ -10,9 +10,18 @@ const app = express();
 // ── Middleware ──────────────────────────────────
 app.use(express.json());
 
-const allowedOrigins = process.env.FRONTEND_URL
-  ? [process.env.FRONTEND_URL]
-  : ['http://localhost:5173', 'http://localhost:4173'];
+const envOrigins = process.env.FRONTEND_URL
+  ? process.env.FRONTEND_URL.split(',').map(s => s.trim())
+  : [];
+
+const allowedOrigins = [
+  ...envOrigins,
+  'https://triocraft.in',
+  'https://www.triocraft.in',
+  'https://triocraft-5cix.onrender.com',
+  'http://localhost:5173',
+  'http://localhost:4173',
+];
 
 app.use(
   cors({

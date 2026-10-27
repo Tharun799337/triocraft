@@ -5,4 +5,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://triocraft-5cix.onrender.com/sitemap.xml
+Sitemap: https://triocraft.in/sitemap.xml

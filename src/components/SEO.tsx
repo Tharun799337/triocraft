@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const BASE_URL = 'https://triocraft-5cix.onrender.com';
+const BASE_URL = 'https://triocraft.in';
 const DEFAULT_IMAGE = `${BASE_URL}/triocraft-logo.png`;
 const SITE_NAME = 'TrioCraft';
 
