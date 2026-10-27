@@ -49,7 +49,6 @@ export const HomePage: React.FC = () => {
               },
               areaServed: 'Worldwide',
               serviceType: ['Web Development', 'Digital Marketing', 'AI Chatbot Development', 'Hospital Management Systems', 'Influencer Marketing'],
-              sameAs: ['https://github.com/Tharun799337'],
               priceRange: '₹₹',
             },
           ],

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Radio, Copy, ArrowRight, Mail, CheckCircle2 } from 'lucide-react';
-import { GithubIcon } from './Icons';
 
 export const CyberTerminal: React.FC = () => {
   const [copied, setCopied] = useState<boolean>(false);
@@ -135,16 +134,8 @@ export const CyberTerminal: React.FC = () => {
             </div>
           )}
 
-          {/* Social Links */}
+          {/* Contact Direct */}
           <div className="mt-8 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-center gap-6 text-sm text-[#5B5D7A] font-mono">
-            <a
-              href="https://github.com/Tharun799337"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-indigo-600 flex items-center gap-2 transition-colors"
-            >
-              <GithubIcon className="w-4 h-4" /> GitHub
-            </a>
             <a
               href="mailto:trioocraaft@gmail.com"
               className="hover:text-indigo-600 flex items-center gap-2 transition-colors"

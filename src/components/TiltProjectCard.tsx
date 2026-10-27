@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import type { Project } from '../types';
-import { ArrowUpRight, Cpu, Activity } from 'lucide-react';
+import { Cpu, Activity } from 'lucide-react';
 
 interface TiltProjectCardProps {
   project: Project;
@@ -187,22 +187,11 @@ export const TiltProjectCard: React.FC<TiltProjectCardProps> = ({ project, onIns
             {/* Primary: Inspect Architecture Blueprint */}
             <button
               onClick={() => onInspect(project)}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/40 text-xs font-semibold transition-all hover:scale-[1.02] cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/40 text-xs font-semibold transition-all hover:scale-[1.01] cursor-pointer"
             >
               <Cpu className="w-3.5 h-3.5" />
-              <span>Inspect Architecture</span>
+              <span>Inspect Architecture Blueprint</span>
             </button>
-
-            {/* Secondary: Live Demo / Source */}
-            <a
-              href={`https://github.com/Tharun799337`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs font-mono text-slate-400 hover:text-white transition-colors group/link cursor-pointer"
-            >
-              <span>Verified Repo</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-            </a>
           </div>
 
         </div>

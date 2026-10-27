@@ -3,7 +3,7 @@ import { ContactForm } from '../components/ContactForm';
 import { SectionHeading } from '../components/SectionHeading';
 import { PROFILE } from '../data/profile';
 import { SEO } from '../components/SEO';
-import { GithubIcon, LinkedinIcon } from '../components/Icons';
+import { LinkedinIcon } from '../components/Icons';
 import { 
   Mail, 
   Clock, 
@@ -129,22 +129,12 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 {/* Social Profiles */}
-                <div className="grid grid-cols-2 gap-3 pt-2">
-                  <a
-                    href={PROFILE.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2.5 text-xs text-[#25263A] hover:text-indigo-600 hover:border-indigo-400 transition-colors"
-                  >
-                    <GithubIcon className="w-4 h-4 text-[#25263A]" />
-                    <span>GitHub Profile</span>
-                  </a>
-
+                <div className="pt-2">
                   <a
                     href={PROFILE.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2.5 text-xs text-[#25263A] hover:text-indigo-600 hover:border-indigo-400 transition-colors"
+                    className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center gap-2.5 text-xs text-[#25263A] hover:text-indigo-600 hover:border-indigo-400 transition-colors w-full"
                   >
                     <LinkedinIcon className="w-4 h-4 text-[#25263A]" />
                     <span>LinkedIn Profile</span>

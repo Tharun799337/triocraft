@@ -10,7 +10,6 @@ export const PROFILE = {
     "Helping startups, founders, and growing businesses turn ideas into high-performing web platforms, intelligent RAG systems, AI agents, and workflow automations that scale.",
   location: "India (Serving Global Clients)",
   email: import.meta.env.VITE_CONTACT_EMAIL || "trioocraaft@gmail.com",
-  github: import.meta.env.VITE_GITHUB_URL || "https://github.com/Tharun799337",
   linkedin: import.meta.env.VITE_LINKEDIN_URL || "https://linkedin.com/in/tharun-dev",
   bioIntro: 
     "I am a full-stack engineer and AI developer focused on creating reliable digital products. From high-converting corporate web applications to custom generative AI pipelines and browser extensions, I build technology that solves operational bottlenecks.",

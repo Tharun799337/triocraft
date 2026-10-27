@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Mail, MapPin } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './Icons';
+import { LinkedinIcon } from './Icons';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -35,15 +35,6 @@ export const Footer: React.FC = () => {
             </p>
 
             <div className="flex items-center gap-2 pt-2">
-              <a
-                href="https://github.com/Tharun799337"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-amber-600 hover:border-amber-400 transition-colors shadow-xs"
-                title="GitHub"
-              >
-                <GithubIcon className="w-4 h-4" />
-              </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
