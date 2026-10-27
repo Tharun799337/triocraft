@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Radio, Copy, ArrowRight, Phone, Mail, CheckCircle2 } from 'lucide-react';
+import { Radio, Copy, ArrowRight, Mail, CheckCircle2 } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 export const CyberTerminal: React.FC = () => {
@@ -13,7 +13,7 @@ export const CyberTerminal: React.FC = () => {
   });
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('tharunchundi799@gmail.com');
+    navigator.clipboard.writeText('trioocraaft@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -63,7 +63,7 @@ export const CyberTerminal: React.FC = () => {
               className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-[#25263A] border border-slate-200 transition-colors cursor-pointer text-xs font-mono font-medium shadow-2xs"
             >
               <Copy className="w-3 h-3" />
-              <span>{copied ? 'COPIED TO CLIPBOARD!' : 'tharunchundi799@gmail.com'}</span>
+              <span>{copied ? 'COPIED TO CLIPBOARD!' : 'trioocraaft@gmail.com'}</span>
             </button>
           </div>
 
@@ -146,18 +146,10 @@ export const CyberTerminal: React.FC = () => {
               <GithubIcon className="w-4 h-4" /> GitHub
             </a>
             <a
-              href="https://wa.me/917993376939"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-emerald-600 flex items-center gap-2 transition-colors"
-            >
-              <Phone className="w-4 h-4" /> +91 7993376939
-            </a>
-            <a
-              href="mailto:tharunchundi799@gmail.com"
+              href="mailto:trioocraaft@gmail.com"
               className="hover:text-indigo-600 flex items-center gap-2 transition-colors"
             >
-              <Mail className="w-4 h-4" /> Email Direct
+              <Mail className="w-4 h-4" /> trioocraaft@gmail.com
             </a>
           </div>
         </div>

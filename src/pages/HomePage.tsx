@@ -40,7 +40,6 @@ export const HomePage: React.FC = () => {
               },
               image: 'https://triocraft.in/triocraft-logo.png',
               description: 'TrioCraft is a full-service digital design, custom engineering, and AI agency based in Hyderabad, India. We build web applications, hospital management systems, AI chatbots, influencer marketing campaigns, and revenue-scaling platforms.',
-              telephone: '+91-79933-76939',
               email: 'trioocraaft@gmail.com',
               address: {
                 '@type': 'PostalAddress',

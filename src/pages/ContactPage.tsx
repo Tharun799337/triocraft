@@ -6,7 +6,6 @@ import { SEO } from '../components/SEO';
 import { GithubIcon, LinkedinIcon } from '../components/Icons';
 import { 
   Mail, 
-  MessageSquare, 
   Clock, 
   MapPin, 
   ShieldCheck, 
@@ -24,7 +23,6 @@ export const ContactPage: React.FC = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const cleanWhatsapp = PROFILE.whatsapp.replace(/[^0-9+]/g, '');
 
   const faqs = [
     {
@@ -129,27 +127,6 @@ export const ContactPage: React.FC = () => {
                     {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
                   </button>
                 </div>
-
-                {/* WhatsApp */}
-                <a
-                  href={`https://wa.me/${cleanWhatsapp.replace('+', '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3 hover:border-emerald-500 transition-colors group"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
-                      <MessageSquare className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-[11px] text-[#5B5D7A] font-medium font-mono">WhatsApp Direct</div>
-                      <div className="text-xs font-semibold text-[#25263A] group-hover:text-emerald-700 transition-colors">
-                        {PROFILE.whatsapp}
-                      </div>
-                    </div>
-                  </div>
-                  <span className="text-xs text-emerald-700 font-semibold font-mono">Chat ➔</span>
-                </a>
 
                 {/* Social Profiles */}
                 <div className="grid grid-cols-2 gap-3 pt-2">

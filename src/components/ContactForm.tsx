@@ -7,8 +7,7 @@ import {
   Send, 
   CheckCircle2, 
   AlertCircle, 
-  Mail, 
-  MessageSquare 
+  Mail 
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
@@ -183,14 +182,9 @@ export const ContactForm: React.FC = () => {
   };
 
   const mailtoUrl = `mailto:${PROFILE.email}?subject=${encodeURIComponent(
-    `Freelance Project Enquiry: ${getSelectedServiceTitle()}`
+    `Project Enquiry: ${getSelectedServiceTitle()}`
   )}&body=${encodeURIComponent(
-    `Hi Tharun,\n\nName: ${formData.name}\nCompany: ${formData.company || 'N/A'}\nEmail: ${formData.email}\nService: ${getSelectedServiceTitle()}\nBudget: ${formData.budget}\n\nProject Details:\n${formData.message}\n`
-  )}`;
-
-  const cleanWhatsapp = PROFILE.whatsapp.replace(/[^0-9+]/g, '');
-  const whatsappUrl = `https://wa.me/${cleanWhatsapp.replace('+', '')}?text=${encodeURIComponent(
-    `Hi Tharun, I'm reaching out about a freelance project:\n\n*Name:* ${formData.name}\n*Service:* ${getSelectedServiceTitle()}\n*Budget:* ${formData.budget}\n*Details:* ${formData.message}`
+    `Hi TrioCraft Team,\n\nName: ${formData.name}\nCompany: ${formData.company || 'N/A'}\nEmail: ${formData.email}\nService: ${getSelectedServiceTitle()}\nBudget: ${formData.budget}\n\nProject Details:\n${formData.message}\n`
   )}`;
 
   return (
@@ -212,25 +206,16 @@ export const ContactForm: React.FC = () => {
             ) : (
               <div className="space-y-4 max-w-md mx-auto text-left">
                 <p className="text-[#5B5D7A] text-sm leading-relaxed">
-                  Thank you, <strong className="text-[#25263A]">{formData.name}</strong>! Your details have been validated. To ensure instant delivery, please choose your preferred direct channel:
+                  Thank you, <strong className="text-[#25263A]">{formData.name}</strong>! Your details have been validated. To ensure instant delivery, click below to send via your email client:
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <div className="pt-2">
                   <a
                     href={mailtoUrl}
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#25263A] hover:bg-indigo-600 text-white font-semibold text-sm shadow-md transition-all"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#25263A] hover:bg-indigo-600 text-white font-semibold text-sm shadow-md transition-all"
                   >
                     <Mail className="w-4 h-4" />
-                    Send via Email App
-                  </a>
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-md transition-all"
-                  >
-                    <MessageSquare className="w-4 h-4" />
-                    Send via WhatsApp
+                    Send via Email App ({PROFILE.email})
                   </a>
                 </div>
 

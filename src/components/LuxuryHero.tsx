@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { DeveloperHero3D } from './DeveloperHero3D';
 
 export const LuxuryHero: React.FC = () => {
@@ -52,17 +52,6 @@ export const LuxuryHero: React.FC = () => {
               >
                 <span>Explore Projects</span>
               </Link>
-
-              <a
-                href="https://wa.me/917993370000?text=Hello%20TrioCraft%20Team,%20I%20would%20like%20to%20discuss%20a%20project"
-                target="_blank"
-                rel="noreferrer"
-                className="px-4 py-4 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-bold text-sm shadow-sm transition-all cursor-pointer inline-flex items-center gap-2"
-                title="Direct WhatsApp"
-              >
-                <MessageCircle className="w-4 h-4 text-emerald-600" />
-                <span className="hidden sm:inline">WhatsApp</span>
-              </a>
             </div>
 
             {/* Trust Bullet Items */}

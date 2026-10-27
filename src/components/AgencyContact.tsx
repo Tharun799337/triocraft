@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, MessageCircle, CheckCircle2, Clock } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2, Clock, Calendar } from 'lucide-react';
 
 const API = import.meta.env.VITE_API_URL ?? '';
 
@@ -70,22 +70,20 @@ export const AgencyContact: React.FC = () => {
                 </div>
               </div>
 
-              {/* Channel 2: WhatsApp & Phone */}
+              {/* Channel 2: Consultation */}
               <a
-                href="https://wa.me/917993370000?text=Hello%20TrioCraft%20Team,%20I%20would%20like%20to%20discuss%20a%20project"
-                target="_blank"
-                rel="noreferrer"
+                href="mailto:trioocraaft@gmail.com?subject=Project%20Discovery%20Call%20Request"
                 className="card-hover-smooth card-shine flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs block text-left group"
               >
                 <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <MessageCircle className="w-6 h-6" />
+                  <Calendar className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono font-bold text-slate-400 uppercase">Direct WhatsApp &amp; Call</div>
+                  <div className="text-xs font-mono font-bold text-slate-400 uppercase">Consultation &amp; Scoping</div>
                   <div className="text-sm font-bold text-[#1a1f22] group-hover:text-emerald-700 transition-colors mt-0.5">
-                    +91 7993376939
+                    Schedule Discovery Call
                   </div>
-                  <div className="text-xs text-emerald-600 font-semibold">Available for instant project consultation ➔</div>
+                  <div className="text-xs text-emerald-600 font-semibold">Free architecture &amp; feasibility session ➔</div>
                 </div>
               </a>
 

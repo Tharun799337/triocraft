@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { ArrowRight, Mail, MapPin } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 export const Footer: React.FC = () => {
@@ -52,15 +52,6 @@ export const Footer: React.FC = () => {
                 title="LinkedIn"
               >
                 <LinkedinIcon className="w-4 h-4" />
-              </a>
-              <a
-                href="https://wa.me/917993370000"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-emerald-600 hover:border-emerald-400 transition-colors shadow-xs"
-                title="WhatsApp"
-              >
-                <MessageCircle className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -131,12 +122,6 @@ export const Footer: React.FC = () => {
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
                 <span>Hyderabad, Telangana, India (Global Remote Service)</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <a href="tel:+917993376939" className="hover:text-emerald-700 font-semibold">
-                  +91 79933 76939
-                </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-amber-600 flex-shrink-0" />

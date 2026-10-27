@@ -9,9 +9,7 @@ export const PROFILE = {
   subheadline: 
     "Helping startups, founders, and growing businesses turn ideas into high-performing web platforms, intelligent RAG systems, AI agents, and workflow automations that scale.",
   location: "India (Serving Global Clients)",
-  email: import.meta.env.VITE_CONTACT_EMAIL || "tharunchundi799@gmail.com",
-  whatsapp: import.meta.env.VITE_CONTACT_WHATSAPP || "+917993376939",
-  phone: "+917993376939",
+  email: import.meta.env.VITE_CONTACT_EMAIL || "trioocraaft@gmail.com",
   github: import.meta.env.VITE_GITHUB_URL || "https://github.com/Tharun799337",
   linkedin: import.meta.env.VITE_LINKEDIN_URL || "https://linkedin.com/in/tharun-dev",
   bioIntro: 

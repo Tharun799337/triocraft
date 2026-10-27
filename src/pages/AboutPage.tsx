@@ -75,7 +75,7 @@ export const AboutPage: React.FC = () => {
                 <div className="aspect-square w-full rounded-xl overflow-hidden bg-slate-100 mb-4 border border-slate-200">
                   <img
                     src="/tharun-portrait-placeholder.svg"
-                    alt="Tharun Portrait"
+                    alt="Vijay Portrait"
                     className="w-full h-full object-cover"
                   />
                 </div>
