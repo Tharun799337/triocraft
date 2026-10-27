@@ -8,8 +8,8 @@ export const NotFoundPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="404 - Page Not Found | Tharun Portfolio"
-        description="The requested page could not be found. Return to Tharun's portfolio homepage."
+        title="404 - Page Not Found | TrioCraft"
+        description="The requested page could not be found. Return to TrioCraft homepage."
       />
 
       <div className="py-24 sm:py-32 flex items-center justify-center min-h-[60vh]">

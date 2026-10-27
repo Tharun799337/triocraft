@@ -25,7 +25,7 @@ export const BlogPage: React.FC = () => {
             badge="Engineering Insights"
             title="Technical Articles &amp;"
             highlight="Architecture Guides"
-            description="Deep dives into building production RAG pipelines, Manifest V3 extensions, and automation systems. Clearly identified technical walkthroughs by Tharun."
+            description="Deep dives into building production RAG pipelines, Manifest V3 extensions, and automation systems. Clearly identified technical walkthroughs by Vijay."
             align="center"
           />
 

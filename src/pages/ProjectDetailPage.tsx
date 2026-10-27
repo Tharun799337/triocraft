@@ -36,7 +36,7 @@ export const ProjectDetailPage: React.FC = () => {
   return (
     <>
       <SEO
-        title={`${project.title} | Tharun Portfolio Case Study`}
+        title={`${project.title} | TrioCraft Case Study`}
         description={project.shortDescription}
       />
 
@@ -65,7 +65,7 @@ export const ProjectDetailPage: React.FC = () => {
                 {project.status}
               </span>
               <span className="text-xs text-slate-400 font-mono">
-                Engineered by Tharun
+                Engineered by Vijay
               </span>
             </div>
 
