@@ -368,7 +368,7 @@ export const ProjectShowcase: React.FC = () => {
                           <span>View Specs</span>
                           <ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                         </span>
-                        <span className="text-[9px] font-mono text-slate-400 uppercase">Live Demo</span>
+                        <span className="text-[9px] font-mono text-slate-400 uppercase">Case Study</span>
                       </div>
                     </div>
                   </div>

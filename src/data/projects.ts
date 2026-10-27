@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
     ],
     image: "https://images.unsplash.com/photo-1613422954567-8eade6e47038?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Vinayaka Chavithi Maha Utsav Festival and Puja Portal",
-    status: "Live Demo Available",
+    status: "Case Study & Architecture Breakdown",
     featured: true
   },
   {
@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
     ],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Revenue Tracker SaaS Financial Intelligence Platform",
-    status: "Live Demo Available",
+    status: "Case Study & Architecture Breakdown",
     featured: true
   },
   {
@@ -106,7 +106,7 @@ export const PROJECTS: Project[] = [
     ],
     image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "ForeverAfter Couple Surprise and Apology Web Portal",
-    status: "Live Demo Available",
+    status: "Case Study & Architecture Breakdown",
     featured: true
   },
   {
@@ -142,7 +142,7 @@ export const PROJECTS: Project[] = [
     ],
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Hospital Management System (HMS)",
-    status: "Live Demo Available",
+    status: "Case Study & Architecture Breakdown",
     featured: true
   },
   {
@@ -177,7 +177,7 @@ export const PROJECTS: Project[] = [
     ],
     image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Hospital Website and Patient Telehealth Portal",
-    status: "Live Demo Available",
+    status: "Case Study & Architecture Breakdown",
     featured: true
   },
   {
@@ -212,7 +212,7 @@ export const PROJECTS: Project[] = [
     ],
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Real-Time Chatbots and Patient Triage",
-    status: "Live Demo Available",
+    status: "Case Study & Architecture Breakdown",
     featured: true
   },
   {

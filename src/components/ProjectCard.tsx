@@ -27,7 +27,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {project.category}
           </Badge>
           <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/95 text-[#25263A] border border-slate-200 font-medium">
-            {project.status === 'Live Demo Available' ? '🟢 Live' : '📋 Case Study'}
+            📋 Case Study
           </span>
         </div>
       </div>
